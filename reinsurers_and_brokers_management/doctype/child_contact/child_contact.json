@@ -1,0 +1,97 @@
+{
+ "actions": [],
+ "autoname": "autoincrement",
+ "creation": "2023-01-11 13:43:48.208655",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "contact",
+  "last_name",
+  "first_name",
+  "civility",
+  "email_address",
+  "phone",
+  "mobile_no",
+  "r\u00f4le"
+ ],
+ "fields": [
+  {
+   "fieldname": "contact",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Contact",
+   "options": "Contact",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "contact.first_name",
+   "fieldname": "first_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Pr\u00e9nom",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "contact.last_name",
+   "fieldname": "last_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Nom",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "contact.salutation",
+   "fieldname": "civility",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Civilit\u00e9",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "contact.email_id",
+   "fieldname": "email_address",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Adresse \u00e9mail",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "contact.phone",
+   "fieldname": "phone",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "TEL fixe",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "contact.mobile_no",
+   "fieldname": "mobile_no",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "TEL mobile",
+   "read_only": 1
+  },
+  {
+   "fieldname": "r\u00f4le",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "R\u00f4le",
+   "options": "Role de la personne"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-05-02 06:01:12.056183",
+ "modified_by": "Administrator",
+ "module": "Reinsurers and Brokers Management",
+ "name": "child contact",
+ "naming_rule": "Autoincrement",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

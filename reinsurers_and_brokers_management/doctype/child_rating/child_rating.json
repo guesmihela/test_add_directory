@@ -1,0 +1,51 @@
+{
+ "actions": [],
+ "autoname": "autoincrement",
+ "creation": "2023-01-12 10:57:13.777720",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "date_effet",
+  "rating_agency",
+  "rating"
+ ],
+ "fields": [
+  {
+   "fieldname": "rating_agency",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Agence de notation",
+   "options": "Agence de Rating",
+   "reqd": 1
+  },
+  {
+   "fieldname": "rating",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "La notation",
+   "options": "Notation",
+   "reqd": 1
+  },
+  {
+   "fieldname": "date_effet",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date d\u2019effet  du rating",
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-05-02 05:53:32.630590",
+ "modified_by": "Administrator",
+ "module": "Reinsurers and Brokers Management",
+ "name": "child rating",
+ "naming_rule": "Autoincrement",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
