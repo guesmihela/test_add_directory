@@ -1,0 +1,177 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:numero_du_contrat",
+ "creation": "2023-05-07 14:20:50.290613",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "periode_comptable",
+  "date_preparation_du_fichier",
+  "code_client",
+  "nom_du_client",
+  "numero_du_contrat",
+  "code_agence",
+  "code_produit",
+  "nature_operation",
+  "column_break_dszr",
+  "type_avenant",
+  "numero_avenant",
+  "date_souscription_operation",
+  "date_effet_operation",
+  "date_echeance_contractuelle",
+  "fractionnement",
+  "capitaux_assures_a_100",
+  "prime_nette_annuelle",
+  "compagnie_aperitrice",
+  "quote_part_en_coassurance",
+  "quote_part_coassurance_calculer"
+ ],
+ "fields": [
+  {
+   "fieldname": "periode_comptable",
+   "fieldtype": "Data",
+   "label": "P\u00e9riode comptable"
+  },
+  {
+   "fieldname": "date_preparation_du_fichier",
+   "fieldtype": "Date",
+   "label": "Date pr\u00e9paration du fichier"
+  },
+  {
+   "fieldname": "code_client",
+   "fieldtype": "Data",
+   "label": "Code client"
+  },
+  {
+   "fieldname": "nom_du_client",
+   "fieldtype": "Data",
+   "label": "Nom du client"
+  },
+  {
+   "fieldname": "numero_du_contrat",
+   "fieldtype": "Data",
+   "label": "Num\u00e9ro du contrat",
+   "unique": 1
+  },
+  {
+   "fieldname": "code_agence",
+   "fieldtype": "Data",
+   "label": "Code agence"
+  },
+  {
+   "fieldname": "code_produit",
+   "fieldtype": "Link",
+   "label": "Code produit",
+   "options": "Categorie ou produit"
+  },
+  {
+   "fieldname": "nature_operation",
+   "fieldtype": "Select",
+   "label": "Nature d\u2019op\u00e9ration",
+   "options": "\nAffaire nouvelle\nRenouvellement\nAvenant"
+  },
+  {
+   "fieldname": "column_break_dszr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "type_avenant",
+   "fieldtype": "Data",
+   "label": "Type d\u2019avenant"
+  },
+  {
+   "fieldname": "numero_avenant",
+   "fieldtype": "Data",
+   "label": "Num\u00e9ro d\u2019avenant"
+  },
+  {
+   "fieldname": "date_souscription_operation",
+   "fieldtype": "Date",
+   "label": "Date de souscription de l\u2019op\u00e9ration"
+  },
+  {
+   "fieldname": "date_effet_operation",
+   "fieldtype": "Date",
+   "label": "Date d\u2019effet de l\u2019op\u00e9ration"
+  },
+  {
+   "fieldname": "date_echeance_contractuelle",
+   "fieldtype": "Date",
+   "label": "Date d\u2019\u00e9ch\u00e9ance contractuelle"
+  },
+  {
+   "fieldname": "fractionnement",
+   "fieldtype": "Select",
+   "label": "Fractionnement",
+   "options": "\nMensuel\nTrimestriel\nSemestriel\nAnnuel"
+  },
+  {
+   "fieldname": "capitaux_assures_a_100",
+   "fieldtype": "Percent",
+   "label": "Capitaux assur\u00e9s \u00e0 100%",
+   "precision": "0"
+  },
+  {
+   "fieldname": "prime_nette_annuelle",
+   "fieldtype": "Currency",
+   "label": "Prime nette annuelle"
+  },
+  {
+   "fieldname": "compagnie_aperitrice",
+   "fieldtype": "Link",
+   "label": "Compagnie ap\u00e9ritrice",
+   "options": "Compagnie assurance"
+  },
+  {
+   "fieldname": "quote_part_en_coassurance",
+   "fieldtype": "Percent",
+   "label": "Quote part en Coassurance",
+   "precision": "2"
+  },
+  {
+   "depends_on": "eval:doc.quote_part_en_coassurance",
+   "fieldname": "quote_part_coassurance_calculer",
+   "fieldtype": "Select",
+   "label": "quote_part_coassurance_calculer",
+   "options": "\nOui\nNon"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-08-18 09:43:00.011136",
+ "modified_by": "Administrator",
+ "module": "Traitement des Imports",
+ "name": "Contrat Individuel",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Role1",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

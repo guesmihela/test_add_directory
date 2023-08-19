@@ -1,0 +1,155 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{numero_emission}-{nature_emission}-{periode_comptable}",
+ "creation": "2023-05-11 15:20:12.797185",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "periode_comptable",
+  "date_preparation_du_fichier",
+  "numero_du_contrat",
+  "numero_aliment",
+  "numero_emission",
+  "code_agence",
+  "code_produit",
+  "nature_emission",
+  "column_break_dlz6",
+  "nature_operation",
+  "date_de_souscription_operation",
+  "dat_effet_operation",
+  "prime_nette_emise",
+  "frais_de_quittance",
+  "commissions_servies",
+  "traiter"
+ ],
+ "fields": [
+  {
+   "fieldname": "periode_comptable",
+   "fieldtype": "Data",
+   "label": "P\u00e9riode comptable"
+  },
+  {
+   "fieldname": "date_preparation_du_fichier",
+   "fieldtype": "Date",
+   "label": "Date pr\u00e9paration du fichier"
+  },
+  {
+   "fieldname": "numero_du_contrat",
+   "fieldtype": "Link",
+   "label": "Num\u00e9ro du contrat",
+   "options": "Contrat cadre"
+  },
+  {
+   "fieldname": "numero_aliment",
+   "fieldtype": "Link",
+   "label": "Num\u00e9ro d\u2019aliment",
+   "options": "Aliment"
+  },
+  {
+   "fieldname": "numero_emission",
+   "fieldtype": "Data",
+   "label": "Num\u00e9ro de l\u2019\u00e9mission",
+   "unique": 1
+  },
+  {
+   "fieldname": "code_agence",
+   "fieldtype": "Data",
+   "label": "Code agence"
+  },
+  {
+   "fieldname": "code_produit",
+   "fieldtype": "Link",
+   "label": "Code produit",
+   "options": "Categorie ou produit"
+  },
+  {
+   "fieldname": "nature_emission",
+   "fieldtype": "Select",
+   "label": "Nature d\u2019\u00e9mission",
+   "options": "Emission\nAnnulation \u00e9mission"
+  },
+  {
+   "fieldname": "column_break_dlz6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "nature_operation",
+   "fieldtype": "Select",
+   "label": "Nature d\u2019op\u00e9ration",
+   "options": "Affaire nouvelle\nRenouvellement\nComptant\nRetour administratif\nRetour XP\nRistourne\nP.B originale"
+  },
+  {
+   "fieldname": "date_de_souscription_operation",
+   "fieldtype": "Date",
+   "label": "Date de souscription op\u00e9ration"
+  },
+  {
+   "fieldname": "dat_effet_operation",
+   "fieldtype": "Date",
+   "label": "Date d\u2019effet op\u00e9ration"
+  },
+  {
+   "fieldname": "prime_nette_emise",
+   "fieldtype": "Currency",
+   "label": "Prime nette \u00e9mise"
+  },
+  {
+   "fieldname": "frais_de_quittance",
+   "fieldtype": "Currency",
+   "label": "Frais de quittance"
+  },
+  {
+   "fieldname": "commissions_servies",
+   "fieldtype": "Currency",
+   "label": "Commissions servies"
+  },
+  {
+   "default": "0",
+   "fieldname": "traiter",
+   "fieldtype": "Check",
+   "label": "traiter",
+   "print_hide": 1,
+   "report_hide": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-08-18 05:55:58.885519",
+ "modified_by": "Administrator",
+ "module": "Traitement des Imports",
+ "name": "Prime emise cadre",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Role1",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

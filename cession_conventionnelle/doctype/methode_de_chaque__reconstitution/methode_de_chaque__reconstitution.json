@@ -1,0 +1,51 @@
+{
+ "actions": [],
+ "autoname": "autoincrement",
+ "creation": "2023-02-20 17:18:08.922876",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "numero_de_reconstitution",
+  "methode_de_chaque__reconstitution",
+  "cout_reconstitution"
+ ],
+ "fields": [
+  {
+   "fieldname": "numero_de_reconstitution",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "num\u00e9ro de reconstitution",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "methode_de_chaque__reconstitution",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "M\u00e9thode de chaque  Reconstitution",
+   "options": "\nProrata de la garantie\nProrata de la garantie et temps",
+   "reqd": 1
+  },
+  {
+   "fieldname": "cout_reconstitution",
+   "fieldtype": "Percent",
+   "in_list_view": 1,
+   "label": "Co\u00fbt de la reconstitution",
+   "precision": "2"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-08-14 10:12:46.412576",
+ "modified_by": "Administrator",
+ "module": "cession conventionnelle",
+ "name": "Methode de chaque  Reconstitution",
+ "naming_rule": "Autoincrement",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

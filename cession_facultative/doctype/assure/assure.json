@@ -1,0 +1,81 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:code_client",
+ "creation": "2023-04-18 08:40:28.510167",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "code_client",
+  "nom_client",
+  "adresse_client",
+  "column_break_abry",
+  "email",
+  "num_telephone"
+ ],
+ "fields": [
+  {
+   "fieldname": "code_client",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Code Client",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "nom_client",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Nom Client",
+   "reqd": 1
+  },
+  {
+   "fieldname": "adresse_client",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Adresse Client",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_abry",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email"
+  },
+  {
+   "fieldname": "num_telephone",
+   "fieldtype": "Data",
+   "label": "Num\u00e9ro de t\u00e9l\u00e9phone"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-08-16 07:07:32.460152",
+ "modified_by": "Administrator",
+ "module": "cession facultative",
+ "name": "Assure",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

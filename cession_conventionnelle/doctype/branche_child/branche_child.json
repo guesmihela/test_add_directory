@@ -1,0 +1,71 @@
+{
+ "actions": [],
+ "autoname": "autoincrement",
+ "creation": "2023-02-01 15:44:54.108377",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "code_branche",
+  "nom_de_la_branche",
+  "code_forme_du_traite",
+  "nom_de_la_forme_du_traite",
+  "code_section_du_traite"
+ ],
+ "fields": [
+  {
+   "fieldname": "code_branche",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Code branche",
+   "options": "Branche de traite",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "code_branche.nom_de_la_branche_du_trait\u00e9",
+   "fetch_if_empty": 1,
+   "fieldname": "nom_de_la_branche",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Nom de la branche",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "code_forme_du_traite",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Code Forme du trait\u00e9",
+   "options": "Forme de traite",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "code_forme_du_traite.nom_du_raite",
+   "fetch_if_empty": 1,
+   "fieldname": "nom_de_la_forme_du_traite",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Nom de la forme du trait\u00e9",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "code_section_du_traite",
+   "fieldtype": "Data",
+   "label": "Code section du trait\u00e9"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-08-14 10:50:33.617044",
+ "modified_by": "Administrator",
+ "module": "cession conventionnelle",
+ "name": "branche child",
+ "naming_rule": "Autoincrement",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,49 @@
+{
+ "actions": [],
+ "autoname": "autoincrement",
+ "creation": "2023-04-29 07:37:41.223212",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "code_de_la_section",
+  "code_risque_section_du_trait\u00e9",
+  "niveau_du_trait\u00e9"
+ ],
+ "fields": [
+  {
+   "fieldname": "code_de_la_section",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Code de la section",
+   "options": "Section",
+   "reqd": 1
+  },
+  {
+   "fetch_if_empty": 1,
+   "fieldname": "code_risque_section_du_trait\u00e9",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Code risque section du trait\u00e9"
+  },
+  {
+   "fieldname": "niveau_du_trait\u00e9",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Niveau du trait\u00e9"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-04-29 07:39:10.706599",
+ "modified_by": "Administrator",
+ "module": "Traitement des Redressements des comptes",
+ "name": "section traite child",
+ "naming_rule": "Autoincrement",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

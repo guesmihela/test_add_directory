@@ -1,0 +1,139 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2023-05-30 04:31:50.363551",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "annee_deffet",
+  "description",
+  "taux_des_frais_de_gestion",
+  "column_break_kpdl",
+  "annees_de_report_de_perte",
+  "nombre_annees",
+  "premier_compte_pb",
+  "section_break_c8om",
+  "tableau_a_echelle_de_la_pp",
+  "sections",
+  "annee_liquidation",
+  "annees"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "R\u00e9f\u00e9rence",
+   "options": "P.P-ECHL-"
+  },
+  {
+   "fieldname": "annee_deffet",
+   "fieldtype": "Int",
+   "label": "Ann\u00e9e d'effet"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Data",
+   "label": "Description"
+  },
+  {
+   "fieldname": "taux_des_frais_de_gestion",
+   "fieldtype": "Percent",
+   "label": "Taux des frais de gestion",
+   "precision": "2"
+  },
+  {
+   "fieldname": "column_break_kpdl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "annees_de_report_de_perte",
+   "fieldtype": "Select",
+   "label": "Ann\u00e9es de report de perte",
+   "options": "\nPas de report\nNombre d\u2019ann\u00e9es de report de perte > \u00e0 0 (99 si le report est jusqu\u2019\u00e0 extinction)"
+  },
+  {
+   "fieldname": "nombre_annees",
+   "fieldtype": "Int",
+   "label": "Nombre d'ann\u00e9es"
+  },
+  {
+   "fieldname": "premier_compte_pb",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Premier compte P.P",
+   "options": "\nFin de la 1\u00e8re ann\u00e9e\nFin de la 2\u00e8me ann\u00e9e\nFin de la 3\u00e8me ann\u00e9e",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_c8om",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "tableau_a_echelle_de_la_pp",
+   "fieldtype": "Table",
+   "label": "Tableau \u00e0 \u00e9chelle de la P.P",
+   "options": "taux de PP ou PB echelonnee",
+   "precision": "2",
+   "reqd": 1
+  },
+  {
+   "fieldname": "sections",
+   "fieldtype": "Table",
+   "label": "Sections",
+   "options": "section pb et pp",
+   "read_only": 1
+  },
+  {
+   "fieldname": "annee_liquidation",
+   "fieldtype": "Data",
+   "label": "ann\u00e9e liquidation"
+  },
+  {
+   "fieldname": "annees",
+   "fieldtype": "Data",
+   "label": "ann\u00e9es"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-08-14 10:18:02.653674",
+ "modified_by": "Administrator",
+ "module": "cession conventionnelle",
+ "name": "PP echlonnee",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Role1",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

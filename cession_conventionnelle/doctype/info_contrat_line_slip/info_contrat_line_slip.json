@@ -1,0 +1,106 @@
+{
+ "actions": [],
+ "autoname": "autoincrement",
+ "creation": "2023-06-03 17:22:13.466445",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "numero_du_contrat",
+  "assure",
+  "capital_base_reassurance_100",
+  "fixe",
+  "engagement_line_slip",
+  "column_break_thfc",
+  "part_versee",
+  "base_engagement",
+  "taux_smp",
+  "currency"
+ ],
+ "fields": [
+  {
+   "fieldname": "numero_du_contrat",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Num\u00e9ro du Contrat",
+   "reqd": 1
+  },
+  {
+   "fieldname": "assure",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Assur\u00e9",
+   "reqd": 1
+  },
+  {
+   "fieldname": "capital_base_reassurance_100",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Capital Base R\u00e9assurance 100%",
+   "options": "currency",
+   "reqd": 1
+  },
+  {
+   "fieldname": "fixe",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "fixe",
+   "options": "\noui\nnon"
+  },
+  {
+   "fieldname": "engagement_line_slip",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Engagement Line-Slip",
+   "options": "currency",
+   "read_only_depends_on": "eval:doc.fixe=='oui'",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_thfc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "part_versee",
+   "fieldtype": "Percent",
+   "label": "Part vers\u00e9e",
+   "precision": "2",
+   "reqd": 1
+  },
+  {
+   "fieldname": "base_engagement",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Base Engagement",
+   "options": "\nSomme assur\u00e9e 100%\nSMP\nTOP VALUE\nLCI"
+  },
+  {
+   "fieldname": "taux_smp",
+   "fieldtype": "Percent",
+   "in_list_view": 1,
+   "label": "Taux SMP",
+   "precision": "2"
+  },
+  {
+   "default": "TND",
+   "fieldname": "currency",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "currency",
+   "options": "Currency"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-08-14 10:18:30.777251",
+ "modified_by": "Administrator",
+ "module": "cession conventionnelle",
+ "name": "info contrat line slip",
+ "naming_rule": "Autoincrement",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

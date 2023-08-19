@@ -1,0 +1,74 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:code_branche",
+ "creation": "2023-02-01 14:01:29.760620",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "code_branche",
+  "nom_branche",
+  "identifiant_legal"
+ ],
+ "fields": [
+  {
+   "fieldname": "code_branche",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Code branche du trait\u00e9",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "nom_branche",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Nom de la branche du trait\u00e9",
+   "reqd": 1
+  },
+  {
+   "fieldname": "identifiant_legal",
+   "fieldtype": "Int",
+   "label": "Code identifiant l\u00e9gal (Branche)"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-08-15 08:31:20.128829",
+ "modified_by": "Administrator",
+ "module": "cession conventionnelle",
+ "name": "Branche de traite",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Role1",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

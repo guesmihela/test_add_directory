@@ -1,0 +1,139 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{code_garantie}-{numero_emission}",
+ "creation": "2023-05-08 16:53:47.255749",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "periode_comptable",
+  "date_preparation_du_fichier",
+  "numero_emission",
+  "numero_du_contrat",
+  "numero_aliment",
+  "date_effect_operation",
+  "column_break_yqwl",
+  "code_garantie",
+  "cumulable_en_reassurance",
+  "capital_garantie",
+  "prime_garantie",
+  "commission_garantie",
+  "traiter"
+ ],
+ "fields": [
+  {
+   "fieldname": "periode_comptable",
+   "fieldtype": "Data",
+   "label": "P\u00e9riode comptable"
+  },
+  {
+   "fieldname": "date_preparation_du_fichier",
+   "fieldtype": "Date",
+   "label": "Date pr\u00e9paration du fichier"
+  },
+  {
+   "fieldname": "numero_emission",
+   "fieldtype": "Link",
+   "label": "Num\u00e9ro de l\u2019\u00e9mission",
+   "options": "prime emise individuel"
+  },
+  {
+   "fieldname": "numero_du_contrat",
+   "fieldtype": "Data",
+   "label": "Num\u00e9ro du contrat"
+  },
+  {
+   "fetch_from": "numero_emission.numero_aliment",
+   "fetch_if_empty": 1,
+   "fieldname": "numero_aliment",
+   "fieldtype": "Link",
+   "label": "Num\u00e9ro d\u2019aliment",
+   "options": "Aliment"
+  },
+  {
+   "fetch_from": "numero_emission.dat_effet_operation",
+   "fetch_if_empty": 1,
+   "fieldname": "date_effect_operation",
+   "fieldtype": "Date",
+   "label": "Date d\u2019effet op\u00e9ration",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_yqwl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "code_garantie",
+   "fieldtype": "Link",
+   "label": "Code garantie",
+   "options": "Garantie"
+  },
+  {
+   "fieldname": "cumulable_en_reassurance",
+   "fieldtype": "Select",
+   "label": "Cumulable en r\u00e9assurance",
+   "options": "Oui\nNon"
+  },
+  {
+   "fieldname": "capital_garantie",
+   "fieldtype": "Currency",
+   "label": "Capital garantie",
+   "precision": "0"
+  },
+  {
+   "fieldname": "prime_garantie",
+   "fieldtype": "Currency",
+   "label": "Prime garantie"
+  },
+  {
+   "fieldname": "commission_garantie",
+   "fieldtype": "Currency",
+   "label": "Commission garantie"
+  },
+  {
+   "default": "0",
+   "fieldname": "traiter",
+   "fieldtype": "Check",
+   "label": "traiter"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-08-18 05:56:36.435074",
+ "modified_by": "Administrator",
+ "module": "Traitement des Imports",
+ "name": "Garanties par emission",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Role1",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

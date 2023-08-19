@@ -1,0 +1,70 @@
+{
+ "actions": [],
+ "autoname": "autoincrement",
+ "creation": "2023-02-06 10:17:28.721012",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "affectation_de",
+  "produitsgaranties",
+  "categorie_produit",
+  "column_break_ymt7",
+  "produit_garantie",
+  "produit"
+ ],
+ "fields": [
+  {
+   "fieldname": "affectation_de",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Affectation de",
+   "options": "\nBranche assurance\nSous branche assurance\nCategorie ou produit\nFamille de garantie\nGarantie",
+   "read_only": 1
+  },
+  {
+   "fieldname": "produitsgaranties",
+   "fieldtype": "Dynamic Link",
+   "label": "Branche/ Sous branche",
+   "options": "affectation_de",
+   "read_only": 1
+  },
+  {
+   "fieldname": "categorie_produit",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "categorie_produit",
+   "options": "\nBranche assurance\nSous branche assurance\nCategorie ou produit\nFamille de garantie\nGarantie"
+  },
+  {
+   "fieldname": "column_break_ymt7",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "produit_garantie",
+   "fieldtype": "Dynamic Link",
+   "in_list_view": 1,
+   "label": "Produits/garanties",
+   "options": "categorie_produit"
+  },
+  {
+   "fieldname": "produit",
+   "fieldtype": "Data",
+   "label": "Produit",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-08-14 10:17:34.000199",
+ "modified_by": "Administrator",
+ "module": "cession conventionnelle",
+ "name": "Affectation des Produits et Garanties child",
+ "naming_rule": "Autoincrement",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

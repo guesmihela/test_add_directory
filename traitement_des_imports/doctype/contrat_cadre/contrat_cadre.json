@@ -1,0 +1,132 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:numero_du_contrat_cadre",
+ "creation": "2023-05-07 14:51:03.063634",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "periode_comptable",
+  "date_preparation_du_fichier",
+  "code_client",
+  "nom_du_client",
+  "numero_du_contrat_cadre",
+  "code_agence",
+  "column_break_ovwy",
+  "code_branche",
+  "sous_code_branche",
+  "date_de_souscription_du_contrat",
+  "date_effet_contrat",
+  "date_echeance_contractuelle",
+  "fractionnement"
+ ],
+ "fields": [
+  {
+   "fieldname": "periode_comptable",
+   "fieldtype": "Data",
+   "label": "P\u00e9riode comptable"
+  },
+  {
+   "fieldname": "date_preparation_du_fichier",
+   "fieldtype": "Date",
+   "label": "Date pr\u00e9paration du fichier"
+  },
+  {
+   "fieldname": "code_client",
+   "fieldtype": "Data",
+   "label": "Code client"
+  },
+  {
+   "fieldname": "nom_du_client",
+   "fieldtype": "Data",
+   "label": "Nom du client"
+  },
+  {
+   "fieldname": "numero_du_contrat_cadre",
+   "fieldtype": "Data",
+   "label": "Num\u00e9ro du contrat cadre",
+   "unique": 1
+  },
+  {
+   "fieldname": "code_agence",
+   "fieldtype": "Data",
+   "label": "Code agence"
+  },
+  {
+   "fieldname": "column_break_ovwy",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "code_branche",
+   "fieldtype": "Link",
+   "label": "Code branche",
+   "options": "Branche assurance"
+  },
+  {
+   "fieldname": "sous_code_branche",
+   "fieldtype": "Link",
+   "label": "Sous code branche",
+   "options": "Sous branche assurance"
+  },
+  {
+   "fieldname": "date_de_souscription_du_contrat",
+   "fieldtype": "Date",
+   "label": "Date de souscription du contrat"
+  },
+  {
+   "fieldname": "date_effet_contrat",
+   "fieldtype": "Date",
+   "label": "Date d\u2019effet du contrat"
+  },
+  {
+   "fieldname": "date_echeance_contractuelle",
+   "fieldtype": "Data",
+   "label": "Date d\u2019\u00e9ch\u00e9ance contractuelle"
+  },
+  {
+   "fieldname": "fractionnement",
+   "fieldtype": "Select",
+   "label": "Fractionnement",
+   "options": "Mensuel\nTrimestriel\nSemestriel\nAnnuel"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-08-18 05:56:07.820354",
+ "modified_by": "Administrator",
+ "module": "Traitement des Imports",
+ "name": "Contrat cadre",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Role1",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

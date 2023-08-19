@@ -1,0 +1,106 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:forme_du_traite",
+ "creation": "2023-02-01 14:05:39.919649",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "type_de_traite",
+  "forme_du_traite",
+  "excedent_du_traite",
+  "column_break_xpt8",
+  "nom_forme",
+  "abreviation",
+  "identifiant_legal"
+ ],
+ "fields": [
+  {
+   "fieldname": "column_break_xpt8",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "type_de_traite",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Type du trait\u00e9",
+   "options": "\nProportionnel\nNon proportionnel",
+   "reqd": 1
+  },
+  {
+   "fieldname": "forme_du_traite",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Forme du trait\u00e9",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "depends_on": "eval:doc.type_de_trait\u00e9=='Non proportionnel'",
+   "fieldname": "excedent_du_traite",
+   "fieldtype": "Select",
+   "label": "Exc\u00e9dent du trait\u00e9",
+   "options": "\nExc\u00e9dent de sinistre\nExc\u00e9dent de perte"
+  },
+  {
+   "fieldname": "nom_forme",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Nom de la forme du trait\u00e9",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "abreviation",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Abr\u00e9viation",
+   "reqd": 1
+  },
+  {
+   "fieldname": "identifiant_legal",
+   "fieldtype": "Int",
+   "label": "Code identifiant l\u00e9gal (forme trait\u00e9)"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-08-15 08:21:49.565505",
+ "modified_by": "Administrator",
+ "module": "cession conventionnelle",
+ "name": "Forme de traite",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Role1",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

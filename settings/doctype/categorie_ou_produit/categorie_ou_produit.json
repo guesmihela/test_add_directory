@@ -1,0 +1,100 @@
+{
+ "actions": [],
+ "autoname": "field:code_cp",
+ "creation": "2023-01-03 03:27:46.882318",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "code_cp",
+  "label_cp",
+  "column_break_1ni3",
+  "branche",
+  "under_insurance_branch",
+  "section_break_fpw2",
+  "list_of_guarantee"
+ ],
+ "fields": [
+  {
+   "fieldname": "code_cp",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Code CP",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "label_cp",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Libell\u00e9 CP",
+   "reqd": 1
+  },
+  {
+   "fieldname": "under_insurance_branch",
+   "fieldtype": "Link",
+   "label": "Sous branche",
+   "options": "Sous branche assurance",
+   "reqd": 1
+  },
+  {
+   "fieldname": "list_of_guarantee",
+   "fieldtype": "Table",
+   "label": "Liste des garanties",
+   "options": "child guarantee"
+  },
+  {
+   "fieldname": "column_break_1ni3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "branche",
+   "fieldtype": "Link",
+   "label": "Branche",
+   "options": "Branche assurance",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_fpw2",
+   "fieldtype": "Section Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-05-02 06:10:05.509169",
+ "modified_by": "Administrator",
+ "module": "Settings",
+ "name": "Categorie ou produit",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Role1",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,288 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"L1hMx3Bste\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Imports des  Donn\u00e9es</span>\",\"col\":12}},{\"id\":\"GOxKBOJljE\",\"type\":\"card\",\"data\":{\"card_name\":\"Contrats\",\"col\":3}},{\"id\":\"q91SV9XRld\",\"type\":\"card\",\"data\":{\"card_name\":\"Aliments\",\"col\":4}},{\"id\":\"7nzUmgwRrk\",\"type\":\"card\",\"data\":{\"card_name\":\"R\u00e9assurance & \u00e9v\u00e8nements\",\"col\":4}},{\"id\":\"MpggZb9I-4\",\"type\":\"card\",\"data\":{\"card_name\":\"Primes Emises\",\"col\":3}},{\"id\":\"eyB7LdDucO\",\"type\":\"card\",\"data\":{\"card_name\":\"SP & Recours encaiss\u00e9s\",\"col\":4}},{\"id\":\"VBedkXVCMi\",\"type\":\"card\",\"data\":{\"card_name\":\"SAP & Recours \u00e0 encaisser\",\"col\":5}},{\"id\":\"f2dHEOgriW\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Traitement des Donn\u00e9es</b></span>\",\"col\":12}},{\"id\":\"IostdbdcYB\",\"type\":\"card\",\"data\":{\"card_name\":\"Recap \u00e9missions\",\"col\":3}},{\"id\":\"sRf-aDcuvL\",\"type\":\"card\",\"data\":{\"card_name\":\"Recap SAP & Recours \u00e0 encaisser\",\"col\":4}},{\"id\":\"d2kWptWJNz\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Recap Sp Et Recours Encaisse\",\"col\":3}}]",
+ "creation": "2023-05-05 13:36:27.267273",
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "",
+ "idx": 0,
+ "label": "Traitement des Imports",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Aliments",
+   "link_count": 2,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Aliments",
+   "link_count": 0,
+   "link_to": "Aliment",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Garanties par aliment",
+   "link_count": 0,
+   "link_to": "Garanties par aliment",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Contrats",
+   "link_count": 3,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Contrats Individuels",
+   "link_count": 0,
+   "link_to": "Contrat Individuel",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Garanties des contrats",
+   "link_count": 0,
+   "link_to": "Garanties des contrats",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Contrats cadres",
+   "link_count": 0,
+   "link_to": "Contrat cadre",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "R\u00e9assurance & \u00e9v\u00e8nements",
+   "link_count": 2,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Donn\u00e9es R\u00e9assurance",
+   "link_count": 0,
+   "link_to": "Donnees Reassurance",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Ev\u00e9nement",
+   "link_count": 0,
+   "link_to": "Evenement",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "SP & Recours encaiss\u00e9s",
+   "link_count": 2,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "SP et Recours encaisse cadre",
+   "link_count": 0,
+   "link_to": "SP et Recours encaisse cadre",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "SP et Recours encaisse individuel",
+   "link_count": 0,
+   "link_to": "SP et Recours encaisse individuel",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Primes Emises",
+   "link_count": 3,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Prime emise individuel",
+   "link_count": 0,
+   "link_to": "prime emise individuel",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Prime emise cadre",
+   "link_count": 0,
+   "link_to": "Prime emise cadre",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Garanties par emission",
+   "link_count": 0,
+   "link_to": "Garanties par emission",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "SAP & Recours \u00e0 encaisser",
+   "link_count": 3,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "SAP et Recours a encaisser cadre",
+   "link_count": 0,
+   "link_to": "SAP et Recours a encaisser cadre",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "SAP et Recours a encaisser individuel",
+   "link_count": 0,
+   "link_to": "SAP et Recours a encaisser individuel",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Garanties sinistres",
+   "link_count": 0,
+   "link_to": "Garanties sinistres",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Recap \u00e9missions",
+   "link_count": 2,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Recap \u00e9missions",
+   "link_count": 0,
+   "link_to": "Recap emission",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Recap garanties par \u00e9mission",
+   "link_count": 0,
+   "link_to": "Recap garanties par emission",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Recap SAP & Recours \u00e0 encaisser",
+   "link_count": 2,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Recap SAP et Recours a encaisser",
+   "link_count": 0,
+   "link_to": "Recap SAP et Recours a encaisser",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Recap garanties sinistres",
+   "link_count": 0,
+   "link_to": "Recap garanties sinistres",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2023-08-18 08:41:16.145233",
+ "modified_by": "Administrator",
+ "module": "Traitement des Imports",
+ "name": "Traitement des Imports",
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 13.0,
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Recap Sp Et Recours Encaisse",
+   "link_to": "Recap SP et Recours encaisse",
+   "type": "DocType"
+  }
+ ],
+ "title": "Traitement des Imports"
+}

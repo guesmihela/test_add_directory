@@ -1,0 +1,113 @@
+{
+ "actions": [],
+ "autoname": "field:code_rubrique",
+ "creation": "2023-01-03 03:45:23.070371",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "code_rubrique",
+  "libelle_rubrique",
+  "sens_comptable",
+  "column_break_gbcm",
+  "num_compte_comptable",
+  "code_regroupement",
+  "ordre_edition",
+  "compte_ou_hors_compte"
+ ],
+ "fields": [
+  {
+   "fieldname": "column_break_gbcm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "code_rubrique",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Code rubrique de comptes",
+   "length": 3,
+   "reqd": 1,
+   "set_only_once": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "libelle_rubrique",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Libell\u00e9 rubrique de comptes",
+   "reqd": 1
+  },
+  {
+   "fieldname": "sens_comptable",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Sens comptable",
+   "options": "\nD\nC",
+   "reqd": 1
+  },
+  {
+   "fieldname": "num_compte_comptable",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Num\u00e9ro de compte comptable"
+  },
+  {
+   "fieldname": "code_regroupement",
+   "fieldtype": "Link",
+   "label": "Code de regroupement",
+   "options": "Regroupement rubriques de comptes"
+  },
+  {
+   "fieldname": "ordre_edition",
+   "fieldtype": "Data",
+   "label": "L\u2019ordre d\u2019\u00e9dition",
+   "length": 3,
+   "unique": 1
+  },
+  {
+   "fieldname": "compte_ou_hors_compte",
+   "fieldtype": "Select",
+   "label": "Compte ou Hors compte",
+   "options": "\nCompte\nHors comptes",
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-08-09 20:13:48.873732",
+ "modified_by": "Administrator",
+ "module": "Settings",
+ "name": "Rubrique de compte",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Role1",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

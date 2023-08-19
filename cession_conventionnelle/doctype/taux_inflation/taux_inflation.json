@@ -1,0 +1,78 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:annee_civile",
+ "creation": "2023-03-03 13:28:36.435280",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "annee_civile",
+  "column_break_mbuz",
+  "taux_inflation"
+ ],
+ "fields": [
+  {
+   "fieldname": "column_break_mbuz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "Varie de 3 \u00e0 20 %",
+   "fieldname": "taux_inflation",
+   "fieldtype": "Percent",
+   "label": "Taux inflation",
+   "length": 5,
+   "precision": "2",
+   "reqd": 1
+  },
+  {
+   "description": "varie entre 2023 et 2030",
+   "fieldname": "annee_civile",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Ann\u00e9e civile",
+   "length": 4,
+   "reqd": 1,
+   "set_only_once": 1,
+   "unique": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-08-14 10:53:21.241547",
+ "modified_by": "Administrator",
+ "module": "cession conventionnelle",
+ "name": "Taux inflation",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Role1",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

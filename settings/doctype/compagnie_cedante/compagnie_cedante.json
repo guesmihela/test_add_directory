@@ -1,0 +1,108 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:company_name",
+ "creation": "2022-12-29 17:55:32.713403",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "company_name",
+  "attach_logo",
+  "column_break_huaw",
+  "abbreviation",
+  "section_break_pqzy",
+  "company_addresses",
+  "comptes___bancaires__compagnie_section",
+  "company_bank_accounts"
+ ],
+ "fields": [
+  {
+   "fieldname": "company_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Nom de la compagnie c\u00e9dante",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "abbreviation",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Abr\u00e9viation",
+   "reqd": 1
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_pqzy",
+   "fieldtype": "Section Break",
+   "label": "Adresses  Compagnie"
+  },
+  {
+   "fieldname": "company_addresses",
+   "fieldtype": "Table",
+   "label": "Adresses  Compagnie",
+   "options": "adresse child"
+  },
+  {
+   "fieldname": "company_bank_accounts",
+   "fieldtype": "Table",
+   "label": "Comptes   Bancaires  Compagnie",
+   "options": "Bank Account Child"
+  },
+  {
+   "fieldname": "attach_logo",
+   "fieldtype": "Attach Image",
+   "label": "Logo"
+  },
+  {
+   "fieldname": "column_break_huaw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "comptes___bancaires__compagnie_section",
+   "fieldtype": "Section Break",
+   "label": "Comptes   Bancaires  Compagnie"
+  }
+ ],
+ "image_field": "attach_logo",
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-01-16 09:05:20.801917",
+ "modified_by": "Administrator",
+ "module": "Settings",
+ "name": "Compagnie cedante",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Role1",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

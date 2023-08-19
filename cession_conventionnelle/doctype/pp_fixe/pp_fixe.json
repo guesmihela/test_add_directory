@@ -1,0 +1,120 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2023-05-29 05:51:19.899651",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "description",
+  "taux_de_la_pp",
+  "taux_des_frais_de_gestion",
+  "column_break_8bwy",
+  "ann\u00e9es_de_report_de_perte",
+  "nombre_annees",
+  "premier_compte_pp",
+  "section_break_pwti",
+  "sections"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "R\u00e9f\u00e9rence",
+   "options": "P.P-FIXE-"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Data",
+   "label": "Description"
+  },
+  {
+   "fieldname": "taux_de_la_pp",
+   "fieldtype": "Percent",
+   "label": "Taux de la P.P",
+   "precision": "2",
+   "reqd": 1
+  },
+  {
+   "fieldname": "taux_des_frais_de_gestion",
+   "fieldtype": "Percent",
+   "label": "Taux des frais de gestion",
+   "precision": "2"
+  },
+  {
+   "fieldname": "column_break_8bwy",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "ann\u00e9es_de_report_de_perte",
+   "fieldtype": "Select",
+   "label": "Ann\u00e9es de report de perte",
+   "options": "Pas de report\nNombre d\u2019ann\u00e9es de report de perte"
+  },
+  {
+   "fieldname": "nombre_annees",
+   "fieldtype": "Int",
+   "label": "Nombre d'ann\u00e9es"
+  },
+  {
+   "fieldname": "premier_compte_pp",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Premier compte P.P",
+   "options": "\nFin de la 1\u00e8re ann\u00e9e\nFin de la 2\u00e8me ann\u00e9e\nFin de la 3\u00e8me ann\u00e9e",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_pwti",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "sections",
+   "fieldtype": "Table",
+   "label": "Sections",
+   "options": "section pb et pp",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-08-14 10:17:53.509739",
+ "modified_by": "Administrator",
+ "module": "cession conventionnelle",
+ "name": "PP fixe",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Role1",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,44 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-02-01 14:18:18.051211",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "branche_de_traite",
+  "nom_de_la_branche_du_traite"
+ ],
+ "fields": [
+  {
+   "fieldname": "branche_de_traite",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Branche de traite",
+   "options": "Branche de traite",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "branche_de_traite.nom_de_la_branche_du_trait\u00e9",
+   "fetch_if_empty": 1,
+   "fieldname": "nom_de_la_branche_du_traite",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Nom de la branche du trait\u00e9",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-08-14 10:52:24.646298",
+ "modified_by": "Administrator",
+ "module": "cession conventionnelle",
+ "name": "child branche",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

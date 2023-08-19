@@ -1,0 +1,192 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-04-12 13:37:54.343030",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "num_placement",
+  "origine_placement",
+  "nature_placement",
+  "code_client",
+  "nom_assure",
+  "adresse_assure",
+  "activite_lassure",
+  "description_placement",
+  "numero_avenant",
+  "column_break_nvpx",
+  "caractere_placement",
+  "reference_programme",
+  "date_effet",
+  "date_expiration",
+  "parite",
+  "section_break_hk25",
+  "monnaie",
+  "sections_tab",
+  "section_html"
+ ],
+ "fields": [
+  {
+   "fieldname": "num_placement",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Num\u00e9ro du placement",
+   "length": 8,
+   "read_only": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "origine_placement",
+   "fieldtype": "Link",
+   "label": "Origine du placement",
+   "options": "Placement en reassurance facultative",
+   "read_only": 1
+  },
+  {
+   "default": "Affaire Nouvelle",
+   "fieldname": "nature_placement",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Nature du placement",
+   "options": "Affaire Nouvelle\nRenouvellement",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "code_client",
+   "fieldtype": "Link",
+   "label": "Code client",
+   "options": "Assure",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "code_client.nom_client",
+   "fetch_if_empty": 1,
+   "fieldname": "nom_assure",
+   "fieldtype": "Data",
+   "label": "Nom de l'assur\u00e9",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "adresse_assure",
+   "fieldtype": "Data",
+   "label": "L'adresse de l'assur\u00e9",
+   "reqd": 1
+  },
+  {
+   "fieldname": "activite_lassure",
+   "fieldtype": "Link",
+   "label": "L'activit\u00e9 de l'assur\u00e9",
+   "options": "Activite Assure",
+   "reqd": 1
+  },
+  {
+   "fieldname": "description_placement",
+   "fieldtype": "Small Text",
+   "label": "Description du placement",
+   "reqd": 1
+  },
+  {
+   "fieldname": "numero_avenant",
+   "fieldtype": "Data",
+   "label": "Num\u00e9ro d\u2019avenant",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_nvpx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "caractere_placement",
+   "fieldtype": "Select",
+   "label": "Caract\u00e8re du placement",
+   "options": "\nLocal\nInternational",
+   "reqd": 1
+  },
+  {
+   "fieldname": "reference_programme",
+   "fieldtype": "Link",
+   "label": "R\u00e9f\u00e9rence du programme",
+   "mandatory_depends_on": "eval:doc.caractere_placement=='International'",
+   "options": "Programme de reassurance"
+  },
+  {
+   "fieldname": "date_effet",
+   "fieldtype": "Date",
+   "label": "Date d\u2019effet du placement",
+   "reqd": 1
+  },
+  {
+   "fieldname": "date_expiration",
+   "fieldtype": "Date",
+   "label": "Date d\u2019expiration du placement",
+   "mandatory_depends_on": "eval:doc.nature_du_placement=='Affaire Nouvelle'"
+  },
+  {
+   "fieldname": "parite",
+   "fieldtype": "Percent",
+   "label": "Parit\u00e9",
+   "precision": "2"
+  },
+  {
+   "fieldname": "section_break_hk25",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "monnaie",
+   "fieldtype": "Table",
+   "label": "Monnaie",
+   "mandatory_depends_on": "eval:doc.nature_du_placement=='Affaire Nouvelle'",
+   "options": "monnaie placement"
+  },
+  {
+   "depends_on": "eval:!doc.__islocal",
+   "fieldname": "sections_tab",
+   "fieldtype": "Tab Break",
+   "label": "Sections"
+  },
+  {
+   "fieldname": "section_html",
+   "fieldtype": "HTML"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-08-16 07:07:44.562726",
+ "modified_by": "Administrator",
+ "module": "cession facultative",
+ "name": "Placement en reassurance facultative",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Role1",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

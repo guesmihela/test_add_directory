@@ -1,0 +1,100 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{numero_de_sinistre}-{code_garantie}",
+ "creation": "2023-05-09 07:15:44.721768",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "periode_comptable",
+  "date_preparation_du_fichier",
+  "code_garantie",
+  "column_break_8eio",
+  "montant_de_sinistre_a_payer",
+  "montant_de_recours_a_encaisser",
+  "section_break_zwbv",
+  "numero_de_sinistre"
+ ],
+ "fields": [
+  {
+   "fieldname": "periode_comptable",
+   "fieldtype": "Data",
+   "label": "P\u00e9riode comptable"
+  },
+  {
+   "fieldname": "date_preparation_du_fichier",
+   "fieldtype": "Date",
+   "label": "Date pr\u00e9paration du fichier"
+  },
+  {
+   "fieldname": "code_garantie",
+   "fieldtype": "Link",
+   "label": "Code garantie",
+   "options": "Garantie"
+  },
+  {
+   "fieldname": "column_break_8eio",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "montant_de_sinistre_a_payer",
+   "fieldtype": "Currency",
+   "label": "Montant de sinistre \u00e0 payer/Garantie",
+   "precision": "0"
+  },
+  {
+   "fieldname": "montant_de_recours_a_encaisser",
+   "fieldtype": "Currency",
+   "label": "Montant de recours \u00e0 encaisser /Garantie",
+   "precision": "0"
+  },
+  {
+   "fieldname": "section_break_zwbv",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "numero_de_sinistre",
+   "fieldtype": "Data",
+   "label": "Num\u00e9ro de sinistre"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-08-18 05:56:16.580459",
+ "modified_by": "Administrator",
+ "module": "Traitement des Imports",
+ "name": "Recap garanties sinistres",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Role1",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

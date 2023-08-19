@@ -1,0 +1,40 @@
+{
+ "actions": [],
+ "autoname": "autoincrement",
+ "creation": "2023-02-06 11:13:59.808535",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "label",
+  "taux_de_pb_echelonnee"
+ ],
+ "fields": [
+  {
+   "fieldname": "label",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "label",
+   "reqd": 1
+  },
+  {
+   "fieldname": "taux_de_pb_echelonnee",
+   "fieldtype": "Float",
+   "label": "Taux de P.B \u00e9chelonn\u00e9e"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-08-14 11:02:25.392149",
+ "modified_by": "Administrator",
+ "module": "cession conventionnelle",
+ "name": "child taux par tranche de Benefice",
+ "naming_rule": "Autoincrement",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

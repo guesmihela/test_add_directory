@@ -1,0 +1,126 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2023-05-29 05:34:27.714962",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "annee_effet",
+  "description",
+  "taux_de_la_pb",
+  "taux_des_frais_de_gestion",
+  "column_break_ouaw",
+  "ann\u00e9es_de_report_de_perte",
+  "nombre_annee",
+  "premier_compte_pb",
+  "section_break_befx",
+  "sections"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "R\u00e9f\u00e9rence",
+   "options": "P.B-FIXE-"
+  },
+  {
+   "fieldname": "annee_effet",
+   "fieldtype": "Data",
+   "label": "Ann\u00e9e d'effet"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Data",
+   "label": "Description"
+  },
+  {
+   "fieldname": "taux_de_la_pb",
+   "fieldtype": "Percent",
+   "label": "Taux de la P.B",
+   "precision": "2",
+   "reqd": 1
+  },
+  {
+   "fieldname": "taux_des_frais_de_gestion",
+   "fieldtype": "Percent",
+   "label": "Taux des frais de gestion",
+   "precision": "2"
+  },
+  {
+   "fieldname": "column_break_ouaw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "ann\u00e9es_de_report_de_perte",
+   "fieldtype": "Select",
+   "label": "Ann\u00e9es de report de perte",
+   "options": "Pas de report\nNombre d\u2019ann\u00e9es de report de perte > \u00e0 0 (99 si le report est jusqu\u2019\u00e0 extinction)"
+  },
+  {
+   "fieldname": "nombre_annee",
+   "fieldtype": "Int",
+   "label": "Nombre d'ann\u00e9es"
+  },
+  {
+   "fieldname": "premier_compte_pb",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Premier compte P.B",
+   "options": "\nFin de la 1\u00e8re ann\u00e9e\nFin de la 2\u00e8me ann\u00e9e\nFin de la 3\u00e8me ann\u00e9e",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_befx",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "sections",
+   "fieldtype": "Table",
+   "label": "Sections",
+   "options": "section pb et pp",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-08-15 08:16:21.738964",
+ "modified_by": "Administrator",
+ "module": "cession conventionnelle",
+ "name": "PB fixe",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Role1",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,177 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:numero_du_contrat",
+ "creation": "2023-04-17 09:44:13.834994",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "numero_du_contrat",
+  "code_produit",
+  "taux_fac_unique",
+  "num_certificat_transport",
+  "nom_assure",
+  "activite_assure",
+  "nature_du_contrat",
+  "date_effet",
+  "date_expiration",
+  "column_break_t2d2",
+  "fractionnement",
+  "capitaux_100",
+  "prime_nette_a_100",
+  "prime_au_comptant",
+  "compagnie_aperitrice",
+  "quote_part_coassurance",
+  "base_engagement",
+  "taux_smp",
+  "engagement_cedante"
+ ],
+ "fields": [
+  {
+   "fieldname": "numero_du_contrat",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Num\u00e9ro du contrat",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "code_produit",
+   "fieldtype": "Link",
+   "label": "Code produit",
+   "options": "Categorie ou produit"
+  },
+  {
+   "fieldname": "taux_fac_unique",
+   "fieldtype": "Select",
+   "label": "Taux FAC unique pour tous les ordres",
+   "options": "\nOui\nNon"
+  },
+  {
+   "depends_on": "eval:doc.taux_fac_unique_pour_tous_les_ordres=='Non'",
+   "fieldname": "num_certificat_transport",
+   "fieldtype": "Int",
+   "label": "Num\u00e9ro de certificat transport facult\u00e9s abonnement"
+  },
+  {
+   "fieldname": "nom_assure",
+   "fieldtype": "Data",
+   "label": "Nom de l\u2019assur\u00e9"
+  },
+  {
+   "fieldname": "activite_assure",
+   "fieldtype": "Link",
+   "label": "L\u2019activit\u00e9 de l\u2019assur\u00e9",
+   "options": "Activite Assure",
+   "reqd": 1
+  },
+  {
+   "fieldname": "nature_du_contrat",
+   "fieldtype": "Select",
+   "label": "Nature du contrat",
+   "options": "Affaire Nouvelle",
+   "reqd": 1
+  },
+  {
+   "fieldname": "date_effet",
+   "fieldtype": "Date",
+   "label": "Date d\u2019effet du contrat",
+   "reqd": 1
+  },
+  {
+   "fieldname": "date_expiration",
+   "fieldtype": "Date",
+   "label": "Date d\u2019expiration du contrat",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_t2d2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "fractionnement",
+   "fieldtype": "Select",
+   "label": "Fractionnement",
+   "options": "\nMensuel\nTrimestriel\nSemestriel\nAnnuel"
+  },
+  {
+   "fieldname": "capitaux_100",
+   "fieldtype": "Currency",
+   "label": "Capitaux \u00e0 100 %",
+   "reqd": 1
+  },
+  {
+   "fieldname": "prime_nette_a_100",
+   "fieldtype": "Currency",
+   "label": "Prime nette \u00e0 100 %",
+   "reqd": 1
+  },
+  {
+   "fieldname": "prime_au_comptant",
+   "fieldtype": "Currency",
+   "label": "Prime au comptant",
+   "reqd": 1
+  },
+  {
+   "fieldname": "compagnie_aperitrice",
+   "fieldtype": "Link",
+   "label": "Compagnie ap\u00e9ritrice",
+   "options": "Compagnie cedante"
+  },
+  {
+   "depends_on": "eval:doc.compagnie_ap\u00e9ritrice",
+   "fieldname": "quote_part_coassurance",
+   "fieldtype": "Percent",
+   "label": "Quote part Coassurance",
+   "precision": "2",
+   "reqd": 1
+  },
+  {
+   "fieldname": "base_engagement",
+   "fieldtype": "Select",
+   "label": "Base engagement",
+   "options": "\n100 % des capitaux\nBase SMP\nTOP VALUE\nLimite contractuelle d\u2019indemnisation",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.base_engagement=='Base SMP'",
+   "fieldname": "taux_smp",
+   "fieldtype": "Percent",
+   "label": "Taux SMP",
+   "mandatory_depends_on": "eval:doc.base_engagement=='Base SMP'",
+   "precision": "2"
+  },
+  {
+   "fieldname": "engagement_cedante",
+   "fieldtype": "Currency",
+   "label": "Engagement C\u00e9dante"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-08-16 07:07:18.528311",
+ "modified_by": "Administrator",
+ "module": "cession facultative",
+ "name": "Contrat",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

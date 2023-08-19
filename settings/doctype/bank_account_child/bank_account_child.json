@@ -1,0 +1,109 @@
+{
+ "actions": [],
+ "autoname": "autoincrement",
+ "creation": "2023-01-02 09:44:16.628333",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "bank_name",
+  "agency",
+  "pays",
+  "monnaie_du_compte",
+  "adresse_de_la_banque",
+  "column_break_9dak",
+  "ville",
+  "code_postal",
+  "rib",
+  "iban",
+  "swift"
+ ],
+ "fields": [
+  {
+   "fetch_from": "bank_account.bank_name",
+   "fieldname": "bank_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Nom de la banque",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "bank_account.agency",
+   "fieldname": "agency",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Agence"
+  },
+  {
+   "fetch_from": "bank_account.iban",
+   "fieldname": "iban",
+   "fieldtype": "Data",
+   "label": "IBAN"
+  },
+  {
+   "fieldname": "pays",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Pays",
+   "options": "Country",
+   "reqd": 1
+  },
+  {
+   "fieldname": "monnaie_du_compte",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Monnaie du compte",
+   "options": "Currency",
+   "reqd": 1
+  },
+  {
+   "fieldname": "adresse_de_la_banque",
+   "fieldtype": "Data",
+   "label": "Adresse de la banque",
+   "reqd": 1
+  },
+  {
+   "fieldname": "rib",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "RIB",
+   "reqd": 1
+  },
+  {
+   "fieldname": "ville",
+   "fieldtype": "Link",
+   "label": "Ville",
+   "options": "Ville",
+   "reqd": 1
+  },
+  {
+   "fieldname": "code_postal",
+   "fieldtype": "Link",
+   "label": "Code Postal",
+   "options": "Code postal",
+   "reqd": 1
+  },
+  {
+   "fieldname": "swift",
+   "fieldtype": "Data",
+   "label": "Swift"
+  },
+  {
+   "fieldname": "column_break_9dak",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-01-30 12:57:36.906134",
+ "modified_by": "Administrator",
+ "module": "Settings",
+ "name": "Bank Account Child",
+ "naming_rule": "Autoincrement",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

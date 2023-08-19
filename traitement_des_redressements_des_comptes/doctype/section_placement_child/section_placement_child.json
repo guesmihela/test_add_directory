@@ -1,0 +1,74 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-04-29 07:48:20.586806",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "code_de_la_section",
+  "num\u00e9ro_de_la_section",
+  "code_risque",
+  "code_branche",
+  "num\u00e9ro_du_contrat",
+  "nom_assure"
+ ],
+ "fields": [
+  {
+   "fieldname": "code_de_la_section",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Code de la section",
+   "options": "Section Placement",
+   "reqd": 1
+  },
+  {
+   "fieldname": "num\u00e9ro_de_la_section",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Num\u00e9ro de la section",
+   "reqd": 1
+  },
+  {
+   "fieldname": "code_risque",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Code risque",
+   "reqd": 1
+  },
+  {
+   "fieldname": "code_branche",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Code branche",
+   "reqd": 1
+  },
+  {
+   "fieldname": "num\u00e9ro_du_contrat",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Num\u00e9ro du contrat",
+   "reqd": 1
+  },
+  {
+   "fieldname": "nom_assure",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Nom de l\u2019assur\u00e9",
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-04-29 07:54:06.932174",
+ "modified_by": "Administrator",
+ "module": "Traitement des Redressements des comptes",
+ "name": "Section Placement child",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

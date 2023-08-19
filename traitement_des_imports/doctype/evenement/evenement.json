@@ -1,0 +1,102 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:numero_evenement",
+ "creation": "2023-05-08 17:56:20.082838",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "periode_comptable",
+  "date_preparation_du_fichier",
+  "date_evenement",
+  "numero_evenement",
+  "description_evenement",
+  "column_break_syre",
+  "numero_de_sinistre",
+  "numero_de_contrat",
+  "numero_aliment",
+  "code_produit"
+ ],
+ "fields": [
+  {
+   "fieldname": "periode_comptable",
+   "fieldtype": "Data",
+   "label": "P\u00e9riode comptable"
+  },
+  {
+   "fieldname": "date_preparation_du_fichier",
+   "fieldtype": "Date",
+   "label": "Date pr\u00e9paration du fichier"
+  },
+  {
+   "fieldname": "date_evenement",
+   "fieldtype": "Date",
+   "label": "Date d\u2019\u00e9v\u00e8nement"
+  },
+  {
+   "fieldname": "numero_evenement",
+   "fieldtype": "Data",
+   "label": "Num\u00e9ro d\u2019\u00e9v\u00e8nement",
+   "length": 2,
+   "unique": 1
+  },
+  {
+   "fieldname": "description_evenement",
+   "fieldtype": "Small Text",
+   "label": "Description de l\u2019\u00e9v\u00e8nement"
+  },
+  {
+   "fieldname": "column_break_syre",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "numero_de_sinistre",
+   "fieldtype": "Data",
+   "label": "Num\u00e9ro de sinistre"
+  },
+  {
+   "fieldname": "numero_de_contrat",
+   "fieldtype": "Data",
+   "label": "Num\u00e9ro de contrat"
+  },
+  {
+   "fieldname": "numero_aliment",
+   "fieldtype": "Link",
+   "label": "Num\u00e9ro d\u2019aliment",
+   "options": "Aliment"
+  },
+  {
+   "fieldname": "code_produit",
+   "fieldtype": "Link",
+   "label": "Code produit",
+   "options": "Categorie ou produit"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-08-18 05:57:50.500358",
+ "modified_by": "Administrator",
+ "module": "Traitement des Imports",
+ "name": "Evenement",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,145 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"xA-bp2jHnZ\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Programmes de cessions en r\u00e9assurance conventionnelle</span>\",\"col\":12}},{\"id\":\"_uxEocKeNN\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Trait\u00e9s\",\"col\":5}},{\"id\":\"8FclnHql0G\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Regroupement de trait\u00e9s\",\"col\":3}},{\"id\":\"n8Kvnoo0i2\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Programme de r\u00e9assurance\",\"col\":3}},{\"id\":\"2CiUZ9cX_Y\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"trKFuwmNm6\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"ks936WHSTs\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Param\u00e9trages</b></span>\",\"col\":12}},{\"id\":\"qe3Ixru5po\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Forme du trait\u00e9\",\"col\":5}},{\"id\":\"fuFnrJcr9O\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Branche du trait\u00e9\",\"col\":3}},{\"id\":\"Oeu8dRMh-b\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Risque de la branche du trait\u00e9\",\"col\":3}},{\"id\":\"BdtdAdOcFE\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"p\u00e9riodicit\u00e9 de constitution et de lib\u00e9ration des d\u00e9p\u00f4ts\",\"col\":5}},{\"id\":\"-weo_tE5Fz\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Etat du trait\u00e9\",\"col\":3}},{\"id\":\"KRIhDXf3b9\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Taux d'inflation\",\"col\":3}},{\"id\":\"srzYnkQPeP\",\"type\":\"card\",\"data\":{\"card_name\":\"P.B & P.P \",\"col\":5}},{\"id\":\"w35eKI4cFU\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Echelle de commission\",\"col\":3}}]",
+ "creation": "2023-02-01 13:25:59.141678",
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "",
+ "idx": 0,
+ "label": "cession conventionnelle",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "P.B & P.P ",
+   "link_count": 4,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "P.B fixe",
+   "link_count": 0,
+   "link_to": "PB fixe",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "P.B echlonn\u00e9e",
+   "link_count": 0,
+   "link_to": "PB echlonnee",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "P.P fixe",
+   "link_count": 0,
+   "link_to": "PP fixe",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "P.P echlonn\u00e9e",
+   "link_count": 0,
+   "link_to": "PP echlonnee",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2023-08-18 08:45:47.124561",
+ "modified_by": "Administrator",
+ "module": "cession conventionnelle",
+ "name": "cession conventionnelle",
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 10.0,
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Forme du trait\u00e9",
+   "link_to": "Forme de traite",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Programme de r\u00e9assurance",
+   "link_to": "Programme de reassurance",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Trait\u00e9s",
+   "link_to": "Traite",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Echelle de commission",
+   "link_to": "Echelle de commission",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "p\u00e9riodicit\u00e9 de constitution et de lib\u00e9ration des d\u00e9p\u00f4ts",
+   "link_to": "periodicite de constitution et de liberation des depots",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Regroupement de trait\u00e9s",
+   "link_to": "Regroupement de traite",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Branche du trait\u00e9",
+   "link_to": "Branche de traite",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Etat du trait\u00e9",
+   "link_to": "Etat du traite",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Risque de la branche du trait\u00e9",
+   "link_to": "Risque des traites",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Taux d'inflation",
+   "link_to": "Taux inflation",
+   "type": "DocType"
+  }
+ ],
+ "title": "cession conventionnelle"
+}
