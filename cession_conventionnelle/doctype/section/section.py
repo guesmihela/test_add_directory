@@ -88,44 +88,29 @@ class Section(Document):
 
     @frappe.whitelist()
     def add_note(self, note, att, pro):
+        frappe.msgprint(
+            msg='This file does not exist',
+            title='Error'
+        )
+
         if att == "Garantie":
             self.append("table_tree", {"affectation_de": att, "categorie_produit": "Garantie", "produit_garantie": note,
                                        "produit": pro})
-        elif att == "Categorie ou produit":
+        if att == "Categorie ou produit":
             self.append("table_tree",
                         {"affectation_de": att, "categorie_produit": "Categorie ou produit", "produit_garantie": note})
-        elif att == "Sous branche assurance":
+        if att == "Sous branche assurance":
             categorie = frappe.get_all("Categorie ou produit", filters={"under_insurance_branch": note}, fields=["*"])
             for cat in categorie:
                 self.append("table_tree", {"affectation_de": att, "categorie_produit": "Categorie ou produit",
                                            "produitsgaranties": note, "produit_garantie": cat.name})
-        elif att == "Branche assurance":
+        if att == "Branche assurance":
             categorie = frappe.get_all("Categorie ou produit", filters={"branche": note}, fields=["*"])
             for cat in categorie:
                 self.append("table_tree", {"affectation_de": att, "categorie_produit": "Categorie ou produit",
                                            "produitsgaranties": note, "produit_garantie": cat.name})
 
-        #	if att == "Garantie":
-        #		self.append("table_tree",
-        #					{"affectation_de": att, "categorie_produit": "Garantie", "produit_garantie": note,
-        #					 "produit": pro})
-        #	elif att == "Categorie ou produit":
-        #		self.append("table_tree", {"affectation_de": att, "categorie_produit": "Categorie ou produit",
-        #								   "produit_garantie": note})
-        #	elif att == "Sous branche assurance":
-        #		categorie = frappe.get_all("Categorie ou produit", filters={"under_insurance_branch": note},
-        #								   fields=["*"])
-        #		for cat in categorie:
-        #			self.append("table_tree", {"affectation_de": att, "categorie_produit": "Categorie ou produit",
-        #									   "produitsgaranties": note, "produit_garantie": cat.name})
-        #	elif att == "Branche assurance":
-        #		categorie = frappe.get_all("Categorie ou produit", filters={"branche": note}, fields=["*"])
-        #		for cat in categorie:
-        #			self.append("table_tree", {"affectation_de": att, "categorie_produit": "Categorie ou produit",
-        #									   "produitsgaranties": note, "produit_garantie": cat.name})
-        #	else:
-        #
-        #		self.append("table_tree", {"affectation_de": att, "produit_garantie": note})
+
 
         self.save()
 
@@ -164,7 +149,71 @@ class Section(Document):
             self.code_section = str(nb_section)
 
 
+@frappe.whitelist()
+def get_branch(name, note, att, pro):
 
+    if att == "Garantie":
+        nb_row = frappe.db.count('Affectation des Produits et Garanties child',
+                                 {'parenttype': "section", "parent": name})
+        nb_row = nb_row + 1
+        doc = frappe.new_doc('Affectation des Produits et Garanties child')
+        doc.affectation_de = att
+        doc.parenttype = "Section"
+        doc.parent = name
+        doc.idx = nb_row
+        doc.parentfield = "table_tree"
+        doc.categorie_produit = "Garantie"
+        doc.produit_garantie = note
+        doc.produit =pro
+        doc.insert()
+
+    if att == "Categorie ou produit":
+        nb_row = frappe.db.count('Affectation des Produits et Garanties child',
+                                 {'parenttype': "section", "parent": name})
+        nb_row = nb_row + 1
+        doc = frappe.new_doc('Affectation des Produits et Garanties child')
+        doc.affectation_de = att
+        doc.parenttype = "Section"
+        doc.parent = name
+        doc.idx = nb_row
+        doc.parentfield = "table_tree"
+        doc.categorie_produit = "Categorie ou produit"
+        doc.produit_garantie = note
+        doc.insert()
+
+    if att == "Sous branche assurance":
+
+            categorie = frappe.get_all("Categorie ou produit", filters={"under_insurance_branch": note}, fields=["*"])
+            for cat in categorie:
+                nb_row = frappe.db.count('Affectation des Produits et Garanties child',
+                                         {'parenttype': "section", "parent": name})
+                nb_row = nb_row + 1
+                doc = frappe.new_doc('Affectation des Produits et Garanties child')
+                doc.affectation_de = att
+                doc.parenttype = "Section"
+                doc.parent = name
+                doc.idx = nb_row
+                doc.parentfield = "table_tree"
+                doc.categorie_produit = "Categorie ou produit"
+                doc.produitsgaranties = note
+                doc.produit_garantie = cat.name
+                doc.insert()
+    if att == "Branche assurance":
+        categorie = frappe.get_all("Categorie ou produit", filters={"branche": note}, fields=["*"])
+        for cat in categorie:
+            nb_row = frappe.db.count('Affectation des Produits et Garanties child',
+                                     {'parenttype': "section", "parent": name})
+            nb_row = nb_row + 1
+            doc = frappe.new_doc('Affectation des Produits et Garanties child')
+            doc.affectation_de = att
+            doc.parenttype = "Section"
+            doc.parent = name
+            doc.idx = nb_row
+            doc.parentfield = "table_tree"
+            doc.categorie_produit = "Categorie ou produit"
+            doc.produitsgaranties = note
+            doc.produit_garantie = cat.name
+            doc.insert()
 
 
 

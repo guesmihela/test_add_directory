@@ -18,40 +18,8 @@
   "link_name",
   "type_traite",
   "forme_traite",
+  "nom_forme_traite",
   "niveau_traite",
-  "fonctionnement_section",
-  "fonctionnement",
-  "engagement_line_slip",
-  "liste_de_contrats",
-  "la_limite_du_traite_section",
-  "type_du_plein",
-  "valeur_du_plein",
-  "column_break_wngy",
-  "limite_plein",
-  "nombre_de_pleins_limite",
-  "section_break_hali",
-  "plein_variable_par_taux",
-  "section_break_zgvw",
-  "plein_variable_par",
-  "retention_section_plein",
-  "nombre_de_pleins_retention",
-  "limite_retention",
-  "plein_variable_taux_retention",
-  "plein_variable_capitaux_retention",
-  "la__limite_du_traite_a_100_section",
-  "limite_t_p",
-  "retention_section",
-  "taux_retention",
-  "column_break_lzug",
-  "limite",
-  "engagement_des_reassureurs_section",
-  "nb_pleins_engagement",
-  "limite_engagement_plein",
-  "plein_variable_taux_engagement",
-  "plein_variable_capitaux_engagement",
-  "engagement_des_tiers_section",
-  "taux_engagement",
-  "limite_engagement",
   "tiers_section",
   "contact_html",
   "les__depots_risques_en_cours_section",
@@ -116,6 +84,103 @@
   "bonification_pour_non_sinistre",
   "column_break_9zcl",
   "taux_de_bonification",
+  "tab_saisie_engamement_pro",
+  "fonctionnement_section",
+  "fonctionnement",
+  "engagement_line_slip",
+  "liste_de_contrats",
+  "la_limite_du_traite_section",
+  "type_du_plein",
+  "valeur_du_plein",
+  "column_break_wngy",
+  "limite_plein",
+  "nombre_de_pleins_limite",
+  "section_break_hali",
+  "plein_variable_par_taux",
+  "section_break_zgvw",
+  "plein_variable_par",
+  "retention_section_plein",
+  "nombre_de_pleins_retention",
+  "limite_retention",
+  "plein_variable_taux_retention",
+  "plein_variable_capitaux_retention",
+  "la__limite_du_traite_a_100_section",
+  "limite_t_p",
+  "retention_section",
+  "taux_retention",
+  "column_break_lzug",
+  "limite",
+  "engagement_des_reassureurs_section",
+  "nb_pleins_engagement",
+  "limite_engagement_plein",
+  "plein_variable_taux_engagement",
+  "plein_variable_capitaux_engagement",
+  "engagement_des_tiers_section",
+  "taux_engagement",
+  "limite_engagement",
+  "base__engagements_section",
+  "base_engagement",
+  "base_cession_section",
+  "base_cession",
+  "column_break_yzwv",
+  "taux_smp_min",
+  "coassurance_non_aperiteur_section",
+  "choix_coassurance",
+  "column_break_ldql",
+  "limite_en_coassurance",
+  "agregat_cat_nat_section",
+  "cat_nat",
+  "limite_cat_nat_par_annee_assurance",
+  "column_break_yoer",
+  "limite_cat_nat_choix",
+  "limite_par_sinistre",
+  "limite_par_evenement",
+  "agregat_risques_politiques_section",
+  "r_politique",
+  "limite_r_p_par_s",
+  "column_break_ezu0",
+  "limite_par_evenement_r_p",
+  "limite_par_sinistre_r_p",
+  "limite_r_p_par_annee",
+  "saisie_limite_non_prop",
+  "modalite_fonctionnement_section",
+  "choix",
+  "priorite_section",
+  "limite_priorite",
+  "column_break_z7yr",
+  "taux_priorite",
+  "franchise_annuelle_additionnelle_aad_section",
+  "choix_franchise_additionnelle",
+  "column_break_fvec",
+  "franchise_annuelle",
+  "choix_portee_section",
+  "choix_portee",
+  "portee_section",
+  "limite_portee",
+  "column_break_wapy",
+  "taux_portee",
+  "plafond_section",
+  "limite_plafond",
+  "column_break_7e3n",
+  "taux_plafond",
+  "plafond_annuel_section",
+  "plafond_annuel",
+  "clause_ind_sec",
+  "clause_indexation",
+  "date_deffet_indexation",
+  "column_break_qazg",
+  "taux_dindexation",
+  "cond_app_indexation",
+  "taux_dinflation_clause_index",
+  "clause_stabilisation_sec",
+  "clause_de_stabilisation",
+  "annee_base",
+  "indice_base",
+  "date_deffet_app_clause_de_stabilisation",
+  "column_break_tqoo",
+  "valeur_lindice",
+  "condition_app_clause_stabilisation",
+  "taux_inflation_clause_sta",
   "tab_break_iymx",
   "html_tree",
   "column_break_skmg",
@@ -299,7 +364,7 @@
    "mandatory_depends_on": "eval:(doc.forme_traite=='QPART'|| doc.forme_traite=='QPRSC')"
   },
   {
-   "depends_on": "eval:(doc.forme_du_traite=='QPART'|| doc.forme_du_traite=='QPRSC')",
+   "depends_on": "eval:(doc.forme_traite=='QPART'|| doc.forme_traite=='QPRSC')",
    "fieldname": "retention_section",
    "fieldtype": "Section Break",
    "label": "R\u00e9tention"
@@ -836,7 +901,7 @@
   },
   {
    "fieldname": "description_section",
-   "fieldtype": "Data",
+   "fieldtype": "Small Text",
    "label": "Description de la section",
    "reqd": 1
   },
@@ -854,11 +919,409 @@
    "fieldtype": "Int",
    "in_list_view": 1,
    "label": "Niveau du trait\u00e9"
+  },
+  {
+   "depends_on": "eval:doc.nom_forme_traite!= \"Line Slip\"",
+   "fieldname": "base__engagements_section",
+   "fieldtype": "Section Break",
+   "label": "Base  engagements"
+  },
+  {
+   "fieldname": "base_engagement",
+   "fieldtype": "Select",
+   "label": "Base engagement",
+   "mandatory_depends_on": "eval:(doc.type_traite=='Proportionnel'&& doc.nom_forme_traite != \"Line Slip\")",
+   "options": "\nPar risque\nPar contrat\nPar risque et/ou par contrat"
+  },
+  {
+   "depends_on": "eval:doc.nom_forme_traite != \"Line Slip\"",
+   "fieldname": "base_cession_section",
+   "fieldtype": "Section Break",
+   "label": "Base  de la cession"
+  },
+  {
+   "fieldname": "base_cession",
+   "fieldtype": "Select",
+   "label": "Base cession",
+   "options": "Somme assur\u00e9e\nSMP"
+  },
+  {
+   "fieldname": "column_break_yzwv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.base_cession=='SMP'",
+   "description": "Ce taux SMP doit \u00eatre > 0 et < 100",
+   "fieldname": "taux_smp_min",
+   "fieldtype": "Percent",
+   "label": "Taux SMP minimum",
+   "mandatory_depends_on": "eval:doc.base_cession=='SMP'",
+   "precision": "2"
+  },
+  {
+   "depends_on": "eval:doc.nom_forme_traite != \"Line Slip\"",
+   "fieldname": "coassurance_non_aperiteur_section",
+   "fieldtype": "Section Break",
+   "label": "Coassurance non ap\u00e9riteur"
+  },
+  {
+   "fieldname": "choix_coassurance",
+   "fieldtype": "Select",
+   "label": "Choix coassurance",
+   "options": "\nOui\nNon"
+  },
+  {
+   "fieldname": "column_break_ldql",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.choix_coassurance=='Oui'",
+   "description": "La limite en % qui doit \u00eatre > 0 et < 100",
+   "fieldname": "limite_en_coassurance",
+   "fieldtype": "Percent",
+   "label": "Limite en Coassurance",
+   "mandatory_depends_on": "eval:doc.choix_coassurance=='Oui'",
+   "precision": "2"
+  },
+  {
+   "fieldname": "agregat_cat_nat_section",
+   "fieldtype": "Section Break",
+   "label": "Agr\u00e9gat CAT NAT"
+  },
+  {
+   "fieldname": "cat_nat",
+   "fieldtype": "Select",
+   "label": "CAT NAT",
+   "options": "\nOui\nNon"
+  },
+  {
+   "depends_on": "eval:doc.cat_nat=='Oui'",
+   "fieldname": "limite_cat_nat_par_annee_assurance",
+   "fieldtype": "Currency",
+   "label": "Limite CAT NAT par ann\u00e9e d\u2019assurance",
+   "mandatory_depends_on": "eval:doc.cat_nat=='Oui'"
+  },
+  {
+   "depends_on": "eval:doc.type_traite=='Proportionnel'",
+   "fieldname": "tab_saisie_engamement_pro",
+   "fieldtype": "Tab Break",
+   "label": "Saisie des limites des engagements"
+  },
+  {
+   "fieldname": "column_break_yoer",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.cat_nat=='Oui'",
+   "fieldname": "limite_cat_nat_choix",
+   "fieldtype": "Select",
+   "label": "Limite CAT NAT par sinistre et/ou par \u00e9v\u00e9nement",
+   "mandatory_depends_on": "eval:doc.cat_nat=='Oui'",
+   "options": "\nPar sinistre\nPar \u00e9v\u00e9nement\nPar sinistre et \u00e9v\u00e9nement"
+  },
+  {
+   "depends_on": "eval:((doc.limite_cat_nat_choix=='Par sinistre'||doc.limite_cat_nat_choix=='Par sinistre et \u00e9v\u00e9nement') && doc.cat_nat=='Oui')",
+   "fieldname": "limite_par_sinistre",
+   "fieldtype": "Currency",
+   "label": "Limite par sinistre",
+   "mandatory_depends_on": "eval:((doc.limite_cat_nat_choix=='Par sinistre'||doc.limite_cat_nat_choix=='Par sinistre et \u00e9v\u00e9nement') && doc.cat_nat=='Oui')"
+  },
+  {
+   "depends_on": "eval:((doc.limite_cat_nat_choix=='Par \u00e9v\u00e9nement'||doc.limite_cat_nat_choix=='Par sinistre et \u00e9v\u00e9nement') && doc.cat_nat=='Oui')",
+   "fieldname": "limite_par_evenement",
+   "fieldtype": "Currency",
+   "label": "Limite par \u00e9v\u00e9nement",
+   "mandatory_depends_on": "eval:((doc.limite_cat_nat_choix=='Par \u00e9v\u00e9nement'||doc.limite_cat_nat_choix=='Par sinistre et \u00e9v\u00e9nement') && doc.cat_nat=='Oui')"
+  },
+  {
+   "fieldname": "agregat_risques_politiques_section",
+   "fieldtype": "Section Break",
+   "label": "Agr\u00e9gat Risques politiques"
+  },
+  {
+   "fieldname": "r_politique",
+   "fieldtype": "Select",
+   "label": "R- politique",
+   "options": "\nOui\nNon"
+  },
+  {
+   "depends_on": "eval:doc.r_politique=='Oui'",
+   "fieldname": "limite_r_p_par_s",
+   "fieldtype": "Select",
+   "label": "Limite R-P par sinistre et/ou par \u00e9v\u00e8nement",
+   "mandatory_depends_on": "eval:doc.r_politique=='Oui'",
+   "options": "\nPar sinistre\nPar \u00e9v\u00e9nement\nPar sinistre et \u00e9v\u00e9nement"
+  },
+  {
+   "fieldname": "column_break_ezu0",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:((doc.limite_r_p_par_s=='Par \u00e9v\u00e9nement'||doc.limite_r_p_par_s=='Par sinistre et \u00e9v\u00e9nement') && doc.r_politique=='Oui' )",
+   "fieldname": "limite_par_evenement_r_p",
+   "fieldtype": "Currency",
+   "label": "Limite par \u00e9v\u00e9nement",
+   "mandatory_depends_on": "eval:((doc.limite_r_p_par_s=='Par \u00e9v\u00e9nement'||doc.limite_r_p_par_s=='Par sinistre et \u00e9v\u00e9nement') && doc.r_politique=='Oui' )"
+  },
+  {
+   "depends_on": "eval:((doc.limite_r_p_par_s=='Par sinistre'||doc.limite_r_p_par_s=='Par sinistre et \u00e9v\u00e9nement') && doc.r_politique=='Oui' )",
+   "fieldname": "limite_par_sinistre_r_p",
+   "fieldtype": "Currency",
+   "label": "Limite par sinistre",
+   "mandatory_depends_on": "eval:((doc.limite_r_p_par_s=='Par sinistre'||doc.limite_r_p_par_s=='Par sinistre et \u00e9v\u00e9nement') && doc.r_politique=='Oui' )"
+  },
+  {
+   "depends_on": "eval:doc.r_politique=='Oui'",
+   "fieldname": "limite_r_p_par_annee",
+   "fieldtype": "Currency",
+   "label": "Limite R-P par ann\u00e9e d\u2019assurance",
+   "mandatory_depends_on": "eval:doc.r_politique=='Oui'"
+  },
+  {
+   "fetch_from": "forme_traite.nom_forme",
+   "fetch_if_empty": 1,
+   "fieldname": "nom_forme_traite",
+   "fieldtype": "Data",
+   "label": "Nom de la forme du trait\u00e9"
+  },
+  {
+   "depends_on": "eval:doc.type_traite=='Non proportionnel'",
+   "fieldname": "saisie_limite_non_prop",
+   "fieldtype": "Tab Break",
+   "label": "Saisie des limites des engagements"
+  },
+  {
+   "fieldname": "modalite_fonctionnement_section",
+   "fieldtype": "Section Break",
+   "label": "Modalit\u00e9 de fonctionnement"
+  },
+  {
+   "fieldname": "choix",
+   "fieldtype": "Select",
+   "label": "Choix",
+   "mandatory_depends_on": "eval:doc.type_traite=='Non proportionnel'",
+   "options": "\nPar risque\nPar \u00e9v\u00e9nement\nPar risque et/ ou par \u00e9v\u00e9nement\nXOL CAT\nXOL pour compte commun\nXOL sur r\u00e9tention"
+  },
+  {
+   "fieldname": "priorite_section",
+   "fieldtype": "Section Break",
+   "label": "La priorit\u00e9"
+  },
+  {
+   "fieldname": "limite_priorite",
+   "fieldtype": "Currency",
+   "label": "Limite ",
+   "mandatory_depends_on": "eval:(doc.type_traite=='Non proportionnel' && doc.forme_traite!='SLOSS')"
+  },
+  {
+   "fieldname": "column_break_z7yr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.forme_traite=='SLOSS'",
+   "fieldname": "taux_priorite",
+   "fieldtype": "Percent",
+   "label": "Taux",
+   "mandatory_depends_on": "eval:doc.forme_traite=='SLOSS'",
+   "precision": "2"
+  },
+  {
+   "fieldname": "franchise_annuelle_additionnelle_aad_section",
+   "fieldtype": "Section Break",
+   "label": "Franchise annuelle additionnelle (AAD)"
+  },
+  {
+   "fieldname": "choix_franchise_additionnelle",
+   "fieldtype": "Select",
+   "label": "Choix de la franchise additionnelle",
+   "mandatory_depends_on": "eval:doc.type_du_traite=='Non proportionnel'",
+   "options": "\nOui\nNon"
+  },
+  {
+   "fieldname": "column_break_fvec",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.choix_franchise_additionnelle=='Oui'",
+   "fieldname": "franchise_annuelle",
+   "fieldtype": "Currency",
+   "label": "Franchise annuelle",
+   "mandatory_depends_on": "eval:doc.choix_franchise_additionnelle=='Oui'"
+  },
+  {
+   "fieldname": "choix_portee_section",
+   "fieldtype": "Section Break",
+   "label": "Choix de la Port\u00e9e"
+  },
+  {
+   "default": "Port\u00e9e limit\u00e9e",
+   "fieldname": "choix_portee",
+   "fieldtype": "Select",
+   "label": "Choix de la port\u00e9e",
+   "options": "Port\u00e9e limit\u00e9e\nPort\u00e9e illimit\u00e9e",
+   "read_only_depends_on": "eval:doc.forme_traite=='SLOSS'"
+  },
+  {
+   "depends_on": "eval:doc.choix_portee=='Port\u00e9e limit\u00e9e'",
+   "fieldname": "portee_section",
+   "fieldtype": "Section Break",
+   "label": "La port\u00e9e"
+  },
+  {
+   "fieldname": "limite_portee",
+   "fieldtype": "Currency",
+   "label": "Limite",
+   "mandatory_depends_on": "eval:(doc.type_traite=='Non proportionnel' && doc.forme_traite!='SLOSS')"
+  },
+  {
+   "fieldname": "column_break_wapy",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.forme_traite=='SLOSS'",
+   "fieldname": "taux_portee",
+   "fieldtype": "Percent",
+   "label": "Taux",
+   "mandatory_depends_on": "eval:doc.forme_traite=='SLOSS'",
+   "precision": "2"
+  },
+  {
+   "depends_on": "eval:doc.choix_portee=='Port\u00e9e limit\u00e9e'",
+   "fieldname": "plafond_section",
+   "fieldtype": "Section Break",
+   "label": "Le plafond"
+  },
+  {
+   "fieldname": "limite_plafond",
+   "fieldtype": "Currency",
+   "label": "Limite",
+   "mandatory_depends_on": "eval:(doc.type_traite=='Non proportionnel' && doc.forme_traite!='SLOSS')"
+  },
+  {
+   "fieldname": "column_break_7e3n",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.forme_traite=='SLOSS'",
+   "fieldname": "taux_plafond",
+   "fieldtype": "Percent",
+   "label": "Taux",
+   "mandatory_depends_on": "eval:doc.forme_traite=='SLOSS'"
+  },
+  {
+   "fieldname": "plafond_annuel_section",
+   "fieldtype": "Section Break",
+   "label": "Plafond annuel (AAL)"
+  },
+  {
+   "fieldname": "plafond_annuel",
+   "fieldtype": "Currency",
+   "label": "Plafond annuel"
+  },
+  {
+   "fieldname": "clause_ind_sec",
+   "fieldtype": "Section Break",
+   "label": "Clause d'indexation"
+  },
+  {
+   "fieldname": "clause_indexation",
+   "fieldtype": "Select",
+   "label": "Clause d'indexation",
+   "mandatory_depends_on": "eval:doc.type_traite=='Non proportionnel'",
+   "options": "\nOui\nNon"
+  },
+  {
+   "fieldname": "date_deffet_indexation",
+   "fieldtype": "Date",
+   "label": "Date d'effet de l'indexation",
+   "mandatory_depends_on": "eval:doc.type_traite=='Non proportionnel'"
+  },
+  {
+   "fieldname": "column_break_qazg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "taux_dindexation",
+   "fieldtype": "Percent",
+   "label": "Taux d'indexation",
+   "mandatory_depends_on": "eval:doc.type_traite=='Non proportionnel'",
+   "precision": "2"
+  },
+  {
+   "fieldname": "cond_app_indexation",
+   "fieldtype": "Select",
+   "label": "Condition d'application de l'indexation",
+   "mandatory_depends_on": "eval:doc.type_du_traite=='Non proportionnel'",
+   "options": "\nAutomatique\nTaux d\u2019inflation"
+  },
+  {
+   "depends_on": "eval:doc.cond_app_indexation=='Taux d\u2019inflation'",
+   "fieldname": "taux_dinflation_clause_index",
+   "fieldtype": "Percent",
+   "label": "Taux d'inflation",
+   "mandatory_depends_on": "eval:doc.cond_app_indexation=='Taux d\u2019inflation'",
+   "precision": "2"
+  },
+  {
+   "fieldname": "clause_stabilisation_sec",
+   "fieldtype": "Section Break",
+   "label": "Clause de stabilisation"
+  },
+  {
+   "fieldname": "clause_de_stabilisation",
+   "fieldtype": "Select",
+   "label": "Clause de stabilisation",
+   "mandatory_depends_on": "eval:doc.type_traite=='Non proportionnel'",
+   "options": "\nOui\nNon"
+  },
+  {
+   "fieldname": "annee_base",
+   "fieldtype": "Data",
+   "label": "Ann\u00e9e de base",
+   "mandatory_depends_on": "eval:doc.type_traite=='Non proportionnel'"
+  },
+  {
+   "fieldname": "indice_base",
+   "fieldtype": "Int",
+   "label": "Indice de base",
+   "mandatory_depends_on": "eval:doc.type_traite=='Non proportionnel'"
+  },
+  {
+   "fieldname": "date_deffet_app_clause_de_stabilisation",
+   "fieldtype": "Date",
+   "label": "Date d'effet de l'application de la clause de  stabilisation",
+   "mandatory_depends_on": "eval:doc.type_traite=='Non proportionnel'"
+  },
+  {
+   "fieldname": "column_break_tqoo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "varie entre 2 et 15",
+   "fieldname": "valeur_lindice",
+   "fieldtype": "Percent",
+   "label": "Valeur de l'indice",
+   "mandatory_depends_on": "eval:doc.type_traite=='Non proportionnel'",
+   "precision": "2"
+  },
+  {
+   "fieldname": "condition_app_clause_stabilisation",
+   "fieldtype": "Select",
+   "label": "Condition d'application de la clause de stabilisation",
+   "mandatory_depends_on": "eval:doc.type_traite=='Non proportionnel'",
+   "options": "Taux d\u2019inflation"
+  },
+  {
+   "fieldname": "taux_inflation_clause_sta",
+   "fieldtype": "Percent",
+   "label": "Taux d'inflation",
+   "mandatory_depends_on": "eval:doc.type_traite=='Non proportionnel'",
+   "precision": "2"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-08-16 05:16:20.578314",
+ "modified": "2023-08-22 20:11:35.497519",
  "modified_by": "Administrator",
  "module": "cession conventionnelle",
  "name": "Section",

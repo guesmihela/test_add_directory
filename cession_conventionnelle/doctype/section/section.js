@@ -16,6 +16,7 @@ somme = frm.doc.taux_retention + frm.doc.taux_engagement
 }
 },
  	refresh(frm) {
+ 	frm.refresh_field("table_tree")
 
 
 		if (!frm.is_new()) {
@@ -71,6 +72,58 @@ frm.fields_dict["contact_html"] && $(frm.fields_dict["contact_html"].wrapper).ht
 
 
 },
+annee_base: function(frm) {
+var annee_base = frm.doc.annee_base
+
+if (/[^0-9]/.test(annee_base)){
+   //iban1 = iban1.replace(/[^A-Z0-9\s-_]/g, "")
+
+   frm.set_value('annee_base', "")
+
+}
+},
+ valeur_lindice: function(frm){
+  if (  frm.doc.valeur_lindice < 2 || frm.doc.valeur_lindice >15){
+   frm.set_value('valeur_lindice', "")
+}
+ },
+  taux_inflation_clause_sta: function(frm){
+  if (  frm.doc.taux_inflation_clause_sta < 5 || frm.doc.taux_inflation_clause_sta >20){
+   frm.set_value('taux_inflation_clause_sta', "")
+}
+ },
+
+ indice_base: function(frm){
+  if (  frm.doc.indice_base < 100 || frm.doc.indice_base >120){
+   frm.set_value('indice_base', "")
+}
+
+ },
+
+ limite_en_coassurance: function(frm){
+ if (  frm.doc.limite_en_coassurance <= 0 || frm.doc.limite_en_coassurance >100){
+   frm.set_value('limite_en_coassurance', "")
+}
+ },
+  taux_smp_min: function(frm){
+ if (  frm.doc.taux_smp_min <= 0 || frm.doc.taux_smp_min >100){
+   frm.set_value('taux_smp_min', "")
+}
+ },
+ taux_dindexation: function(frm) {
+if (  frm.doc.taux_dindexation < 5 || frm.doc.taux_dindexation >20){
+   frm.set_value('taux_dindexation', "")
+
+}
+
+},
+
+taux_dinflation_clause_index: function(frm) {
+if (  frm.doc.taux_dinflation_clause_index < 5 || frm.doc.taux_dinflation_clause_index >20){
+   frm.set_value('taux_dinflation_clause_index', "")
+
+}
+},
 taux_interets: function(frm){
 	var taux_interets = frm.doc.taux_interets
 
@@ -82,6 +135,15 @@ taux_interets: function(frm){
 
 
 	validate(frm ,cdt, cdn) {
+
+     if (frm.doc.choix_coassurance =="Oui"){
+	 if (  frm.doc.limite_en_coassurance <= 0 || frm.doc.limite_en_coassurance >100){
+         	   frappe.throw(__("Limite en Coassurance doit être entre 0 et < 100"))
+}}
+if (frm.doc.base_cession == "SMP"){
+if (  frm.doc.taux_smp_min <= 0 || frm.doc.taux_smp_min >100){
+         	   frappe.throw(__("Taux SMP minimum doit être entre 0 et < 100"))
+}}
 	        		frm.set_value("etat_doc", frm.doc.etat_doc+1);
 
 
@@ -179,16 +241,29 @@ taux_interets: function(frm){
 
  limite_engagement: function(frm){
 var limite = 0
+if (frm.doc.limite_t_p){
+var limite_retention = frm.doc.limite_t_p - frm.doc.limite_engagement
+   frm.set_value('limite', limite_retention)
+
+}else{
 limite = frm.doc.limite + frm.doc.limite_engagement
 
-   frm.set_value('limite_t_p', limite)
+   frm.set_value('limite_t_p', limite)}
+
  },
 
  limite: function(frm){
+if (frm.doc.limite_t_p){
+var limite_engagement = frm.doc.limite_t_p - frm.doc.limite
+   frm.set_value('limite_engagement', limite_engagement)
+
+}
+else{
 var limite = 0
 limite = frm.doc.limite + frm.doc.limite_engagement
 
    frm.set_value('limite_t_p', limite)
+   }
 
 
  },
@@ -212,13 +287,27 @@ limite = frm.doc.nombre_de_pleins_limite * frm.doc.valeur_du_plein
   taux_retention: function(frm){
 
  if (  frm.doc.taux_retention <= 0 || frm.doc.taux_retention >100){
-   frm.set_value('taux_retention', "")
-}
+   frm.set_value('taux_retention', "")}
+if (frm.doc.limite_t_p){
+var limite = (frm.doc.taux_retention * frm.doc.limite_t_p ) / 100
+var taux_engagement = 100 - frm.doc.taux_retention
 
- },
+    frm.set_value('taux_engagement', taux_engagement)
+    frm.set_value('limite', limite)
+
+}
+},
  taux_engagement: function(frm){
 if (  frm.doc.taux_engagement <=0 || frm.doc.taux_engagement >100){
    frm.set_value('taux_engagement', "")
+
+}
+if (frm.doc.limite_t_p){
+var limite_engagement = (frm.doc.taux_engagement * frm.doc.limite_t_p ) / 100
+var taux_retention = 100 - frm.doc.taux_engagement
+
+    frm.set_value('taux_retention', taux_retention)
+    frm.set_value('limite', limite)
 
 }
  },
@@ -256,8 +345,6 @@ if (  frm.doc.taux_engagement <=0 || frm.doc.taux_engagement >100){
 					});
 		}
 
-
-
 		if (this.frm.fields_dict["contact_html"] && "contact_list" in this.frm.doc.__onload) {
 			$(this.frm.fields_dict["contact_html"].wrapper)
 				.html(frappe.render_template("tiers_list", this.frm.doc.__onload))
@@ -292,43 +379,36 @@ async update_status (input_field) {
 		let att = $(input_field).attr("att");
 		let pro = ""
 
+
 if (att =="Garantie"){		 pro = $(input_field).attr("pro");
 
      //  let row = this.frm.add_child("table_tree", { affectation_de: att, produitsgaranties: docnam, produit: pro})
 
-		}/*else{
-		       let row = this.frm.add_child("table_tree", { affectation_de: att, produitsgaranties: docnam})
-
 		}
-       //doc.save()
-       this.frm.save();
 
-        this.frm.refresh_field("table_tree")
-        this.refresh();
-        */
 			frappe.call({
-						method: "add_note",
-						doc: me.frm.doc,
+						method: "appre.cession_conventionnelle.doctype.section.section.get_branch",
+					//	doc: me.frm.doc,
 						args: {
+
 							note: docnam,
 							att : att,
-							pro : pro
+							pro : pro,
+							name : this.frm.doc.name
 						},
 						callback: function(r) {
 							if (!r.exc) {
-							frappe.msgprint(__('Document updated successfully' + att + docnam ));
 
 
-						     	me.frm.refresh_field("html_tree");
+						     //me.frm.refresh_field("html_tree");
 
-								me.frm.refresh_field("table_tree");
-								me.refresh();
-							}else{
-							frappe.msgprint(__('Document updated successfully' + att + docnam ));
+					//.frm.refresh_field("table_tree");
+
 							}
 
 						}
 					});
+
 
 	}
 

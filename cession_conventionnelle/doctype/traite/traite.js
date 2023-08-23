@@ -43,22 +43,8 @@ frappe.ui.form.on("Traite", {
  limite_t_p: function(frm){
 
  },*/
- valeur_lindice: function(frm){
-  if (  frm.doc.valeur_lindice < 2 || frm.doc.valeur_lindice >15){
-   frm.set_value('valeur_lindice', "")
-}
- },
- taux_inflation_clause_sta: function(frm){
-  if (  frm.doc.taux_inflation_clause_sta < 5 || frm.doc.taux_inflation_clause_sta >20){
-   frm.set_value('taux_inflation_clause_sta', "")
-}
- },
- indice_base: function(frm){
-  if (  frm.doc.indice_base < 100 || frm.doc.indice_base >120){
-   frm.set_value('indice_base', "")
-}
 
- },
+
 
  estimation_prime_a_ceeder: function(frm){
  if (  frm.doc.estimation_prime_a_ceeder <= 0){
@@ -70,19 +56,6 @@ frappe.ui.form.on("Traite", {
    frm.set_value('assiette_primes', "")
 }
  },
- limite_en_coassurance: function(frm){
- if (  frm.doc.limite_en_coassurance <= 0 || frm.doc.limite_en_coassurance >100){
-   frm.set_value('limite_en_coassurance', "")
-}
- },
-
- taux_smp_min: function(frm){
- if (  frm.doc.taux_smp_min <= 0 || frm.doc.taux_smp_min >100){
-   frm.set_value('taux_smp_min', "")
-}
- },
-
-
 
 forme_traite: function(frm){
 if (frm.doc.forme_traite  && frm.doc.annee_effet && frm.doc.code_branche_traite){
@@ -125,31 +98,9 @@ if (  frm.doc.delai_reglement < 10 || frm.doc.delai_reglement >90){
 
 }
 },
-taux_dindexation: function(frm) {
-if (  frm.doc.taux_dindexation < 5 || frm.doc.taux_dindexation >20){
-   frm.set_value('taux_dindexation', "")
 
-}
 
-},
-taux_dinflation_clause_index: function(frm) {
-if (  frm.doc.taux_dinflation_clause_index < 5 || frm.doc.taux_dinflation_clause_index >20){
-   frm.set_value('taux_dinflation_clause_index', "")
 
-}
-
-},
-
-annee_base: function(frm) {
-var annee_base = frm.doc.annee_base
-
-if (/[^0-9]/.test(annee_base)){
-   //iban1 = iban1.replace(/[^A-Z0-9\s-_]/g, "")
-
-   frm.set_value('annee_base', "")
-
-}
-},
 annee_effet: function(frm) {
 var annee_effet = frm.doc.annee_effet
 
@@ -181,17 +132,6 @@ onload: function(frm) {
 		});
 	},
 refresh: function(frm) {
-/*
-if(frm.doc.nom_traite && frm.is_new()){
-var n =   frm.doc.nom_traite + "-"+ frm.doc.annee_effet_du_traite
-frappe.db.get_value('Traite', n, 'nom_traite')
-    .then(r => {
-         frappe.throw(__("le traité " + n+ " existe déjà"));
-
-
-    })
-}
-*/
 
 if (frm.doc.duree_validite == 'Renouvelable'){
 
