@@ -16,7 +16,6 @@ somme = frm.doc.taux_retention + frm.doc.taux_engagement
 }
 },
  	refresh(frm) {
- 	frm.refresh_field("table_tree")
 
 
 		if (!frm.is_new()) {
@@ -25,6 +24,13 @@ somme = frm.doc.taux_retention + frm.doc.taux_engagement
     });
         frm.call('get_t_t').then(r => {
            if (r.message) {
+
+
+		if (frm.fields_dict["html_tree"] && "branch_cat_list" in frm.doc.__onload) {
+			$(this.frm.fields_dict["html_tree"].wrapper)
+				.html(frappe.render_template("branche_list", frm.doc.__onload))
+
+		}
 
 		if (frm.fields_dict["contact_html"] && "contact_list" in frm.doc.__onload) {
 			$(this.frm.fields_dict["contact_html"].wrapper)
@@ -297,6 +303,11 @@ var taux_engagement = 100 - frm.doc.taux_retention
 
 }
 },
+table_tree: function(frm){
+ 	frm.refresh();
+
+},
+
  taux_engagement: function(frm){
 if (  frm.doc.taux_engagement <=0 || frm.doc.taux_engagement >100){
    frm.set_value('taux_engagement', "")
@@ -400,9 +411,11 @@ if (att =="Garantie"){		 pro = $(input_field).attr("pro");
 							if (!r.exc) {
 
 
-						     //me.frm.refresh_field("html_tree");
+						     me.frm.refresh_field("html_tree");
 
-					//.frm.refresh_field("table_tree");
+					me.frm.refresh_field("table_tree");
+								this.frm.refresh();
+
 
 							}
 

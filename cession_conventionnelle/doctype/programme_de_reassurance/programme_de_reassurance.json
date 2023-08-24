@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "field:code_de_programme",
+ "autoname": "format:PROG{annee_effet}-{risque}",
  "creation": "2023-03-26 05:44:56.644890",
  "default_view": "List",
  "doctype": "DocType",
@@ -9,6 +9,8 @@
  "engine": "InnoDB",
  "field_order": [
   "code_de_programme",
+  "annee_effet",
+  "risque",
   "date_debut",
   "date_fin",
   "estimation_des_primes_c\u00e9d\u00e9es_des_trait\u00e9s_proportionnels",
@@ -25,10 +27,9 @@
   {
    "fieldname": "code_de_programme",
    "fieldtype": "Data",
+   "hidden": 1,
    "in_list_view": 1,
-   "label": "Code du programme de r\u00e9assurance",
-   "reqd": 1,
-   "unique": 1
+   "label": "Code du programme de r\u00e9assurance"
   },
   {
    "fieldname": "date_debut",
@@ -94,16 +95,30 @@
    "fieldname": "niveaux_de_programme",
    "fieldtype": "Table",
    "label": "Niveaux de programme",
-   "options": "niveau programme"
+   "options": "niveau programme",
+   "read_only": 1
+  },
+  {
+   "fieldname": "annee_effet",
+   "fieldtype": "Data",
+   "label": "ann\u00e9e d'effet",
+   "reqd": 1
+  },
+  {
+   "fieldname": "risque",
+   "fieldtype": "Link",
+   "label": "Risque",
+   "options": "Risque des traites",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-08-14 10:17:07.241795",
+ "modified": "2023-08-24 06:47:20.606459",
  "modified_by": "Administrator",
  "module": "cession conventionnelle",
  "name": "Programme de reassurance",
- "naming_rule": "By fieldname",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

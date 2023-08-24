@@ -10,7 +10,7 @@ from datetime import datetime
 
 class Placementenreassurancefacultative(Document):
 	def onload(self):
-		contact_list = frappe.get_list("Section Placement", filters={"link_doctype": self.doctype, "link_name": self.name},fields=["*"] , order_by= "numero_de_la_section")
+		contact_list = frappe.get_list("Section Placement", filters={"link_doctype": self.doctype, "link_name": self.name},fields=["*"] , order_by= "num_section")
 		self.set_onload("contact_list", contact_list)
 
 	def autoname(self):
@@ -49,7 +49,7 @@ class Placementenreassurancefacultative(Document):
 	@frappe.whitelist()
 	def get_section(self):
 		contact_list = frappe.get_list("Section Placement", filters={"link_doctype": self.doctype, "link_name": self.name}, fields=["*"],
-									   order_by="numero_section")
+									   order_by="num_section")
 
 		self.set_onload("contact_list", contact_list)
 		"""
