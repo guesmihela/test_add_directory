@@ -15,6 +15,7 @@ somme = frm.doc.taux_retention + frm.doc.taux_engagement
  }
 }
 },
+
  	refresh(frm) {
 
 
@@ -26,10 +27,14 @@ somme = frm.doc.taux_retention + frm.doc.taux_engagement
            if (r.message) {
 
 
+
 		if (frm.fields_dict["html_tree"] && "branch_cat_list" in frm.doc.__onload) {
-			$(this.frm.fields_dict["html_tree"].wrapper)
+			$(frm.fields_dict["html_tree"].wrapper)
 				.html(frappe.render_template("branche_list", frm.doc.__onload))
 
+				$(".completion-checkbox").on("click", function() {
+						update_status();
+					});
 		}
 
 		if (frm.fields_dict["contact_html"] && "contact_list" in frm.doc.__onload) {
@@ -43,6 +48,7 @@ somme = frm.doc.taux_retention + frm.doc.taux_engagement
 
 		}
 
+
            }
         })
         		frm.set_value("etat_doc", frm.doc.etat_doc+1);
@@ -50,6 +56,10 @@ somme = frm.doc.taux_retention + frm.doc.taux_engagement
 
         } else {
 frm.fields_dict["contact_html"] && $(frm.fields_dict["contact_html"].wrapper).html("");		}
+
+
+
+
 
  	if (frm.doc.__islocal) {
 			const last_doc = frappe.contacts.get_last_doc(frm);
@@ -68,8 +78,13 @@ frm.fields_dict["contact_html"] && $(frm.fields_dict["contact_html"].wrapper).ht
 
  	},
  	onload: function(frm) {
- 	frm.refresh();
+
+
  	   	    	frm.refresh_field("contact_html")
+ 	   	    	frm.refresh_field("html_tree")
+ 	   	    	frm.refresh_field("table_tree")
+
+
 
 
  	frm.get_field("methode_de_chaque__reconstitution").grid.cannot_add_rows = true;
@@ -393,11 +408,114 @@ async update_status (input_field) {
 
 if (att =="Garantie"){		 pro = $(input_field).attr("pro");
 
+
+
+		let row = this.frm.add_child('table_tree', {
+    affectation_de: att,
+    categorie_produit:"Garantie",
+    produit_garantie: docnam,
+        produitsgaranties: docnam,
+
+    produit : pro
+
+
+});
+
+this.frm.refresh_field('table_tree');
+
+this.frm.save()
+
      //  let row = this.frm.add_child("table_tree", { affectation_de: att, produitsgaranties: docnam, produit: pro})
 
 		}
 
-			frappe.call({
+
+if (att =="Categorie ou produit"){
+		let row = this.frm.add_child('table_tree', {
+    affectation_de: att,
+    categorie_produit:"Categorie ou produit",
+    produitsgaranties: docnam,
+    produit_garantie: docnam
+});
+
+this.frm.refresh_field('table_tree');
+
+this.frm.save()
+}
+if(att == "Sous branche assurance"){
+
+
+frappe.db.get_list('Categorie ou produit', {
+    fields: ['name'],
+    filters: {
+        under_insurance_branch: docnam
+    }
+}).then(records => {
+for (let valeur of records) {
+
+let cond = 0
+for (let row of this.frm.doc.table_tree){
+if( valeur.name == row.produit_garantie){
+
+cond = 1}
+
+}
+
+if (cond == 0){
+
+	let row = this.frm.add_child('table_tree', {
+
+
+
+
+    affectation_de: att,
+    categorie_produit:"Categorie ou produit",
+    produitsgaranties : docnam,
+    produit_garantie: valeur.name
+});}
+
+}
+this.frm.refresh_field('table_tree');
+
+this.frm.save()
+})
+}
+
+if(att == "Branche assurance"){
+
+
+frappe.db.get_list('Categorie ou produit', {
+    fields: ['name'],
+    filters: {
+        branche: docnam
+    }
+}).then(records => {
+for (let valeur of records) {
+
+let cond = 0
+for (let row of this.frm.doc.table_tree){
+if( valeur.name == row.produit_garantie){
+
+cond = 1}
+
+}
+
+if (cond == 0){
+	let row = this.frm.add_child('table_tree', {
+    affectation_de: att,
+    categorie_produit:"Categorie ou produit",
+    produitsgaranties : docnam,
+    produit_garantie: valeur.name
+});}
+
+}
+this.frm.refresh_field('table_tree');
+
+this.frm.save()
+})
+}
+
+		/*	frappe.call({
 						method: "appre.cession_conventionnelle.doctype.section.section.get_branch",
 					//	doc: me.frm.doc,
 						args: {
@@ -408,19 +526,18 @@ if (att =="Garantie"){		 pro = $(input_field).attr("pro");
 							name : this.frm.doc.name
 						},
 						callback: function(r) {
-							if (!r.exc) {
 
-
-						     me.frm.refresh_field("html_tree");
-
-					me.frm.refresh_field("table_tree");
-								this.frm.refresh();
-
-
-							}
+frappe.msgprint({
+    title: __('Notification'),
+    indicator: 'green',
+    message: __('Document updated successfully')
+});
 
 						}
-					});
+
+					});*/
+
+
 
 
 	}

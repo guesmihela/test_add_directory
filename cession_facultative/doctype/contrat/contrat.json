@@ -121,12 +121,12 @@
    "options": "Compagnie cedante"
   },
   {
-   "depends_on": "eval:doc.compagnie_ap\u00e9ritrice",
+   "depends_on": "eval:doc.compagnie_aperitrice",
    "fieldname": "quote_part_coassurance",
    "fieldtype": "Percent",
    "label": "Quote part Coassurance",
-   "precision": "2",
-   "reqd": 1
+   "mandatory_depends_on": "eval:doc.compagnie_aperitrice",
+   "precision": "2"
   },
   {
    "fieldname": "base_engagement",
@@ -151,7 +151,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-08-16 07:07:18.528311",
+ "modified": "2023-08-24 14:47:08.166815",
  "modified_by": "Administrator",
  "module": "cession facultative",
  "name": "Contrat",

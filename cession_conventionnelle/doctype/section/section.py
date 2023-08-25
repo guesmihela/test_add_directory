@@ -118,11 +118,21 @@ class Section(Document):
         code_risque = self.code_risque_section
         niveau_traite = self.niveau_traite
         annee_effet = self.annee_effet_traite
+        if frappe.db.exists("Programme de reassurance", {"risque": code_risque, "annee_effet": annee_effet}):
+            programme = frappe.db.get_value('Programme de reassurance',
+                                            {"risque": code_risque, "annee_effet": annee_effet}, ['name'])
+            if frappe.db.exists("niveau programme", {"niveau": niveau_traite, "parent": programme, "forme_de_traite":self.forme_traite }):
+                niveau_programme = frappe.db.get_value('niveau programme',
+                                                {"niveau": niveau_traite, "parent": programme, "forme_de_traite":self.forme_traite}, ['name'])
+
+                frappe.db.set_value('niveau programme', niveau_programme, 'section_risque', self.name)
+
+        """
 
         if frappe.db.exists("Programme de reassurance", {"risque": code_risque, "annee_effet": annee_effet}):
             programme = frappe.db.get_value('Programme de reassurance', {"risque": code_risque, "annee_effet": annee_effet}, ['name'])
-            if frappe.db.exists("niveau programme", {"niveau": niveau_traite, "parent": programme}):
-                frappe.throw(_("le niveau {0} existe déja dans le programme {1}".format(niveau_traite, programme)))
+            #if frappe.db.exists("niveau programme", {"niveau": niveau_traite, "parent": programme}):
+             #   frappe.throw(_("le niveau {0} existe déja dans le programme {1}".format(niveau_traite, programme)))
 
             if not frappe.db.exists("niveau programme", {"section_risque": self.name, "parent": programme}):
                 nb_row = frappe.db.count('niveau programme',
@@ -138,7 +148,7 @@ class Section(Document):
                 doc.parentfield = "niveaux_de_programme"
                 doc.insert()
         else: frappe.throw(_("Aucun programme pour le risque {0} pour l'année {1} ".format(code_risque, annee_effet)))
-
+        """
 
 
         if self.code_section:
@@ -248,100 +258,34 @@ class Section(Document):
 @frappe.whitelist()
 def get_branch(name, note, att, pro):
     parent = frappe.get_doc('Section', name)
+
     if att == "Garantie":
-        parent.append("table_tree", {"affectation_de": att, "categorie_produit": "Garantie", "produit_garantie": note,
+        if not frappe.db.exists("Affectation des Produits et Garanties child", { "parent": name,"produit_garantie": note, "produit": pro}):
+            parent.append("table_tree", {"affectation_de": att, "categorie_produit": "Garantie", "produit_garantie": note,
                                    "produit": pro})
     if att == "Categorie ou produit":
-        parent.append("table_tree",
+        if not frappe.db.exists("Affectation des Produits et Garanties child",
+                    {"parent": name,"produit_garantie": note}):
+            parent.append("table_tree",
                     {"affectation_de": att, "categorie_produit": "Categorie ou produit", "produit_garantie": note})
     if att == "Sous branche assurance":
+
         categorie = frappe.get_all("Categorie ou produit", filters={"under_insurance_branch": note}, fields=["*"])
         for cat in categorie:
-            parent.append("table_tree", {"affectation_de": att, "categorie_produit": "Categorie ou produit",
+            if not frappe.db.exists("Affectation des Produits et Garanties child", {"parent": name,  "produit_garantie": cat.name}):
+                parent.append("table_tree", {"affectation_de": att, "categorie_produit": "Categorie ou produit",
                                        "produitsgaranties": note, "produit_garantie": cat.name})
     if att == "Branche assurance":
         categorie = frappe.get_all("Categorie ou produit", filters={"branche": note}, fields=["*"])
         for cat in categorie:
-            parent.append("table_tree", {"affectation_de": att, "categorie_produit": "Categorie ou produit",
+            if not frappe.db.exists("Affectation des Produits et Garanties child", { "parent": name,"produit_garantie": cat.name}):
+                parent.append("table_tree", {"affectation_de": att, "categorie_produit": "Categorie ou produit",
                                        "produitsgaranties": note, "produit_garantie": cat.name})
     parent.save()
-    frappe.db.commit()
 
+    #parent.refresh()
+    #frappe.db.commit()
 
-"""
-    if att == "Garantie":
-        parent = frappe.get_doc('Section', name)
-        parent.append("table_tree", {
-            'affectation_de': att
-
-        })
-        parent.save()
-        frappe.db.commit()
-
-        
-        nb_row = frappe.db.count('Affectation des Produits et Garanties child',
-                                 {'parenttype': "section", "parent": name})
-        nb_row = nb_row + 1
-        doc = frappe.new_doc('Affectation des Produits et Garanties child')
-        doc.affectation_de = att
-        doc.parenttype = "Section"
-        doc.parent = name
-        doc.idx = nb_row
-        doc.parentfield = "table_tree"
-        doc.categorie_produit = "Garantie"
-        doc.produit_garantie = note
-        doc.produit =pro
-        doc.insert()
-        
-
-    if att == "Categorie ou produit":
-        nb_row = frappe.db.count('Affectation des Produits et Garanties child',
-                                 {'parenttype': "section", "parent": name})
-        nb_row = nb_row + 1
-        doc = frappe.new_doc('Affectation des Produits et Garanties child')
-        doc.affectation_de = att
-        doc.parenttype = "Section"
-        doc.parent = name
-        doc.idx = nb_row
-        doc.parentfield = "table_tree"
-        doc.categorie_produit = "Categorie ou produit"
-        doc.produit_garantie = note
-        doc.insert()
-
-    if att == "Sous branche assurance":
-
-            categorie = frappe.get_all("Categorie ou produit", filters={"under_insurance_branch": note}, fields=["*"])
-            for cat in categorie:
-                nb_row = frappe.db.count('Affectation des Produits et Garanties child',
-                                         {'parenttype': "section", "parent": name})
-                nb_row = nb_row + 1
-                doc = frappe.new_doc('Affectation des Produits et Garanties child')
-                doc.affectation_de = att
-                doc.parenttype = "Section"
-                doc.parent = name
-                doc.idx = nb_row
-                doc.parentfield = "table_tree"
-                doc.categorie_produit = "Categorie ou produit"
-                doc.produitsgaranties = note
-                doc.produit_garantie = cat.name
-                doc.insert()
-    if att == "Branche assurance":
-        categorie = frappe.get_all("Categorie ou produit", filters={"branche": note}, fields=["*"])
-        for cat in categorie:
-            nb_row = frappe.db.count('Affectation des Produits et Garanties child',
-                                     {'parenttype': "section", "parent": name})
-            nb_row = nb_row + 1
-            doc = frappe.new_doc('Affectation des Produits et Garanties child')
-            doc.affectation_de = att
-            doc.parenttype = "Section"
-            doc.parent = name
-            doc.idx = nb_row
-            doc.parentfield = "table_tree"
-            doc.categorie_produit = "Categorie ou produit"
-            doc.produitsgaranties = note
-            doc.produit_garantie = cat.name
-            doc.insert()
-"""
 
 
 
