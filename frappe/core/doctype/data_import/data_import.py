@@ -27,12 +27,14 @@ class DataImport(Document):
 
 		google_sheets_url: DF.Data | None
 		import_file: DF.Attach | None
-		import_type: DF.Literal["", "Insert New Records", "Update Existing Records"]
+		import_type: DF.Literal['Insert New Records', 'Update Existing Records']
 		mute_emails: DF.Check
 		payload_count: DF.Int
+		periode_comptable: DF.Data
 		reference_doctype: DF.Link
 		show_failed_logs: DF.Check
-		status: DF.Literal["Pending", "Success", "Partial Success", "Error"]
+		status: DF.Literal['Pending', 'Success', 'Partial Success', 'Error']
+		structure_csv: DF.Data | None
 		submit_after_import: DF.Check
 		template_options: DF.Code | None
 		template_warnings: DF.Code | None

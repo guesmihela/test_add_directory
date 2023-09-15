@@ -191,8 +191,8 @@ frappe.views.BaseList = class BaseList {
 			Report: "small-file",
 			Calendar: "calendar",
 			Gantt: "gantt",
-			Kanban: "kanban",
-			Dashboard: "dashboard",
+			//Kanban: "kanban",
+			//Dashboard: "dashboard",
 			Map: "map",
 		};
 
@@ -881,9 +881,9 @@ class FilterArea {
 frappe.views.view_modes = [
 	"List",
 	"Report",
-	"Dashboard",
+	//"Dashboard",
 	"Gantt",
-	"Kanban",
+	//"Kanban",
 	"Calendar",
 	"Image",
 	"Inbox",

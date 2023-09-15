@@ -1,0 +1,92 @@
+<div class="clearfix"></div>
+{% for(var i=0, l=branch_cat_list.length; i<l; i++) { %}
+	<div class="address-box">
+		<details>
+  <summary>
+
+			<b > {%=  branch_cat_list[i].branch_code %} </b>
+	  <button class="btn btn-xs btn-default  completion-checkbox" name="{{branch_cat_list[i].name}}" att="Branche assurance" title="{{ __('Ajouter Branche') }}">
+<svg class="icon icon-sm">
+				<use href="#icon-add"></use>
+			</svg>					</button>
+
+
+
+
+	  </summary>
+
+		<p>
+
+			{% if(branch_cat_list[i].sous_branche) { %}
+<ul>
+			{% for(var j=0, k=branch_cat_list[i].sous_branche.length; j<k; j++) { %}
+				<li ><details>
+  <summary>	<b> {%= branch_cat_list[i].sous_branche[j].name %}</b>
+	  	  <button class="btn btn-xs btn-default completion-checkbox" name="{{branch_cat_list[i].sous_branche[j].name}}" att="Sous branche assurance" title="{{ __('Ajouter Sous Branche') }}">
+<svg class="icon icon-sm">
+				<use href="#icon-add"></use>
+			</svg>					</button>
+
+
+
+
+					{% if(branch_cat_list[i].categorie  ) { %}
+
+  </summary>
+				  <ul>
+			{% for(var m=0, n=branch_cat_list[i].categorie.length; m<n; m++) { %}
+					  {% if(branch_cat_list[i].sous_branche[j].name == branch_cat_list[i].categorie[m].under_insurance_branch  ) { %}
+
+				<li>	<b> {%= branch_cat_list[i].categorie[m].name %}  </b>
+					 <button class="btn btn-xs btn-default completion-checkbox" name="{{branch_cat_list[i].categorie[m].name}}"  att ="Categorie ou produit" title="{{ __('Ajouter produit') }}">
+<svg class="icon icon-sm">
+				<use href="#icon-add"></use>
+			</svg>						</button>
+
+
+
+				</li>
+
+					  {% if(branch_cat_list[i].garantie  ) { %}
+					  <ul>
+						  {% for(var w=0, x=branch_cat_list[i].garantie.length; w<x; w++) { %}
+
+					       {% if(branch_cat_list[i].categorie[m].name == branch_cat_list[i].garantie[w].parent  ) { %}
+
+						  <li><b> {%= branch_cat_list[i].garantie[w].code_guarantee  %}  </b>
+							  <button class="btn btn-xs btn-default completion-checkbox" name="{{branch_cat_list[i].garantie[w].code_guarantee}}" pro="{{branch_cat_list[i].garantie[w].parent}}" att ="Garantie" title="{{ __('Ajouter garantie') }}">
+<svg class="icon icon-sm">
+				<use href="#icon-add"></use>
+			</svg>						</button>
+
+						  </li>
+					  {% endif %}
+
+						  {% } %}
+
+					  </ul>
+					  {% endif %}
+					  {% endif %}
+
+				{% } %}
+			{% endif %}
+				  </ul></details>
+
+
+				</li><br/>
+				{% } %}
+			{% endif %}
+		</ul>
+
+		</p>
+</details>
+
+
+	</div>
+
+{% } %}
+{% if(!branch_cat_list.length) { %}
+<p class="text-muted small">{%= __("Aucune branche ajoutée pour le moment.") %}</p>
+{% } %}
+
+

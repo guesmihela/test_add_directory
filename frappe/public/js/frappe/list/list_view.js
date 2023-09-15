@@ -631,11 +631,13 @@ frappe.views.ListView = class ListView extends frappe.views.BaseList {
 		let subject_html = `
 			<input class="level-item list-check-all" type="checkbox"
 				title="${__("Select All")}">
-			<span class="level-item list-liked-by-me hidden-xs">
-				<span title="${__("Likes")}">${frappe.utils.icon("heart", "sm", "like-icon")}</span>
-			</span>
-			<span class="level-item">${__(subject_field.label)}</span>
+				<span class="level-item list-liked-by-me hidden-xs"></span>
+				<span class="level-item">${__(subject_field.label)}</span>
 		`;
+			/*<span class="level-item list-liked-by-me hidden-xs">
+				<span title="${__("Likes")}">${frappe.utils.icon("heart", "sm", "like-icon")}</span>
+			</span>*/
+
 		const $columns = this.columns
 			.map((col) => {
 				let classes = [
@@ -992,13 +994,10 @@ frappe.views.ListView = class ListView extends frappe.views.BaseList {
 		const seen = this.get_seen_class(doc);
 
 		return `
-  			<span class="level-item select-like">
+		<span class="level-item select-like">
   				<input class="list-row-checkbox" type="checkbox"
   					data-name="${escape(doc.name)}">
-  				<span class="list-row-like hidden-xs style="margin-bottom: 1px;">
-  					${this.get_like_html(doc)}
-  				</span>
-  			</span>
+  		</span>
   			<span class="level-item ${seen} ellipsis" title="${escaped_subject}">
   				<a class="ellipsis"
   					href="${this.get_form_link(doc)}"
@@ -1009,6 +1008,13 @@ frappe.views.ListView = class ListView extends frappe.views.BaseList {
   				</a>
   			</span>
   		`;
+  		/*<span class="level-item select-like">
+  				<input class="list-row-checkbox" type="checkbox"
+  					data-name="${escape(doc.name)}">
+  				<span class="list-row-like hidden-xs style="margin-bottom: 1px;">
+  				${this.get_like_html(doc)}
+  				</span>
+  			</span>*/
 	}
 
 	get_indicator_html(doc, show_workflow_state) {

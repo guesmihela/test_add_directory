@@ -14,3 +14,9 @@ import "./frappe/views/formview.js";
 import "./frappe/form/form.js";
 import "./frappe/meta_tag.js";
 import "./frappe/doctype/";
+
+import "./frappe/form/templates/tiers_list.html";
+import "./frappe/form/templates/section.html";
+import "./frappe/form/templates/branche_list.html";
+import "./frappe/form/templates/tiers_placement_list.html";
+import "./frappe/form/templates/Section_placement.html";
