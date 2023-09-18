@@ -1,0 +1,40 @@
+<div class="clearfix"></div>
+{% for(var i=0, l=contact_list.length; i<l; i++) { %}
+	<div class="address-box">
+		<p class="h6 flex align-center">
+			<b> {%= contact_list[i].code_du_tiers    %} </b>   <span class="text-muted"> ({%= contact_list[i].type_tiers %})</span>
+
+
+			<a href="/app/Form/Tiers Placement/{%= encodeURIComponent(contact_list[i].name) %}"
+				class="btn btn-xs btn-default ml-auto">
+				{%= __("Modifier") %}
+			</a>
+			<button class="btn btn-xs btn-default delete-note-btn" name="{{contact_list[i].name}}">
+						{{ __("Supprimer") }}
+						</button>
+		</p>
+
+		<p>
+			<b> {%= __("Part de Tiers") %}:  </b>{%= contact_list[i].la_part_du_tiers %} {%= __(" % ") %}<br>
+			<b> {%= __("Part signée") %}:  </b>{%= contact_list[i].part_signée %} {%= __(" % ") %}<br>
+
+			{% if(contact_list[i].reassurer) { %}
+<ul>
+			{% for(var j=0, k=contact_list[i].reassurer.length; j<k; j++) { %}
+				<li>	<b> {%= contact_list[i].reassurer[j].réassureur %}: </b>{%= contact_list[i].reassurer[j].part_du_réassureur %}{%= __(" % ") %}</li>
+				{% } %}
+			{% endif %}
+		</ul>
+
+		</p>
+
+
+	</div>
+{% } %}
+{% if(!contact_list.length) { %}
+<p class="text-muted small">{%= __("Aucun tiers ajouté pour le moment.") %}</p>
+{% } %}
+<p><button class="btn btn-xs btn-default btn-contact">
+	{{ __("Ajouter Tiers") }}</button>
+</p>
+
