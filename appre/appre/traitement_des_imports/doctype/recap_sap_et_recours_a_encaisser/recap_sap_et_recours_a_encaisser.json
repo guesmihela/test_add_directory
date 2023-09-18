@@ -1,0 +1,237 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:numero_de_sinistre",
+ "creation": "2023-05-09 08:38:07.666587",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "periode_comptable",
+  "date_preparation_du_fichier",
+  "code_client",
+  "nom_du_client",
+  "type_contrat",
+  "numero_du_contrat",
+  "numero_aliment",
+  "numero_evenement",
+  "numero_de_sinistre",
+  "code_agence",
+  "code_produit",
+  "nature_de_sinistrer",
+  "date_de_sinistre",
+  "column_break_kuld",
+  "date_ouverture_sinistre",
+  "heure_de_sinistre",
+  "lieu_de_sinistre_adresse",
+  "lieu_de_sinistre_code_postal",
+  "etat_de_sinistre",
+  "annee_de_souscription",
+  "nature_du_risque",
+  "base_engagement",
+  "taux_smp",
+  "capitaux_a_100",
+  "capital_reassurance",
+  "montant_de_sinistre_a_payer",
+  "montant_de_recours_a_encaisser",
+  "compagnie_aperitrice",
+  "quote_part_coassurance"
+ ],
+ "fields": [
+  {
+   "fieldname": "periode_comptable",
+   "fieldtype": "Data",
+   "label": "P\u00e9riode comptable"
+  },
+  {
+   "fieldname": "date_preparation_du_fichier",
+   "fieldtype": "Data",
+   "label": "Date de traitement"
+  },
+  {
+   "fieldname": "code_client",
+   "fieldtype": "Data",
+   "label": "Code client"
+  },
+  {
+   "fieldname": "nom_du_client",
+   "fieldtype": "Data",
+   "label": "Nom du client"
+  },
+  {
+   "fieldname": "type_contrat",
+   "fieldtype": "Select",
+   "label": "Type contrat",
+   "options": "Contrat cadre\nContrat Individuel"
+  },
+  {
+   "fieldname": "numero_du_contrat",
+   "fieldtype": "Dynamic Link",
+   "label": "Num\u00e9ro du contrat",
+   "options": "type_contrat"
+  },
+  {
+   "fieldname": "numero_aliment",
+   "fieldtype": "Link",
+   "label": "Num\u00e9ro d\u2019aliment",
+   "options": "Aliment"
+  },
+  {
+   "fieldname": "numero_evenement",
+   "fieldtype": "Link",
+   "label": "Num\u00e9ro d\u2019\u00e9v\u00e8nement",
+   "options": "Evenement"
+  },
+  {
+   "fieldname": "numero_de_sinistre",
+   "fieldtype": "Data",
+   "label": "Num\u00e9ro de sinistre",
+   "unique": 1
+  },
+  {
+   "fieldname": "code_agence",
+   "fieldtype": "Data",
+   "label": "Code agence"
+  },
+  {
+   "fieldname": "code_produit",
+   "fieldtype": "Link",
+   "label": "Code produit",
+   "options": "Categorie ou produit"
+  },
+  {
+   "fieldname": "nature_de_sinistrer",
+   "fieldtype": "Data",
+   "label": "Nature de sinistre"
+  },
+  {
+   "fieldname": "date_de_sinistre",
+   "fieldtype": "Date",
+   "label": "Date de sinistre"
+  },
+  {
+   "fieldname": "column_break_kuld",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "date_ouverture_sinistre",
+   "fieldtype": "Date",
+   "label": "Date d\u2019ouverture sinistre"
+  },
+  {
+   "fieldname": "heure_de_sinistre",
+   "fieldtype": "Data",
+   "label": "Heure de sinistre"
+  },
+  {
+   "fieldname": "lieu_de_sinistre_adresse",
+   "fieldtype": "Data",
+   "label": "Lieu de sinistre adresse"
+  },
+  {
+   "fieldname": "lieu_de_sinistre_code_postal",
+   "fieldtype": "Data",
+   "label": "Lieu de sinistre code postal"
+  },
+  {
+   "fieldname": "etat_de_sinistre",
+   "fieldtype": "Select",
+   "label": "Etat de sinistre",
+   "options": "\nEn cours\nClass\u00e9 R.D\nR\u00e9ouverture\nContentieux"
+  },
+  {
+   "fieldname": "annee_de_souscription",
+   "fieldtype": "Data",
+   "label": "Ann\u00e9e de souscription"
+  },
+  {
+   "fieldname": "nature_du_risque",
+   "fieldtype": "Data",
+   "label": "Nature du risque"
+  },
+  {
+   "fieldname": "base_engagement",
+   "fieldtype": "Data",
+   "label": "Base Engagement"
+  },
+  {
+   "fieldname": "taux_smp",
+   "fieldtype": "Percent",
+   "label": "Taux SMP",
+   "precision": "2"
+  },
+  {
+   "fieldname": "capitaux_a_100",
+   "fieldtype": "Currency",
+   "label": "Capitaux \u00e0 100%",
+   "precision": "0"
+  },
+  {
+   "fieldname": "capital_reassurance",
+   "fieldtype": "Currency",
+   "label": "Capital r\u00e9assurance"
+  },
+  {
+   "fieldname": "montant_de_sinistre_a_payer",
+   "fieldtype": "Currency",
+   "label": "Montant de sinistre \u00e0 payer",
+   "precision": "0"
+  },
+  {
+   "fieldname": "montant_de_recours_a_encaisser",
+   "fieldtype": "Currency",
+   "label": "Montant de recours \u00e0 encaisser",
+   "precision": "0"
+  },
+  {
+   "fieldname": "compagnie_aperitrice",
+   "fieldtype": "Link",
+   "label": "Compagnie ap\u00e9ritrice",
+   "options": "Compagnie assurance"
+  },
+  {
+   "fieldname": "quote_part_coassurance",
+   "fieldtype": "Percent",
+   "label": "Quote part Coassurance",
+   "precision": "2"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-08-18 05:54:34.035360",
+ "modified_by": "Administrator",
+ "module": "Traitement des Imports",
+ "name": "Recap SAP et Recours a encaisser",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Role1",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,151 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:PROG{annee_effet}-{risque}",
+ "creation": "2023-03-26 05:44:56.644890",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "code_de_programme",
+  "annee_effet",
+  "risque",
+  "date_debut",
+  "date_fin",
+  "estimation_des_primes_c\u00e9d\u00e9es_des_trait\u00e9s_proportionnels",
+  "estimation_assiette_primes",
+  "column_break_x4eh",
+  "commission_de_r\u00e9assurance_maximal",
+  "commission_de_r\u00e9assurance_minimal",
+  "commission_de_r\u00e9assurance_attendue",
+  "currency",
+  "section_break_dy2i",
+  "niveaux_de_programme"
+ ],
+ "fields": [
+  {
+   "fieldname": "code_de_programme",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "in_list_view": 1,
+   "label": "Code du programme de r\u00e9assurance"
+  },
+  {
+   "fieldname": "date_debut",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "P\u00e9riode de validit\u00e9 (date de d\u00e9but)",
+   "reqd": 1
+  },
+  {
+   "fieldname": "date_fin",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "P\u00e9riode de validit\u00e9 (date d\u2019expiration)",
+   "reqd": 1
+  },
+  {
+   "fieldname": "estimation_des_primes_c\u00e9d\u00e9es_des_trait\u00e9s_proportionnels",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Estimation des primes c\u00e9d\u00e9es des trait\u00e9s proportionnels",
+   "options": "currency",
+   "reqd": 1
+  },
+  {
+   "fieldname": "estimation_assiette_primes",
+   "fieldtype": "Currency",
+   "label": "Estimation de l\u2019assiette des primes des trait\u00e9s (exc\u00e9dents de sinistre)",
+   "options": "currency"
+  },
+  {
+   "fieldname": "column_break_x4eh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "commission_de_r\u00e9assurance_maximal",
+   "fieldtype": "Percent",
+   "label": "Commission de r\u00e9assurance maximal",
+   "precision": "2"
+  },
+  {
+   "fieldname": "commission_de_r\u00e9assurance_minimal",
+   "fieldtype": "Percent",
+   "label": "Commission de r\u00e9assurance minimal",
+   "precision": "2"
+  },
+  {
+   "fieldname": "commission_de_r\u00e9assurance_attendue",
+   "fieldtype": "Percent",
+   "label": "Commission de r\u00e9assurance attendue",
+   "precision": "2"
+  },
+  {
+   "fieldname": "currency",
+   "fieldtype": "Link",
+   "label": "Currency ",
+   "options": "Currency"
+  },
+  {
+   "fieldname": "section_break_dy2i",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "niveaux_de_programme",
+   "fieldtype": "Table",
+   "label": "Niveaux de programme",
+   "options": "niveau programme"
+  },
+  {
+   "fieldname": "annee_effet",
+   "fieldtype": "Data",
+   "label": "ann\u00e9e d'effet",
+   "reqd": 1
+  },
+  {
+   "fieldname": "risque",
+   "fieldtype": "Link",
+   "label": "Risque",
+   "options": "Risque des traites",
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-08-25 11:21:04.859999",
+ "modified_by": "Administrator",
+ "module": "cession conventionnelle",
+ "name": "Programme de reassurance",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Role1",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

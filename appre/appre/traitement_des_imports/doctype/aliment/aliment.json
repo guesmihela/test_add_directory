@@ -1,0 +1,161 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:numero_aliment",
+ "creation": "2023-05-07 15:08:18.492108",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "periode_comptable",
+  "date_preparation_du_fichier",
+  "numero_du_contrat_cadre",
+  "numero_aliment",
+  "code_agence",
+  "code_produit",
+  "nature_operation",
+  "type_avenant",
+  "column_break_qu1v",
+  "numero_avenant",
+  "date_souscription_operation",
+  "date_effet_operation",
+  "capitaux_assures_a_100",
+  "prime_nette_annuelle",
+  "compagnie_aperitrice",
+  "quote_part_en_coassurance",
+  "quote_part_coassurance_calculer"
+ ],
+ "fields": [
+  {
+   "fieldname": "periode_comptable",
+   "fieldtype": "Data",
+   "label": "P\u00e9riode comptable"
+  },
+  {
+   "fieldname": "date_preparation_du_fichier",
+   "fieldtype": "Date",
+   "label": "Date pr\u00e9paration du fichier"
+  },
+  {
+   "fieldname": "numero_du_contrat_cadre",
+   "fieldtype": "Link",
+   "label": "Num\u00e9ro du contrat cadre",
+   "options": "Contrat cadre"
+  },
+  {
+   "fieldname": "numero_aliment",
+   "fieldtype": "Data",
+   "label": "Num\u00e9ro d\u2019aliment",
+   "unique": 1
+  },
+  {
+   "fieldname": "code_agence",
+   "fieldtype": "Data",
+   "label": "Code agence"
+  },
+  {
+   "fieldname": "code_produit",
+   "fieldtype": "Link",
+   "label": "Code produit",
+   "options": "Categorie ou produit"
+  },
+  {
+   "fieldname": "nature_operation",
+   "fieldtype": "Select",
+   "label": "Nature d\u2019op\u00e9ration",
+   "options": "Affaire nouvelle\nRenouvellement\nAvenant"
+  },
+  {
+   "fieldname": "type_avenant",
+   "fieldtype": "Data",
+   "label": "Type d\u2019avenant"
+  },
+  {
+   "fieldname": "column_break_qu1v",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "numero_avenant",
+   "fieldtype": "Data",
+   "label": "Num\u00e9ro d\u2019avenant"
+  },
+  {
+   "fieldname": "date_souscription_operation",
+   "fieldtype": "Date",
+   "label": "Date de souscription de l\u2019op\u00e9ration"
+  },
+  {
+   "fieldname": "date_effet_operation",
+   "fieldtype": "Date",
+   "label": "Date d\u2019effet de l\u2019op\u00e9ration"
+  },
+  {
+   "fieldname": "capitaux_assures_a_100",
+   "fieldtype": "Currency",
+   "label": "Capitaux assur\u00e9s \u00e0 100%",
+   "precision": "0"
+  },
+  {
+   "fieldname": "prime_nette_annuelle",
+   "fieldtype": "Currency",
+   "label": "Prime nette annuelle"
+  },
+  {
+   "fieldname": "compagnie_aperitrice",
+   "fieldtype": "Link",
+   "label": "Compagnie ap\u00e9ritrice",
+   "options": "Compagnie assurance"
+  },
+  {
+   "fieldname": "quote_part_en_coassurance",
+   "fieldtype": "Percent",
+   "label": "Quote part en Coassurance",
+   "precision": "2"
+  },
+  {
+   "depends_on": "eval: doc.quote_part_en_coassurance",
+   "fieldname": "quote_part_coassurance_calculer",
+   "fieldtype": "Select",
+   "label": "Quote part Coassurance Calculer",
+   "options": "\nOui\nNon"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-08-18 05:55:33.202189",
+ "modified_by": "Administrator",
+ "module": "Traitement des Imports",
+ "name": "Aliment",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Role1",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

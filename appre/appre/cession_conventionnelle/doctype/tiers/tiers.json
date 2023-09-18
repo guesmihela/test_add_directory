@@ -1,0 +1,408 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{link_name}-{le_tiers}",
+ "creation": "2023-02-14 08:25:14.047857",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "link_name",
+  "type_traite",
+  "part_de_chaque_tiers",
+  "column_break_xn7r",
+  "type_tiers",
+  "le_tiers",
+  "etat_tiers",
+  "part_signee",
+  "document_signe",
+  "parts_des_tiers_section",
+  "part_de_chaque_reassureur_derriere_les_courtiers",
+  "meme_condition_section",
+  "section_break_assf",
+  "meme_condition_tiers",
+  "column_break_13dm",
+  "tiers_identique",
+  "commissions__de__reassurance_section",
+  "type_de_la_commission",
+  "taux_commission_provisoire",
+  "column_break_3yg1",
+  "taux_de_commission",
+  "taux_de_la_surcommission",
+  "echelle_de_commission",
+  "les_interets_sur_les_depots_liberes_section",
+  "base_de_calcul_des_interets",
+  "column_break_5jgf",
+  "taux_interets",
+  "participation_benefice_ou_perte_section",
+  "pb_ou_pp",
+  "nature_de_la_pb",
+  "nature_de_la_pp",
+  "column_break_qdvp",
+  "taux_de_la_pb",
+  "taux_echelonnee",
+  "pp_fixe",
+  "pp_echelonnee",
+  "affectation_comptable",
+  "link_doctype",
+  "bonification_pour_non_sinistre_section",
+  "bonification_pour_non_sinistre",
+  "column_break_vqcy",
+  "taux_de_bonification"
+ ],
+ "fields": [
+  {
+   "fieldname": "link_name",
+   "fieldtype": "Link",
+   "label": "Section",
+   "options": "Section",
+   "read_only": 1
+  },
+  {
+   "fieldname": "type_traite",
+   "fieldtype": "Data",
+   "label": "type traite",
+   "read_only": 1
+  },
+  {
+   "fieldname": "part_de_chaque_tiers",
+   "fieldtype": "Percent",
+   "in_list_view": 1,
+   "label": "Part du tiers",
+   "non_negative": 1,
+   "precision": "2",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_xn7r",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "type_tiers",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Type tiers",
+   "options": "\nReassureur\nCourtier",
+   "reqd": 1
+  },
+  {
+   "fieldname": "le_tiers",
+   "fieldtype": "Dynamic Link",
+   "in_list_view": 1,
+   "label": "Tiers",
+   "options": "type_tiers",
+   "reqd": 1
+  },
+  {
+   "fieldname": "etat_tiers",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "etat_tiers",
+   "print_hide": 1
+  },
+  {
+   "fieldname": "part_signee",
+   "fieldtype": "Percent",
+   "label": "Part sign\u00e9e",
+   "mandatory_depends_on": "eval:doc.document_signe",
+   "precision": "2"
+  },
+  {
+   "fieldname": "document_signe",
+   "fieldtype": "Attach",
+   "label": "Document sign\u00e9"
+  },
+  {
+   "fieldname": "parts_des_tiers_section",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "meme_condition_section",
+   "fieldtype": "Check",
+   "hidden": 1,
+   "label": "meme_condition_section",
+   "print_hide": 1
+  },
+  {
+   "depends_on": "eval:!doc.meme_condition_section",
+   "fieldname": "section_break_assf",
+   "fieldtype": "Section Break",
+   "label": "M\u00eame condition avec autre tiers"
+  },
+  {
+   "default": "0",
+   "fieldname": "meme_condition_tiers",
+   "fieldtype": "Check",
+   "label": "M\u00eame condition avec autre tiers"
+  },
+  {
+   "fieldname": "column_break_13dm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.meme_condition_tiers",
+   "fieldname": "tiers_identique",
+   "fieldtype": "Link",
+   "label": "Tiers identique",
+   "options": "Tiers"
+  },
+  {
+   "fetch_from": "tiers_identique.type_de_la_commission",
+   "fetch_if_empty": 1,
+   "fieldname": "type_de_la_commission",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Type de la commission",
+   "mandatory_depends_on": "eval:doc.type_traite=='Proportionnel'",
+   "options": "\nCommission fixe\nCommission \u00e0 \u00e9chelle\nCommission originale"
+  },
+  {
+   "depends_on": "eval:doc.type_de_la_commission=='Commission \u00e0 \u00e9chelle'",
+   "fetch_from": "echelle_de_commission.taux_de_la_commission_provisoire",
+   "fetch_if_empty": 1,
+   "fieldname": "taux_commission_provisoire",
+   "fieldtype": "Percent",
+   "label": "taux commission provisoire ",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_3yg1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.type_de_la_commission=='Commission fixe'",
+   "fetch_from": "tiers_identique.taux_de_commission",
+   "fetch_if_empty": 1,
+   "fieldname": "taux_de_commission",
+   "fieldtype": "Percent",
+   "label": "Taux de commission",
+   "mandatory_depends_on": "eval:doc.type_de_la_commission=='Commission fixe'",
+   "precision": "2"
+  },
+  {
+   "depends_on": "eval:doc.type_de_la_commission=='Commission originale'",
+   "fetch_from": "tiers_identique.taux_de_la_surcommission",
+   "fetch_if_empty": 1,
+   "fieldname": "taux_de_la_surcommission",
+   "fieldtype": "Percent",
+   "label": "Taux de la sur-commission",
+   "mandatory_depends_on": "eval:doc.type_de_la_commission=='Commission originale'",
+   "precision": "2"
+  },
+  {
+   "depends_on": "eval:doc.type_de_la_commission=='Commission \u00e0 \u00e9chelle'",
+   "fetch_from": "tiers_identique.echelle_de_commission",
+   "fetch_if_empty": 1,
+   "fieldname": "echelle_de_commission",
+   "fieldtype": "Link",
+   "label": "Echelle de commission",
+   "mandatory_depends_on": "eval:doc.type_de_la_commission=='Commission \u00e0 \u00e9chelle'",
+   "options": "Echelle de commission"
+  },
+  {
+   "fetch_from": "tiers_identique.base_de_calcul_des_interets",
+   "fetch_if_empty": 1,
+   "fieldname": "base_de_calcul_des_interets",
+   "fieldtype": "Select",
+   "label": "Base de calcul des int\u00e9r\u00eats",
+   "options": "\nBrut\nNet de taxe\nN\u00e9ant",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_5jgf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:(doc.base_de_calcul_des_interets=='Brut' || doc.base_de_calcul_des_interets=='Net de taxe')\n",
+   "description": "Ce taux varie de 1 \u00e0 10",
+   "fetch_from": "tiers_identique.taux_interets",
+   "fetch_if_empty": 1,
+   "fieldname": "taux_interets",
+   "fieldtype": "Percent",
+   "label": "Taux d\u2019int\u00e9r\u00eats",
+   "mandatory_depends_on": "eval:(doc.base_de_calcul_des_interets=='Brut' || doc.base_de_calcul_des_interets=='Net de taxe')\n",
+   "precision": "2"
+  },
+  {
+   "depends_on": "eval:doc.type_traite=='Proportionnel'",
+   "fieldname": "participation_benefice_ou_perte_section",
+   "fieldtype": "Section Break",
+   "label": "Participations  aux  B\u00e9n\u00e9fices  ou participations aux pertes"
+  },
+  {
+   "fetch_from": "tiers_identique.pb_ou_pp",
+   "fetch_if_empty": 1,
+   "fieldname": "pb_ou_pp",
+   "fieldtype": "Select",
+   "label": "P.B ou P.P",
+   "mandatory_depends_on": "eval:doc.type_traite=='Proportionnel'",
+   "options": "\nNon appliqu\u00e9e\nP.B\nP.P"
+  },
+  {
+   "depends_on": "eval:doc.pb_ou_pp=='P.B'\n",
+   "fetch_from": "tiers_identique.nature_de_la_pb",
+   "fetch_if_empty": 1,
+   "fieldname": "nature_de_la_pb",
+   "fieldtype": "Select",
+   "label": "Nature de la P.B",
+   "mandatory_depends_on": "eval:(doc.type_traite=='Proportionnel' && doc.pb_ou_pp=='P.B')",
+   "options": "\nP.B Fixe\nP.B Echelonn\u00e9e"
+  },
+  {
+   "depends_on": "eval:doc.pb_ou_pp=='P.P'",
+   "fetch_from": "tiers_identique.nature_de_la_pp",
+   "fetch_if_empty": 1,
+   "fieldname": "nature_de_la_pp",
+   "fieldtype": "Select",
+   "label": "Nature de la P.P",
+   "mandatory_depends_on": "eval:(doc.type_traite=='Proportionnel' && doc.pb_ou_pp=='P.P')\n",
+   "options": "\nP.P Fixe\nP.P \u00c9chelonn\u00e9e"
+  },
+  {
+   "fieldname": "column_break_qdvp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:(doc.nature_de_la_pb=='P.B Fixe'  && doc.pb_ou_pp == \"P.B\")\n",
+   "fetch_from": "tiers_identique.taux_de_la_pb",
+   "fetch_if_empty": 1,
+   "fieldname": "taux_de_la_pb",
+   "fieldtype": "Link",
+   "label": "P.B fixe",
+   "mandatory_depends_on": "eval:(doc.nature_de_la_pb=='P.B Fixe'  && doc.pb_ou_pp == \"P.B\")\n",
+   "options": "PB fixe",
+   "precision": "2"
+  },
+  {
+   "depends_on": "eval:(doc.nature_de_la_pb=='P.B Echelonn\u00e9e'   && doc.pb_ou_pp == \"P.B\")",
+   "fetch_from": "tiers_identique.taux_echelonnee",
+   "fetch_if_empty": 1,
+   "fieldname": "taux_echelonnee",
+   "fieldtype": "Link",
+   "label": "P.B \u00e9chelonn\u00e9e",
+   "mandatory_depends_on": "eval:(doc.nature_de_la_pb=='P.B Echelonn\u00e9e'   && doc.pb_ou_pp == \"P.B\")",
+   "options": "PB echlonnee"
+  },
+  {
+   "depends_on": "eval:(doc.nature_de_la_pp=='P.P Fixe'    && doc.pb_ou_pp == \"P.P\")",
+   "fetch_from": "tiers_identique.pp_fixe",
+   "fetch_if_empty": 1,
+   "fieldname": "pp_fixe",
+   "fieldtype": "Link",
+   "label": "P.P Fixe",
+   "mandatory_depends_on": "eval:(doc.nature_de_la_pp=='P.P Fixe'    && doc.pb_ou_pp == \"P.P\")",
+   "options": "PP fixe",
+   "precision": "2"
+  },
+  {
+   "depends_on": "eval:(doc.nature_de_la_pp=='P.P \u00c9chelonn\u00e9e'  && doc.pb_ou_pp == \"P.P\")",
+   "fetch_from": "tiers_identique.pp_echelonnee",
+   "fetch_if_empty": 1,
+   "fieldname": "pp_echelonnee",
+   "fieldtype": "Link",
+   "label": "P.P \u00e9chelonn\u00e9e",
+   "mandatory_depends_on": "eval:(doc.nature_de_la_pp=='P.P \u00c9chelonn\u00e9e'  && doc.pb_ou_pp == \"P.P\")",
+   "options": "PP echlonnee"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:(doc.pb_ou_pp=='P.B' || doc.pb_ou_pp=='P.P' ) ",
+   "fieldname": "affectation_comptable",
+   "fieldtype": "Check",
+   "label": "Affectation comptable"
+  },
+  {
+   "fieldname": "link_doctype",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "link_doctype"
+  },
+  {
+   "depends_on": "eval:doc.type_traite=='Non proportionnel'",
+   "fieldname": "bonification_pour_non_sinistre_section",
+   "fieldtype": "Section Break",
+   "label": "Bonification pour non sinistre"
+  },
+  {
+   "fetch_from": "tiers_identique.bonification_pour_non_sinistre",
+   "fetch_if_empty": 1,
+   "fieldname": "bonification_pour_non_sinistre",
+   "fieldtype": "Select",
+   "label": "Bonification pour non sinistre",
+   "mandatory_depends_on": "eval:doc.type_traite=='Non proportionnel'",
+   "options": "\nOui\nNon"
+  },
+  {
+   "fieldname": "column_break_vqcy",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.bonification_pour_non_sinistre=='Oui'",
+   "description": "ce taux varie de 1 \u00e0 50%",
+   "fetch_from": "tiers_identique.taux_de_bonification",
+   "fetch_if_empty": 1,
+   "fieldname": "taux_de_bonification",
+   "fieldtype": "Percent",
+   "label": "Taux de bonification",
+   "mandatory_depends_on": "eval:doc.bonification_pour_non_sinistre=='Oui'",
+   "precision": "2"
+  },
+  {
+   "depends_on": "eval:doc.type_tiers=='Courtier'",
+   "fieldname": "part_de_chaque_reassureur_derriere_les_courtiers",
+   "fieldtype": "Table",
+   "label": "Part de chaque r\u00e9assureur derri\u00e8re les courtiers",
+   "options": "child reassurer"
+  },
+  {
+   "depends_on": "eval:doc.type_traite=='Proportionnel'",
+   "fieldname": "commissions__de__reassurance_section",
+   "fieldtype": "Section Break",
+   "label": "Commissions  de  r\u00e9assurance"
+  },
+  {
+   "fieldname": "les_interets_sur_les_depots_liberes_section",
+   "fieldtype": "Section Break",
+   "label": "Les Int\u00e9r\u00eats sur les d\u00e9p\u00f4ts Lib\u00e9r\u00e9s"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-08-25 11:19:11.887635",
+ "modified_by": "Administrator",
+ "module": "cession conventionnelle",
+ "name": "Tiers",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Role1",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

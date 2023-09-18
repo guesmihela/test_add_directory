@@ -1,0 +1,79 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:code_risque_branche_du_traite",
+ "creation": "2023-02-15 10:26:29.832159",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "code_risque_branche_du_traite",
+  "nom_du_risque_de_la_branche_du_traite",
+  "column_break_fykm",
+  "code_identifiant_legal_risque_branche"
+ ],
+ "fields": [
+  {
+   "fieldname": "column_break_fykm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "code_risque_branche_du_traite",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Code risque branche du trait\u00e9",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "nom_du_risque_de_la_branche_du_traite",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Nom du risque de la branche du trait\u00e9",
+   "reqd": 1
+  },
+  {
+   "fieldname": "code_identifiant_legal_risque_branche",
+   "fieldtype": "Int",
+   "label": "Code identifiant l\u00e9gal (Risque branche)"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-08-14 10:47:16.911636",
+ "modified_by": "Administrator",
+ "module": "cession conventionnelle",
+ "name": "Risque des traites",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Role1",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

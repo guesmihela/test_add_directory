@@ -1,0 +1,60 @@
+{
+ "actions": [],
+ "autoname": "autoincrement",
+ "creation": "2023-05-29 09:01:41.232134",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "max_tranche",
+  "min_tranche",
+  "mode_de_calcul",
+  "pourcentage_montant_formule"
+ ],
+ "fields": [
+  {
+   "fieldname": "max_tranche",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Max Tranche",
+   "reqd": 1
+  },
+  {
+   "fieldname": "min_tranche",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Min Tranche",
+   "reqd": 1
+  },
+  {
+   "fieldname": "mode_de_calcul",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Mode de calcul",
+   "options": "\nMontant\nPourcentage\nFormule",
+   "precision": "2",
+   "reqd": 1
+  },
+  {
+   "fieldname": "pourcentage_montant_formule",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Pourcentage/ Montant/ Formule",
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-08-14 10:20:37.107864",
+ "modified_by": "Administrator",
+ "module": "cession conventionnelle",
+ "name": "taux de PP ou PB echelonnee",
+ "naming_rule": "Autoincrement",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

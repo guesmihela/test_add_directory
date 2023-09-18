@@ -1,0 +1,231 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:annee_effet",
+ "creation": "2023-04-10 09:59:48.633783",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "annee_effet",
+  "applique",
+  "column_break_vgei",
+  "periodicite_comptes",
+  "type_de_comptabilisation",
+  "provisions_pour_risques_en_cours",
+  "applique_risques_en_cours",
+  "liberations_risques_en_cours",
+  "column_break_ztqa",
+  "constitutions_risques_en_cours",
+  "provision_sinistres_a_payer_section",
+  "applique_sinistres_payer",
+  "liberations_sinistres_payer",
+  "column_break_sru2",
+  "constitutions_sinistres_payer",
+  "provisions__recours_a_encaisser_section",
+  "applique_recours_encaisser",
+  "liberation_recours_encaisser",
+  "column_break_zmz5",
+  "constitutions_recours_encaisser",
+  "provisions_pour_sinistres_inconnus_section",
+  "applique_sinistres_inconnus",
+  "liberation_sinistres_inconnus",
+  "column_break_hdii",
+  "constitutions_sinistres_inconnus"
+ ],
+ "fields": [
+  {
+   "fieldname": "annee_effet",
+   "fieldtype": "Data",
+   "label": "Ann\u00e9e d\u2019effet",
+   "length": 4,
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "applique",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Appliqu\u00e9",
+   "options": "\nOui\nNon",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_vgei",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "periodicite_comptes",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "P\u00e9riodicit\u00e9 des comptes",
+   "options": "\nMensuelle\nTrimestrielle\nSemestrielle\nAnnuelle",
+   "reqd": 1
+  },
+  {
+   "fieldname": "type_de_comptabilisation",
+   "fieldtype": "Select",
+   "label": "Type de comptabilisation",
+   "options": "Par ann\u00e9e de souscription"
+  },
+  {
+   "fieldname": "provisions_pour_risques_en_cours",
+   "fieldtype": "Section Break",
+   "label": "Provisions pour risques en cours"
+  },
+  {
+   "fieldname": "applique_risques_en_cours",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Appliqu\u00e9 ",
+   "options": "\nOui\nNon",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:(doc.constitutions_risques_en_cours==\"fin de chaque p\u00e9riode\" || doc.constitutions_risques_en_cours==\"Fin de l'ann\u00e9e\")",
+   "fieldname": "liberations_risques_en_cours",
+   "fieldtype": "Select",
+   "label": "Lib\u00e9rations",
+   "options": "\nfin de la p\u00e9riode suivante\nfin de l'ann\u00e9e suivante"
+  },
+  {
+   "fieldname": "column_break_ztqa",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.appliqu\u00e9__risques_en_cours==\"Oui\"",
+   "fieldname": "constitutions_risques_en_cours",
+   "fieldtype": "Select",
+   "label": "Constitutions",
+   "options": "\nfin de chaque p\u00e9riode\nFin de l'ann\u00e9e\nNon appliqu\u00e9"
+  },
+  {
+   "fieldname": "provision_sinistres_a_payer_section",
+   "fieldtype": "Section Break",
+   "label": "Provisions pour sinistres \u00e0 payer"
+  },
+  {
+   "fieldname": "applique_sinistres_payer",
+   "fieldtype": "Select",
+   "label": "Appliqu\u00e9 ",
+   "options": "\nOui\nNon",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:(doc.constitutions_sinistres_payer==\"fin de chaque p\u00e9riode\" || doc.constitutions_sinistres_payer==\"Fin de l'ann\u00e9e\")",
+   "fieldname": "liberations_sinistres_payer",
+   "fieldtype": "Select",
+   "label": "Lib\u00e9rations",
+   "options": "\nfin de la p\u00e9riode suivante\nfin de l'ann\u00e9e suivante"
+  },
+  {
+   "fieldname": "column_break_sru2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.applique_sinistres_payer==\"Oui\"",
+   "fieldname": "constitutions_sinistres_payer",
+   "fieldtype": "Select",
+   "label": "Constitutions",
+   "options": "\nfin de chaque p\u00e9riode\nFin de l'ann\u00e9e\nNon appliqu\u00e9"
+  },
+  {
+   "fieldname": "provisions__recours_a_encaisser_section",
+   "fieldtype": "Section Break",
+   "label": "Provisions pour recours \u00e0 encaisser"
+  },
+  {
+   "fieldname": "applique_recours_encaisser",
+   "fieldtype": "Select",
+   "label": "Appliqu\u00e9",
+   "options": "\nOui\nNon",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:(doc.constitutions_recours_encaisser==\"fin de chaque p\u00e9riode\" || doc.constitutions_recours_encaisser==\"Fin de l'ann\u00e9e\")",
+   "fieldname": "liberation_recours_encaisser",
+   "fieldtype": "Select",
+   "label": "Lib\u00e9rations",
+   "options": "\nfin de la p\u00e9riode suivante\nfin de l'ann\u00e9e suivante"
+  },
+  {
+   "fieldname": "column_break_zmz5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.applique_recours_encaisser==\"Oui\"",
+   "fieldname": "constitutions_recours_encaisser",
+   "fieldtype": "Select",
+   "label": "Constitutions",
+   "options": "\nfin de chaque p\u00e9riode\nFin de l'ann\u00e9e\nNon appliqu\u00e9"
+  },
+  {
+   "fieldname": "provisions_pour_sinistres_inconnus_section",
+   "fieldtype": "Section Break",
+   "label": "Provisions pour sinistres inconnus"
+  },
+  {
+   "fieldname": "applique_sinistres_inconnus",
+   "fieldtype": "Select",
+   "label": "Appliqu\u00e9",
+   "options": "\nOui\nNon",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:(doc.constitutions_sinistres_inconnus==\"fin de chaque p\u00e9riode\" || doc.constitutions_sinistres_inconnus==\"Fin de l'ann\u00e9e\")",
+   "fieldname": "liberation_sinistres_inconnus",
+   "fieldtype": "Select",
+   "label": "Lib\u00e9rations",
+   "options": "\nfin de la p\u00e9riode suivante\nfin de l'ann\u00e9e suivante"
+  },
+  {
+   "fieldname": "column_break_hdii",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.applique_sinistres_inconnus==\"Oui\"",
+   "fieldname": "constitutions_sinistres_inconnus",
+   "fieldtype": "Select",
+   "label": "Constitutions",
+   "options": "\nfin de chaque p\u00e9riode\nFin de l'ann\u00e9e\nNon appliqu\u00e9"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-08-16 07:08:00.032237",
+ "modified_by": "Administrator",
+ "module": "cession facultative",
+ "name": "Periodicite des comptes de reassurance facultative",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Role1",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

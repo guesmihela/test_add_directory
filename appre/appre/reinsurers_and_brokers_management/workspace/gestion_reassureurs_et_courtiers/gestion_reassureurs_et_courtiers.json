@@ -1,0 +1,40 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"cm3eCfk_tO\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Gestion des r\u00e9assureurs et des courtiers</span>\",\"col\":12}},{\"id\":\"7dCCxJygAD\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Reassureur\",\"col\":3}},{\"id\":\"EKUoXaTs70\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Courtier\",\"col\":3}}]",
+ "creation": "2023-01-13 08:41:48.807085",
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "",
+ "idx": 0,
+ "label": "gestion reassureurs et courtiers",
+ "links": [],
+ "modified": "2023-08-18 08:44:54.237716",
+ "modified_by": "Administrator",
+ "module": "Reinsurers and Brokers Management",
+ "name": "gestion reassureurs et courtiers",
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 9.0,
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Courtier",
+   "link_to": "Courtier",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Reassureur",
+   "link_to": "Reassureur",
+   "type": "DocType"
+  }
+ ],
+ "title": "gestion reassureurs et courtiers"
+}

@@ -1,0 +1,324 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:code_periodicite",
+ "creation": "2023-03-26 07:16:29.610778",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "code_periodicite",
+  "column_break_idsl",
+  "date_deffet",
+  "section_break_wdp0",
+  "depots_pour_risques_en_cours_section",
+  "mouvements_en_comptes_section",
+  "constitution_compte_risque_en_cours",
+  "column_break_kfu0",
+  "liberations_compte_risque_en_cours",
+  "mouvement_hors_comptes_section",
+  "constitutions_hors_compte_risque_encours",
+  "column_break_dyfv",
+  "liberation_hors_compte_risque_encours",
+  "data_ktzg",
+  "html_2b1j",
+  "mouvements_en_comptessinistres_\u00e0_payer_section",
+  "constitutions_en_compte_sinistres_payer",
+  "column_break_7ayk",
+  "liberations_compte_sinistres_payer",
+  "mouvement_hors_comptesrsinistres_\u00e0_payer_section",
+  "constitution_hors_compte_sinistre_payer",
+  "column_break_wlmr",
+  "liberations_hors_compte_sinstre_payer",
+  "section_break_odez",
+  "html_qp65",
+  "mouvements_en_comptesrecours_\u00e0_encaisser_section",
+  "constitution_en_compte_recours",
+  "column_break_fqzv",
+  "liberation_en_cours_recours",
+  "mouvements_hors_comptesrecours_\u00e0_encaisser_section",
+  "constitution_hors_compte_recours",
+  "column_break_grvp",
+  "liberation_hors_compte_recours",
+  "section_break_iqtx",
+  "html_wetw",
+  "mouvements_en_comptessinistres_inconnus_section",
+  "constitution_en_compte_sinistre_inconnu",
+  "column_break_ez3h",
+  "libiration_en_compte_sinistre_inconnu",
+  "mouvements_hors_comptessinistres_inconnus_section",
+  "constitution_hors_compte_sinistre_inconnu",
+  "column_break_isnv",
+  "libiration_hors_compte_sinistre_inconnu"
+ ],
+ "fields": [
+  {
+   "fieldname": "column_break_idsl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "date_deffet",
+   "fieldtype": "Date",
+   "label": "Date d'effet"
+  },
+  {
+   "fieldname": "section_break_wdp0",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "mouvements_en_comptes_section",
+   "fieldtype": "Section Break",
+   "label": "D\u00e9p\u00f4ts primes (compte)"
+  },
+  {
+   "fieldname": "constitution_compte_risque_en_cours",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Constitutions",
+   "options": "\nFin de chaque p\u00e9riode\nFin de l'ann\u00e9e\nNon appliqu\u00e9",
+   "read_only_depends_on": "eval:doc.constitutions_hors_compte_risque_encours=='Fin de chaque p\u00e9riode'",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_kfu0",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:(doc.constitution_compte_risque_en_cours=='Fin de chaque p\u00e9riode'|| doc.constitution_compte_risque_en_cours==\"Fin de l'ann\u00e9e\")",
+   "fieldname": "liberations_compte_risque_en_cours",
+   "fieldtype": "Select",
+   "label": "Lib\u00e9rations"
+  },
+  {
+   "fieldname": "mouvement_hors_comptes_section",
+   "fieldtype": "Section Break",
+   "label": "R\u00e9serves pour risques en cours (hors compte)"
+  },
+  {
+   "fieldname": "constitutions_hors_compte_risque_encours",
+   "fieldtype": "Select",
+   "label": "Constitutions",
+   "options": "\nFin de chaque p\u00e9riode\nLes p\u00e9riodes autres que fin d'ann\u00e9e\nNon appliqu\u00e9"
+  },
+  {
+   "fieldname": "column_break_dyfv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:(doc.constitutions_hors_compte_risque_encours=='Fin de chaque p\u00e9riode'|| doc.constitutions_hors_compte_risque_encours==\"Les p\u00e9riodes autres que fin d'ann\u00e9e\")",
+   "fieldname": "liberation_hors_compte_risque_encours",
+   "fieldtype": "Select",
+   "label": "Lib\u00e9ration",
+   "options": "Fin de la p\u00e9riode suivante"
+  },
+  {
+   "fieldname": "data_ktzg",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "html_2b1j",
+   "fieldtype": "HTML",
+   "options": "<h4><b>D\u00e9p\u00f4ts pour sinistres \u00e0 payer</b></h4>"
+  },
+  {
+   "fieldname": "mouvements_en_comptessinistres_\u00e0_payer_section",
+   "fieldtype": "Section Break",
+   "label": "D\u00e9p\u00f4ts sinistres (compte)"
+  },
+  {
+   "fieldname": "constitutions_en_compte_sinistres_payer",
+   "fieldtype": "Select",
+   "label": "Constitution",
+   "options": "\nFin de chaque p\u00e9riode\nFin de l'ann\u00e9e\nNon appliqu\u00e9",
+   "read_only_depends_on": "eval:doc.constitution_hors_compte_sinistre_payer=='Fin de chaque p\u00e9riode'"
+  },
+  {
+   "fieldname": "column_break_7ayk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "mouvement_hors_comptesrsinistres_\u00e0_payer_section",
+   "fieldtype": "Section Break",
+   "label": "R\u00e9serves pour sinistre en suspens (hors compte"
+  },
+  {
+   "fieldname": "constitution_hors_compte_sinistre_payer",
+   "fieldtype": "Select",
+   "label": "Constitution",
+   "options": "\nFin de chaque p\u00e9riode\nLes p\u00e9riodes autres que fin d'ann\u00e9e\nNon appliqu\u00e9"
+  },
+  {
+   "fieldname": "column_break_wlmr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_odez",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "html_qp65",
+   "fieldtype": "HTML",
+   "options": "<h3><b>R\u00e9serves pour recours \u00e0 encaisser</b></h3>"
+  },
+  {
+   "fieldname": "mouvements_en_comptesrecours_\u00e0_encaisser_section",
+   "fieldtype": "Section Break",
+   "label": "Mouvements en comptes(recours \u00e0 encaisser)"
+  },
+  {
+   "fieldname": "constitution_en_compte_recours",
+   "fieldtype": "Select",
+   "label": "Constitution",
+   "options": "\nFin de chaque p\u00e9riode\nFin de l'ann\u00e9e\nNon appliqu\u00e9",
+   "read_only_depends_on": "eval:doc.constitution_hors_compte_recours=='Fin de chaque p\u00e9riode'"
+  },
+  {
+   "fieldname": "column_break_fqzv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:(doc.constitution_en_compte_recours=='Fin de chaque p\u00e9riode'|| doc.constitution_en_compte_recours==\"Fin de l'ann\u00e9e\")",
+   "fieldname": "liberation_en_cours_recours",
+   "fieldtype": "Select",
+   "label": "Lib\u00e9ration"
+  },
+  {
+   "fieldname": "mouvements_hors_comptesrecours_\u00e0_encaisser_section",
+   "fieldtype": "Section Break",
+   "label": "Mouvements hors comptes(recours \u00e0 encaisser)"
+  },
+  {
+   "fieldname": "constitution_hors_compte_recours",
+   "fieldtype": "Select",
+   "label": "Constitution",
+   "options": "\nFin de chaque p\u00e9riode\nLes p\u00e9riodes autres que fin d'ann\u00e9e\nNon appliqu\u00e9"
+  },
+  {
+   "fieldname": "column_break_grvp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:(doc.constitution_hors_compte_recours=='Fin de chaque p\u00e9riode'|| doc.constitution_hors_compte_recours==\"Les p\u00e9riodes autres que fin d'ann\u00e9e\")",
+   "fieldname": "liberation_hors_compte_recours",
+   "fieldtype": "Select",
+   "label": "Lib\u00e9ration",
+   "options": "Fin de la p\u00e9riode suivante"
+  },
+  {
+   "fieldname": "section_break_iqtx",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "html_wetw",
+   "fieldtype": "HTML",
+   "options": "<h3><b>R\u00e9serves pour sinistres inconnus</b></h3>"
+  },
+  {
+   "fieldname": "mouvements_en_comptessinistres_inconnus_section",
+   "fieldtype": "Section Break",
+   "label": "Mouvements en comptes(sinistres inconnus)"
+  },
+  {
+   "fieldname": "constitution_en_compte_sinistre_inconnu",
+   "fieldtype": "Select",
+   "label": "Constitution",
+   "options": "\nFin de chaque p\u00e9riode\nFin de l'ann\u00e9e\nNon appliqu\u00e9",
+   "read_only_depends_on": "eval:doc.constitution_hors_compte_sinistre_inconnu=='Fin de chaque p\u00e9riode'"
+  },
+  {
+   "fieldname": "column_break_ez3h",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:(doc.constitution_en_compte_sinistre_inconnu=='Fin de chaque p\u00e9riode'|| doc.constitution_en_compte_sinistre_inconnu==\"Fin de l'ann\u00e9e\")",
+   "fieldname": "libiration_en_compte_sinistre_inconnu",
+   "fieldtype": "Select",
+   "label": "Lib\u00e9ration"
+  },
+  {
+   "fieldname": "mouvements_hors_comptessinistres_inconnus_section",
+   "fieldtype": "Section Break",
+   "label": "Mouvements hors comptes(sinistres inconnus)"
+  },
+  {
+   "fieldname": "constitution_hors_compte_sinistre_inconnu",
+   "fieldtype": "Select",
+   "label": "Constitution",
+   "options": "\nFin de chaque p\u00e9riode\nLes p\u00e9riodes autres que fin d'ann\u00e9e\nNon appliqu\u00e9"
+  },
+  {
+   "fieldname": "column_break_isnv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:(doc.constitution_hors_compte_sinistre_inconnu=='Fin de chaque p\u00e9riode'|| doc.constitution_hors_compte_sinistre_inconnu==\"Les p\u00e9riodes autres que fin d'ann\u00e9e\")",
+   "fieldname": "libiration_hors_compte_sinistre_inconnu",
+   "fieldtype": "Select",
+   "label": "Lib\u00e9ration",
+   "options": "Fin de la p\u00e9riode suivante"
+  },
+  {
+   "fieldname": "code_periodicite",
+   "fieldtype": "Data",
+   "label": "Code p\u00e9riodicit\u00e9",
+   "unique": 1
+  },
+  {
+   "fieldname": "depots_pour_risques_en_cours_section",
+   "fieldtype": "HTML",
+   "label": "D\u00e9p\u00f4ts pour risques en cours",
+   "options": "<h4><b>D\u00e9p\u00f4ts pour risques en cours<b></b></b></h4>"
+  },
+  {
+   "depends_on": "eval:(doc.constitutions_en_compte_sinistres_payer=='Fin de chaque p\u00e9riode'|| doc.constitutions_en_compte_sinistres_payer==\"Fin de l'ann\u00e9e\")",
+   "fieldname": "liberations_compte_sinistres_payer",
+   "fieldtype": "Select",
+   "label": "Lib\u00e9ration"
+  },
+  {
+   "depends_on": "eval:(doc.constitution_hors_compte_sinistre_payer=='Fin de chaque p\u00e9riode'|| doc.constitution_hors_compte_sinistre_payer==\"Les p\u00e9riodes autres que fin d'ann\u00e9e\")",
+   "fieldname": "liberations_hors_compte_sinstre_payer",
+   "fieldtype": "Select",
+   "label": "Lib\u00e9ration",
+   "options": "Fin de la p\u00e9riode suivante"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-08-14 11:05:25.535403",
+ "modified_by": "Administrator",
+ "module": "cession conventionnelle",
+ "name": "periodicite de constitution et de liberation des depots",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Role1",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

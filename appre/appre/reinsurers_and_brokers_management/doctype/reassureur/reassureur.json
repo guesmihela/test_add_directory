@@ -1,0 +1,260 @@
+{
+ "actions": [],
+ "autoname": "field:reinsurer_code",
+ "creation": "2023-01-11 13:05:20.251987",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "reinsurer_code",
+  "reinsurer_name",
+  "column_break_nesf",
+  "abbreviation",
+  "etat",
+  "addresses_section",
+  "adrresses",
+  "contacts_section",
+  "contacts",
+  "bank_accounts_section",
+  "bank_accounts",
+  "accounting_data_section",
+  "third_party_code",
+  "compte_general",
+  "compte_auxiliaire",
+  "column_break_ecyh",
+  "tax_identification_number",
+  "trade_register",
+  "tax_data_section",
+  "donnees_fiscales",
+  "section_break_ww7f",
+  "rating",
+  "placement",
+  "historique_tiers_tab",
+  "section_break_cksxz",
+  "historique_traite",
+  "histogramme",
+  "historique_placement",
+  "section_break_82egp",
+  "no_histo_message"
+ ],
+ "fields": [
+  {
+   "fieldname": "reinsurer_code",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Code du r\u00e9assureur",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "reinsurer_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Nom de r\u00e9assureur",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_nesf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "abbreviation",
+   "fieldtype": "Data",
+   "label": "Abr\u00e9viation"
+  },
+  {
+   "fieldname": "etat",
+   "fieldtype": "Select",
+   "label": "Etat",
+   "options": "\nActif\nInactif\nBlack list\u00e9"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "addresses_section",
+   "fieldtype": "Section Break",
+   "label": "Adresses Tiers"
+  },
+  {
+   "fieldname": "adrresses",
+   "fieldtype": "Table",
+   "label": "Adresses Tiers",
+   "options": "adresse child"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "bank_accounts_section",
+   "fieldtype": "Section Break",
+   "label": "Comptes  Bancaires"
+  },
+  {
+   "fieldname": "bank_accounts",
+   "fieldtype": "Table",
+   "label": "Comptes  Bancaires",
+   "options": "Bank Account Child"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "contacts_section",
+   "fieldtype": "Section Break",
+   "label": "Contacts"
+  },
+  {
+   "fieldname": "contacts",
+   "fieldtype": "Table",
+   "label": "Contacts",
+   "options": "child contact"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "accounting_data_section",
+   "fieldtype": "Section Break",
+   "label": "Donn\u00e9es Comptables"
+  },
+  {
+   "fieldname": "third_party_code",
+   "fieldtype": "Data",
+   "label": "Code tiers",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "tax_identification_number",
+   "fieldtype": "Data",
+   "label": "Matricule Fiscal"
+  },
+  {
+   "fieldname": "trade_register",
+   "fieldtype": "Data",
+   "label": "Registre de commerce"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "tax_data_section",
+   "fieldtype": "Section Break",
+   "label": "Donn\u00e9es Fiscales"
+  },
+  {
+   "fieldname": "column_break_ecyh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "donnees_fiscales",
+   "fieldtype": "Table",
+   "label": "Donn\u00e9es Fiscales",
+   "options": "child fiscal"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_ww7f",
+   "fieldtype": "Section Break",
+   "label": "Rating"
+  },
+  {
+   "fieldname": "rating",
+   "fieldtype": "Table",
+   "label": "Rating",
+   "options": "child rating"
+  },
+  {
+   "fieldname": "placement",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "placement",
+   "print_hide": 1,
+   "report_hide": 1
+  },
+  {
+   "fieldname": "section_break_cksxz",
+   "fieldtype": "Section Break",
+   "hide_border": 1
+  },
+  {
+   "fieldname": "historique_traite",
+   "fieldtype": "Table",
+   "label": "Historique Trait\u00e9s",
+   "options": "Historique_traite",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_82egp",
+   "fieldtype": "Section Break",
+   "hide_border": 1
+  },
+  {
+   "depends_on": "eval:doc.historique_traite && doc.historique_traite.length !== 0 ",
+   "fieldname": "histogramme",
+   "fieldtype": "HTML",
+   "label": "Histogramme",
+   "options": "<div id=\"histo\"></div>"
+  },
+  {
+   "fieldname": "historique_tiers_tab",
+   "fieldtype": "Tab Break",
+   "label": "Historique Tiers"
+  },
+  {
+   "depends_on": "eval:!doc.historique_traite && !doc.historique_placement || (doc.historique_traite.length == 0 && doc.historique_placement.length == 0)",
+   "fieldname": "no_histo_message",
+   "fieldtype": "HTML",
+   "options": "<div id=\"no_result\"><p></p></div>"
+  },
+  {
+   "fieldname": "compte_general",
+   "fieldtype": "Data",
+   "label": "Compte G\u00e9n\u00e9ral"
+  },
+  {
+   "fieldname": "compte_auxiliaire",
+   "fieldtype": "Data",
+   "label": "Compte auxiliaire"
+  },
+  {
+   "fieldname": "historique_placement",
+   "fieldtype": "Table",
+   "label": "Historique Placement",
+   "options": "Historique_placements",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-08-30 10:46:00.344775",
+ "modified_by": "Administrator",
+ "module": "Reinsurers and Brokers Management",
+ "name": "Reassureur",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Role1",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "placement",
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "third_party_code"
+}

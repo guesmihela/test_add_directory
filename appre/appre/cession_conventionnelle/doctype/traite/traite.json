@@ -1,0 +1,323 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{nom_traite}-{annee_effet}",
+ "creation": "2023-02-01 17:23:08.912294",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "identifiant_traite_section",
+  "nom_traite",
+  "type_traite",
+  "forme_traite",
+  "nom_forme_traite",
+  "annee_effet",
+  "origin_traite",
+  "column_break_c26x",
+  "code_branche_traite",
+  "identifiant_legal",
+  "description_traite",
+  "validite_traite_section",
+  "date_effet",
+  "duree_validite",
+  "date_expiration",
+  "column_break_gkrr",
+  "preavis_resiliation",
+  "etat_traite",
+  "date_etat",
+  "aperiteur_section",
+  "type_tiers",
+  "column_break_8kxm",
+  "tiers_aperiteur",
+  "periodicite_compte_sec",
+  "periodicite_comptes",
+  "delai_envoi_comptes",
+  "column_break_utcv",
+  "delai_bien_trouve",
+  "delai_reglement",
+  "type_compta_sect",
+  "type_comptabilisation",
+  "estimation_prime_a_ceder_sec",
+  "estimation_prime_a_ceeder",
+  "assiette_primes_sec",
+  "assiette_primes",
+  "sections_tab",
+  "section_html"
+ ],
+ "fields": [
+  {
+   "fieldname": "nom_traite",
+   "fieldtype": "Data",
+   "label": "Nom trait\u00e9",
+   "reqd": 1
+  },
+  {
+   "fieldname": "origin_traite",
+   "fieldtype": "Link",
+   "label": "Origine du trait\u00e9",
+   "options": "Traite",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_c26x",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "identifiant_legal",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Identifiant L\u00e9gal",
+   "read_only": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "date_effet",
+   "fieldtype": "Date",
+   "label": "Date d\u2019effet du trait\u00e9",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_gkrr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "date_etat",
+   "fieldtype": "Date",
+   "label": "Date \u00e9tat",
+   "mandatory_depends_on": "eval:(doc.etat_traite=='En cours'|| doc.etat_traite=='Expir\u00e9'|| doc.etat_traite=='R\u00e9sili\u00e9'|| doc.etat_traite=='Commut\u00e9'|| doc.etat_traite=='Cl\u00f4tur\u00e9'|| doc.etat_traite=='Suspendu')"
+  },
+  {
+   "fieldname": "aperiteur_section",
+   "fieldtype": "Section Break",
+   "label": "Ap\u00e9riteur"
+  },
+  {
+   "fieldname": "type_tiers",
+   "fieldtype": "Select",
+   "label": "Type Tiers",
+   "options": "\nReassureur\nCourtier",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_8kxm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "tiers_aperiteur",
+   "fieldtype": "Dynamic Link",
+   "label": "Tiers ap\u00e9riteur",
+   "options": "type_tiers",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_utcv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:!doc.__islocal",
+   "fieldname": "sections_tab",
+   "fieldtype": "Tab Break",
+   "label": "Sections"
+  },
+  {
+   "fieldname": "section_html",
+   "fieldtype": "HTML"
+  },
+  {
+   "fieldname": "identifiant_traite_section",
+   "fieldtype": "Section Break",
+   "label": "Identifiant du trait\u00e9"
+  },
+  {
+   "fieldname": "validite_traite_section",
+   "fieldtype": "Section Break",
+   "label": "Validit\u00e9 du trait\u00e9"
+  },
+  {
+   "fieldname": "periodicite_compte_sec",
+   "fieldtype": "Section Break",
+   "label": "P\u00e9riodicit\u00e9  des  comptes"
+  },
+  {
+   "fieldname": "type_compta_sect",
+   "fieldtype": "Section Break",
+   "label": "Type de comptabilisation"
+  },
+  {
+   "depends_on": "eval:doc.type_traite=='Proportionnel'",
+   "fieldname": "estimation_prime_a_ceder_sec",
+   "fieldtype": "Section Break",
+   "label": "Estimation de la prime  \u00e0 c\u00e9der"
+  },
+  {
+   "depends_on": "eval:doc.type_traite=='Non proportionnel'",
+   "fieldname": "assiette_primes_sec",
+   "fieldtype": "Section Break",
+   "label": "Assiette de primes"
+  },
+  {
+   "fieldname": "estimation_prime_a_ceeder",
+   "fieldtype": "Currency",
+   "label": "Estimation de la prime \u00e0  c\u00e9der",
+   "mandatory_depends_on": "eval:doc.type_traite=='Proportionnel'"
+  },
+  {
+   "fieldname": "assiette_primes",
+   "fieldtype": "Currency",
+   "label": "Assiette de primes",
+   "mandatory_depends_on": "eval:doc.type_traite=='Non proportionnel'"
+  },
+  {
+   "default": " ",
+   "fetch_if_empty": 1,
+   "fieldname": "forme_traite",
+   "fieldtype": "Link",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "label": "Forme du trait\u00e9",
+   "options": "Forme de traite",
+   "reqd": 1
+  },
+  {
+   "fieldname": "annee_effet",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Ann\u00e9e d\u2019effet du trait\u00e9",
+   "length": 4,
+   "reqd": 1
+  },
+  {
+   "fetch_from": "forme_traite.nom_forme",
+   "fetch_if_empty": 1,
+   "fieldname": "nom_forme_traite",
+   "fieldtype": "Data",
+   "label": "Nom de la forme du trait\u00e9",
+   "read_only": 1
+  },
+  {
+   "fieldname": "code_branche_traite",
+   "fieldtype": "Link",
+   "label": "Code branche du trait\u00e9",
+   "options": "Branche de traite",
+   "reqd": 1
+  },
+  {
+   "fieldname": "description_traite",
+   "fieldtype": "Small Text",
+   "label": "Description du trait\u00e9",
+   "reqd": 1
+  },
+  {
+   "fieldname": "duree_validite",
+   "fieldtype": "Select",
+   "label": "Dur\u00e9e de validit\u00e9",
+   "options": "\nFerme\nRenouvelable",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.duree_validite=='Renouvelable'",
+   "fieldname": "preavis_resiliation",
+   "fieldtype": "Select",
+   "label": "Pr\u00e9avis de r\u00e9siliation",
+   "mandatory_depends_on": "eval:doc.dur\u00e9e_de_validite=='Renouvelable'",
+   "options": "\n3 mois\n4 mois"
+  },
+  {
+   "fieldname": "etat_traite",
+   "fieldtype": "Link",
+   "label": "Etat du trait\u00e9",
+   "options": "Etat du traite",
+   "reqd": 1
+  },
+  {
+   "fieldname": "periodicite_comptes",
+   "fieldtype": "Select",
+   "label": "P\u00e9riodicit\u00e9 des comptes",
+   "options": "\nMensuelle\nTrimestrielle\nSemestrielle\nAnnuelle",
+   "read_only_depends_on": "eval:doc.type_du_traite=='Non proportionnel'",
+   "reqd": 1
+  },
+  {
+   "description": "Exprim\u00e9 en nombre de jours (de 10 \u00e0 90 jours)",
+   "fieldname": "delai_envoi_comptes",
+   "fieldtype": "Int",
+   "label": "D\u00e9lai d'envoi des comptes",
+   "reqd": 1
+  },
+  {
+   "description": "Exprim\u00e9 en nombre de jours (de 10 \u00e0 90 jours)",
+   "fieldname": "delai_bien_trouve",
+   "fieldtype": "Int",
+   "label": "D\u00e9lai du bien trouv\u00e9",
+   "reqd": 1
+  },
+  {
+   "description": "Exprim\u00e9 en nombre de jours (de 10 \u00e0 90 jours)",
+   "fieldname": "delai_reglement",
+   "fieldtype": "Int",
+   "label": "D\u00e9lai de r\u00e8glement",
+   "reqd": 1
+  },
+  {
+   "fieldname": "type_traite",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Type du trait\u00e9",
+   "options": "\nProportionnel\nNon proportionnel",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.duree_validite=='Ferme'",
+   "fieldname": "date_expiration",
+   "fieldtype": "Date",
+   "label": "Date d\u2019expiration",
+   "mandatory_depends_on": "eval:doc.dur\u00e9e_de_validite=='Ferme'"
+  },
+  {
+   "fieldname": "type_comptabilisation",
+   "fieldtype": "Select",
+   "label": "Type de comptabilisation",
+   "options": "\nPar ann\u00e9e de souscription\nPar ann\u00e9e comptable",
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-08-22 14:29:12.138724",
+ "modified_by": "Administrator",
+ "module": "cession conventionnelle",
+ "name": "Traite",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Role1",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

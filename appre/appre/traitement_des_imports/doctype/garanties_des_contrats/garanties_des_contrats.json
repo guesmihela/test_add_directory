@@ -1,0 +1,116 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-05-07 14:33:35.581765",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "periode_comptable",
+  "date_preparation_du_fichier",
+  "numero_du_contrat",
+  "date_effet_operation",
+  "numero_avenant",
+  "column_break_bpf1",
+  "code_garantie",
+  "cumulable_en_reassurance",
+  "capitaux_assures_e_100_par_garantie",
+  "prime_nette_annuelle_par_garantie"
+ ],
+ "fields": [
+  {
+   "fieldname": "periode_comptable",
+   "fieldtype": "Data",
+   "label": "P\u00e9riode comptable"
+  },
+  {
+   "fieldname": "date_preparation_du_fichier",
+   "fieldtype": "Date",
+   "label": "Date pr\u00e9paration du fichier"
+  },
+  {
+   "fieldname": "numero_du_contrat",
+   "fieldtype": "Link",
+   "label": "Num\u00e9ro du contrat",
+   "options": "Contrat Individuel"
+  },
+  {
+   "fetch_from": "num\u00e9ro_du_contrat.date_effet_operation",
+   "fieldname": "date_effet_operation",
+   "fieldtype": "Data",
+   "label": "Date d\u2019effet de l\u2019op\u00e9ration",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "num\u00e9ro_du_contrat.numero_avenant",
+   "fetch_if_empty": 1,
+   "fieldname": "numero_avenant",
+   "fieldtype": "Data",
+   "label": "Num\u00e9ro d\u2019avenant",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_bpf1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "code_garantie",
+   "fieldtype": "Link",
+   "label": "Code garantie",
+   "options": "Garantie"
+  },
+  {
+   "fieldname": "cumulable_en_reassurance",
+   "fieldtype": "Select",
+   "label": "Cumulable en r\u00e9assurance",
+   "options": "\nOui\nNon"
+  },
+  {
+   "fieldname": "capitaux_assures_e_100_par_garantie",
+   "fieldtype": "Currency",
+   "label": "Capitaux assur\u00e9s \u00e0 100% par garantie",
+   "precision": "0"
+  },
+  {
+   "fieldname": "prime_nette_annuelle_par_garantie",
+   "fieldtype": "Currency",
+   "label": "Prime nette annuelle par garantie"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-08-18 09:41:09.508557",
+ "modified_by": "Administrator",
+ "module": "Traitement des Imports",
+ "name": "Garanties des contrats",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Role1",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

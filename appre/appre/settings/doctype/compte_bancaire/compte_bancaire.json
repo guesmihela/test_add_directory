@@ -1,0 +1,148 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2022-12-19 14:45:31.953487",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "bank_name",
+  "agency",
+  "country_code",
+  "city2",
+  "city1",
+  "postal_code1",
+  "postal_code2",
+  "bank_address",
+  "column_break_tpt8",
+  "rib",
+  "account_currency",
+  "iban",
+  "swift",
+  "iban_convert"
+ ],
+ "fields": [
+  {
+   "fieldname": "iban",
+   "fieldtype": "Data",
+   "label": "IBAN"
+  },
+  {
+   "fieldname": "column_break_tpt8",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "bank_address",
+   "fieldtype": "Data",
+   "label": "Adresse de la banque",
+   "reqd": 1
+  },
+  {
+   "fieldname": "account_currency",
+   "fieldtype": "Link",
+   "label": "Monnaie du compte",
+   "options": "Currency",
+   "reqd": 1
+  },
+  {
+   "fieldname": "bank_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Nom de la banque",
+   "reqd": 1
+  },
+  {
+   "fieldname": "agency",
+   "fieldtype": "Data",
+   "label": "Agence"
+  },
+  {
+   "fieldname": "country_code",
+   "fieldtype": "Link",
+   "label": "Code pays",
+   "options": "Country",
+   "reqd": 1
+  },
+  {
+   "fieldname": "rib",
+   "fieldtype": "Data",
+   "label": "RIB",
+   "length": 20,
+   "reqd": 1
+  },
+  {
+   "fieldname": "swift",
+   "fieldtype": "Data",
+   "label": "Swift"
+  },
+  {
+   "fieldname": "iban_convert",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "iban convert"
+  },
+  {
+   "depends_on": "eval:doc.country_code=='Tunisia'\n",
+   "fieldname": "city1",
+   "fieldtype": "Link",
+   "label": "Ville",
+   "options": "Ville"
+  },
+  {
+   "depends_on": "eval:doc.country_code!='Tunisia'\n",
+   "fieldname": "city2",
+   "fieldtype": "Data",
+   "label": "Ville"
+  },
+  {
+   "depends_on": "eval:doc.country_code=='Tunisia'\n",
+   "fieldname": "postal_code1",
+   "fieldtype": "Link",
+   "label": "Code postal",
+   "options": "Code postal"
+  },
+  {
+   "depends_on": "eval:doc.country_code!='Tunisia'\n",
+   "fieldname": "postal_code2",
+   "fieldtype": "Int",
+   "label": "Code postal"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-01-12 15:44:35.048725",
+ "modified_by": "Administrator",
+ "module": "Settings",
+ "name": "Compte Bancaire",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Role1",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

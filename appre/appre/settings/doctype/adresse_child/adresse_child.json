@@ -1,0 +1,86 @@
+{
+ "actions": [],
+ "autoname": "autoincrement",
+ "creation": "2023-01-02 09:27:35.726202",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "country_label",
+  "country_code",
+  "address",
+  "city",
+  "postal_code",
+  "city1",
+  "postal_code1"
+ ],
+ "fields": [
+  {
+   "default": "Tunisia",
+   "fieldname": "country_label",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Code pays",
+   "options": "Country",
+   "reqd": 1
+  },
+  {
+   "default": "tn",
+   "fetch_from": "country_label.code",
+   "fieldname": "country_code",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Libell\u00e9 pays",
+   "read_only": 1
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Adresse",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.country_label==\"Tunisia\"",
+   "fieldname": "postal_code",
+   "fieldtype": "Link",
+   "label": "Code postal",
+   "mandatory_depends_on": "eval:doc.country_label==\"Tunisia\"",
+   "options": "Code postal"
+  },
+  {
+   "depends_on": "eval:doc.country_label==\"Tunisia\"",
+   "fieldname": "city",
+   "fieldtype": "Link",
+   "label": "Ville",
+   "mandatory_depends_on": "eval:doc.country_label==\"Tunisia\"",
+   "options": "Ville"
+  },
+  {
+   "depends_on": "eval:doc.country_label!=\"Tunisia\"",
+   "fieldname": "postal_code1",
+   "fieldtype": "Data",
+   "label": "Code postal"
+  },
+  {
+   "depends_on": "eval:doc.country_label!=\"Tunisia\"",
+   "fieldname": "city1",
+   "fieldtype": "Data",
+   "label": "Ville"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-01-16 06:29:35.853138",
+ "modified_by": "Administrator",
+ "module": "Settings",
+ "name": "adresse child",
+ "naming_rule": "Autoincrement",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

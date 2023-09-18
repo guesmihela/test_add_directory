@@ -1,0 +1,70 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-07-13 10:22:05.865174",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "compte_general_section",
+  "taille_compte_general",
+  "compte_auxiliaire_section",
+  "taille_compte_auxiliaire"
+ ],
+ "fields": [
+  {
+   "fieldname": "compte_general_section",
+   "fieldtype": "Section Break",
+   "label": "Compte g\u00e9n\u00e9ral"
+  },
+  {
+   "fieldname": "taille_compte_general",
+   "fieldtype": "Int",
+   "label": "Taille"
+  },
+  {
+   "fieldname": "compte_auxiliaire_section",
+   "fieldtype": "Section Break",
+   "label": "Compte auxiliaire"
+  },
+  {
+   "fieldname": "taille_compte_auxiliaire",
+   "fieldtype": "Int",
+   "label": "Taille"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2023-08-19 12:02:24.398078",
+ "modified_by": "Administrator",
+ "module": "Settings",
+ "name": "Compte comptable",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "Role1",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

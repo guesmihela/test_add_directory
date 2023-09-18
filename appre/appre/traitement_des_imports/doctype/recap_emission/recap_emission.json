@@ -1,0 +1,246 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{numero_emission}-{nature_emission}-{periode_comptable}",
+ "creation": "2023-05-09 06:52:07.523504",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "periode_comptable",
+  "date_de_traitement",
+  "code_client",
+  "nom_du_client",
+  "type_contrat",
+  "numero_du_contrat",
+  "numero_aliment",
+  "numero_emission",
+  "code_agence",
+  "code_produit",
+  "nature_emission",
+  "nature_operation",
+  "date_de_souscription_operation",
+  "date_effet",
+  "date_fin_operation",
+  "column_break_lmzk",
+  "date_echeance_contractuelle",
+  "annee_de_souscription",
+  "fractionnement",
+  "nature_du_risque",
+  "base_engagement",
+  "taux_smp",
+  "capitaux_a_100",
+  "capital_reassurance",
+  "prime_nette",
+  "frais_de_quittance",
+  "commissions_servies",
+  "compagnie_aperitrice",
+  "quote_part_coassurance",
+  "quote_part_coassurance_calculer",
+  "kbr",
+  "calcule"
+ ],
+ "fields": [
+  {
+   "fieldname": "periode_comptable",
+   "fieldtype": "Data",
+   "label": "P\u00e9riode comptable"
+  },
+  {
+   "fieldname": "date_de_traitement",
+   "fieldtype": "Date",
+   "label": "Date de traitement"
+  },
+  {
+   "fieldname": "code_client",
+   "fieldtype": "Data",
+   "label": "Code client"
+  },
+  {
+   "fieldname": "nom_du_client",
+   "fieldtype": "Data",
+   "label": "Nom du client"
+  },
+  {
+   "fieldname": "type_contrat",
+   "fieldtype": "Select",
+   "label": "Type contrat",
+   "options": "Contrat cadre\nContrat Individuel"
+  },
+  {
+   "fieldname": "numero_du_contrat",
+   "fieldtype": "Dynamic Link",
+   "label": "Num\u00e9ro du contrat",
+   "options": "type_contrat"
+  },
+  {
+   "fieldname": "numero_aliment",
+   "fieldtype": "Link",
+   "label": "Num\u00e9ro d\u2019aliment",
+   "options": "Aliment"
+  },
+  {
+   "fieldname": "numero_emission",
+   "fieldtype": "Data",
+   "label": "Num\u00e9ro de l\u2019\u00e9mission"
+  },
+  {
+   "fieldname": "code_agence",
+   "fieldtype": "Data",
+   "label": "Code agence"
+  },
+  {
+   "fieldname": "code_produit",
+   "fieldtype": "Link",
+   "label": "Code produit",
+   "options": "Categorie ou produit"
+  },
+  {
+   "fieldname": "nature_emission",
+   "fieldtype": "Select",
+   "label": "Nature d\u2019\u00e9mission",
+   "options": "Emission\nAnnulation \u00e9mission"
+  },
+  {
+   "fieldname": "nature_operation",
+   "fieldtype": "Select",
+   "label": "Nature d\u2019op\u00e9ration",
+   "options": "Affaire nouvelle\nRenouvellement\nComptant\nRetour administratif\nRetour XP\nRistourne\nP.B originale"
+  },
+  {
+   "fieldname": "date_de_souscription_operation",
+   "fieldtype": "Date",
+   "label": "Date de souscription op\u00e9ration"
+  },
+  {
+   "fieldname": "date_effet",
+   "fieldtype": "Date",
+   "label": "Date d\u2019effet op\u00e9ration"
+  },
+  {
+   "fieldname": "date_fin_operation",
+   "fieldtype": "Date",
+   "label": "Date fin op\u00e9ration"
+  },
+  {
+   "fieldname": "column_break_lmzk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "date_echeance_contractuelle",
+   "fieldtype": "Date",
+   "label": "Date d\u2019\u00e9ch\u00e9ance contractuelle"
+  },
+  {
+   "fieldname": "annee_de_souscription",
+   "fieldtype": "Date",
+   "label": "Ann\u00e9e de souscription"
+  },
+  {
+   "fieldname": "fractionnement",
+   "fieldtype": "Select",
+   "label": "Fractionnement",
+   "options": "\nMensuel\nTrimestriel\nSemestriel\nAnnuel"
+  },
+  {
+   "fieldname": "nature_du_risque",
+   "fieldtype": "Select",
+   "label": "Nature du risque",
+   "options": "\nRisque individuel\nRisque commun"
+  },
+  {
+   "fieldname": "base_engagement",
+   "fieldtype": "Select",
+   "label": "Base Engagement",
+   "options": "\n100% des capitaux\nSMP\nTOP VALUE\nLCI"
+  },
+  {
+   "fieldname": "taux_smp",
+   "fieldtype": "Percent",
+   "label": "Taux SMP",
+   "precision": "2"
+  },
+  {
+   "fieldname": "capitaux_a_100",
+   "fieldtype": "Currency",
+   "label": "Capitaux \u00e0 100%",
+   "precision": "0"
+  },
+  {
+   "fieldname": "capital_reassurance",
+   "fieldtype": "Currency",
+   "label": "Capital r\u00e9assurance"
+  },
+  {
+   "fieldname": "prime_nette",
+   "fieldtype": "Currency",
+   "label": "Prime nette"
+  },
+  {
+   "fieldname": "frais_de_quittance",
+   "fieldtype": "Currency",
+   "label": "Frais de quittance"
+  },
+  {
+   "fieldname": "commissions_servies",
+   "fieldtype": "Currency",
+   "label": "Commissions servies"
+  },
+  {
+   "fieldname": "compagnie_aperitrice",
+   "fieldtype": "Data",
+   "label": "Compagnie ap\u00e9ritrice"
+  },
+  {
+   "fieldname": "quote_part_coassurance",
+   "fieldtype": "Percent",
+   "label": "Quote part Coassurance",
+   "precision": "2"
+  },
+  {
+   "depends_on": "eval:doc.quote_part_coassurance",
+   "fieldname": "quote_part_coassurance_calculer",
+   "fieldtype": "Select",
+   "label": "Quote part Coassurance Calculer",
+   "options": "\nOui\nNon"
+  },
+  {
+   "fieldname": "kbr",
+   "fieldtype": "Currency",
+   "label": "kbr",
+   "precision": "0"
+  },
+  {
+   "default": "0",
+   "fieldname": "calcule",
+   "fieldtype": "Check",
+   "label": "clacul\u00e9"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-08-18 05:54:19.748458",
+ "modified_by": "Administrator",
+ "module": "Traitement des Imports",
+ "name": "Recap emission",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,74 @@
+{
+ "actions": [],
+ "autoname": "field:under_branch_code",
+ "creation": "2023-01-03 03:23:04.441850",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "under_branch_code",
+  "under_branch_label",
+  "code_branch"
+ ],
+ "fields": [
+  {
+   "fieldname": "under_branch_code",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Code sous branche",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "under_branch_label",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Libell\u00e9 de la sous branche",
+   "reqd": 1
+  },
+  {
+   "fieldname": "code_branch",
+   "fieldtype": "Link",
+   "label": "Code Branche",
+   "options": "Branche assurance"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-03-30 10:11:56.333727",
+ "modified_by": "Administrator",
+ "module": "Settings",
+ "name": "Sous branche assurance",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Role1",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

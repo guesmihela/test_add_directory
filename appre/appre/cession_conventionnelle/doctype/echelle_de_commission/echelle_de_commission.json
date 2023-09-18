@@ -1,0 +1,113 @@
+{
+ "actions": [],
+ "autoname": "naming_series:",
+ "creation": "2023-02-20 14:08:03.349950",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "description",
+  "column_break_eion",
+  "taux_de_la_commission_provisoire",
+  "date_de_la_premier_liquidation",
+  "section_break_rwtw",
+  "tab_echelle_commission",
+  "sections",
+  "tab_sp"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "R\u00e9f\u00e9rence",
+   "options": "COM-ECHL-"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Data",
+   "label": "Description"
+  },
+  {
+   "fieldname": "column_break_eion",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "taux_de_la_commission_provisoire",
+   "fieldtype": "Percent",
+   "in_list_view": 1,
+   "label": "Taux de la commission provisoire\u00a0",
+   "precision": "2"
+  },
+  {
+   "fieldname": "date_de_la_premier_liquidation",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Date de la 1\u00e8re liquidation",
+   "options": "\nFin de la 1\u00e8re ann\u00e9e\nFin de la 2\u00e8me ann\u00e9e\nFin de la 3\u00e8me ann\u00e9e",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_rwtw",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "tab_echelle_commission",
+   "fieldtype": "Table",
+   "label": "Tableau d\u2019\u00e9chelle de  commission",
+   "options": "child commission echelle",
+   "reqd": 1
+  },
+  {
+   "fieldname": "sections",
+   "fieldtype": "Table",
+   "label": "Sections",
+   "options": "Section commission",
+   "read_only": 1
+  },
+  {
+   "fieldname": "tab_sp",
+   "fieldtype": "Table",
+   "label": "tableau de s/p",
+   "options": "sp commission"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-08-14 11:01:20.809614",
+ "modified_by": "Administrator",
+ "module": "cession conventionnelle",
+ "name": "Echelle de commission",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Role1",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,260 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"i2aiYNAb5H\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Param\u00e8tres  G\u00e9n\u00e9raux</span>\",\"col\":12}},{\"id\":\"cPtPzHOm-4\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Compagnie c\u00e9dante\",\"col\":3}},{\"id\":\"Ldnz_wGhlV\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Interm\u00e9diaires d'assurance\",\"col\":3}},{\"id\":\"hlJLN5DB1F\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Les compagnies d'assurance\",\"col\":3}},{\"id\":\"RFpv18GW6G\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Contact\",\"col\":3}},{\"id\":\"Q_5-CuJCdK\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Assur\u00e9s\",\"col\":3}},{\"id\":\"lwufWg0gMu\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Civilit\u00e9\",\"col\":3}},{\"id\":\"WpkML85SiJ\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"R\u00f4le de la personne\",\"col\":3}},{\"id\":\"Fjxl_zZBk7\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Activit\u00e9 Assur\u00e9\",\"col\":3}},{\"id\":\"tSUu3nHTyb\",\"type\":\"card\",\"data\":{\"card_name\":\"Ville et Code postal\",\"col\":3}},{\"id\":\"vcDUxmTRLj\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"FuGxUmuHi2\",\"type\":\"card\",\"data\":{\"card_name\":\"Branche assurance et Cat\u00e9gorie\",\"col\":3}},{\"id\":\"itTAmnmDua\",\"type\":\"card\",\"data\":{\"card_name\":\"Garantie\",\"col\":3}},{\"id\":\"ftP42oiV0N\",\"type\":\"card\",\"data\":{\"card_name\":\"Rubrique de comptes\",\"col\":4}},{\"id\":\"Jp8gR__9Th\",\"type\":\"card\",\"data\":{\"card_name\":\"Rating\",\"col\":3}},{\"id\":\"lgU_FUn1DA\",\"type\":\"card\",\"data\":{\"card_name\":\"Compte comptable\",\"col\":4}}]",
+ "creation": "2023-01-16 07:35:57.857380",
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "idx": 0,
+ "label": "Param\u00e8tres  G\u00e9n\u00e9raux",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Ville et Code postal",
+   "link_count": 2,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Ville",
+   "link_count": 0,
+   "link_to": "Ville",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Code postal",
+   "link_count": 0,
+   "link_to": "Code postal",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Garantie",
+   "link_count": 2,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Famille de garantie",
+   "link_count": 0,
+   "link_to": "Famille de garantie",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Garantie",
+   "link_count": 0,
+   "link_to": "Garantie",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Branche assurance et Cat\u00e9gorie",
+   "link_count": 3,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Branche assurance",
+   "link_count": 0,
+   "link_to": "Branche assurance",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Sous branches assurance",
+   "link_count": 0,
+   "link_to": "Sous branche assurance",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Cat\u00e9gorie ou produit",
+   "link_count": 0,
+   "link_to": "Categorie ou produit",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Rating",
+   "link_count": 2,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Agences de Rating",
+   "link_count": 0,
+   "link_to": "Agence de Rating",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Notation",
+   "link_count": 0,
+   "link_to": "Notation",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Rubrique de comptes",
+   "link_count": 3,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Regroupement rubriques de comptes",
+   "link_count": 0,
+   "link_to": "Regroupement rubriques de comptes",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Rubrique de compte",
+   "link_count": 0,
+   "link_to": "Rubrique de compte",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Compte S/P & R\u00e9sultat (P.B & P.P)",
+   "link_count": 0,
+   "link_to": "Compte SP et Resultat PB et PP",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Compte comptable",
+   "link_count": 1,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Compte comptable",
+   "link_count": 0,
+   "link_to": "Compte comptable",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2023-08-16 05:35:14.742468",
+ "modified_by": "Administrator",
+ "module": "Settings",
+ "name": "Param\u00e8tres  G\u00e9n\u00e9raux",
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 8.0,
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Compagnie c\u00e9dante",
+   "link_to": "Compagnie cedante",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Activit\u00e9 Assur\u00e9",
+   "link_to": "Activite Assure",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Interm\u00e9diaires d'assurance",
+   "link_to": "Intermediaire d assurance",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "R\u00f4le de la personne",
+   "link_to": "Role de la personne",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Assur\u00e9s",
+   "link_to": "Assure",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Les compagnies d'assurance",
+   "link_to": "Compagnie assurance",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Contact",
+   "link_to": "Contact",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Civilit\u00e9",
+   "link_to": "Salutation",
+   "type": "DocType"
+  }
+ ],
+ "title": "Param\u00e8tres  G\u00e9n\u00e9raux"
+}

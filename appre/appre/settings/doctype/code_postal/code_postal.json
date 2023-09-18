@@ -1,0 +1,72 @@
+{
+ "actions": [],
+ "autoname": "field:postal_code",
+ "creation": "2023-01-02 10:11:03.944532",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "postal_code",
+  "city"
+ ],
+ "fields": [
+  {
+   "fieldname": "postal_code",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Code postal",
+   "length": 4,
+   "non_negative": 1,
+   "reqd": 1,
+   "set_only_once": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "city",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Ville",
+   "options": "Ville",
+   "reqd": 1,
+   "unique": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-01-16 09:11:20.028090",
+ "modified_by": "Administrator",
+ "module": "Settings",
+ "name": "Code postal",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Role1",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

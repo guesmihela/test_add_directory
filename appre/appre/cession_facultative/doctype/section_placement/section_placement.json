@@ -1,0 +1,284 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:nom_section",
+ "creation": "2023-04-12 14:36:01.704764",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "nom_section",
+  "code_branche",
+  "link_name",
+  "num_section",
+  "code_risque",
+  "type_placement",
+  "capital_base_engagement_reas",
+  "priorite",
+  "portee",
+  "prime_reassurance",
+  "column_break_1",
+  "part_cedee_fac",
+  "delai_paiement",
+  "type_tiers",
+  "tiers_aperiteur",
+  "section_break_2",
+  "contrats",
+  "tiers_section",
+  "contact_html",
+  "link_doctype",
+  "somme_tiers",
+  "validate_doc",
+  "meme_condition_pour_tous_les_tiers_section",
+  "meme_condition",
+  "section_break_hucr",
+  "type_de_commission",
+  "montant_de_la_commission_forfaitaire",
+  "taux_de_commission",
+  "column_break_lufb",
+  "type_interessement",
+  "taux",
+  "frais_de_gestion"
+ ],
+ "fields": [
+  {
+   "fieldname": "nom_section",
+   "fieldtype": "Data",
+   "label": "Nom de section",
+   "unique": 1
+  },
+  {
+   "fieldname": "code_branche",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Code branche",
+   "options": "Branche de traite",
+   "reqd": 1
+  },
+  {
+   "fieldname": "link_name",
+   "fieldtype": "Link",
+   "label": "Placement",
+   "options": "Placement en reassurance facultative",
+   "read_only": 1
+  },
+  {
+   "fieldname": "num_section",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Num\u00e9ro de la section",
+   "read_only": 1
+  },
+  {
+   "fieldname": "code_risque",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Code risque",
+   "options": "Risque des traites",
+   "reqd": 1
+  },
+  {
+   "fieldname": "type_placement",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Type du placement",
+   "options": "\nProportionnel\nNon proportionnel",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.type_du_placement=='Proportionnel'",
+   "fieldname": "capital_base_engagement_reas",
+   "fieldtype": "Currency",
+   "label": "Capital base engagement r\u00e9assurance des c\u00e9dantes",
+   "mandatory_depends_on": "eval:doc.type_du_placement=='Proportionnel'"
+  },
+  {
+   "depends_on": "eval:doc.type_du_placement=='Non proportionnel'",
+   "fieldname": "priorite",
+   "fieldtype": "Int",
+   "label": "Priorit\u00e9",
+   "mandatory_depends_on": "eval:doc.type_du_placement=='Non proportionnel'"
+  },
+  {
+   "depends_on": "eval:doc.type_du_placement=='Non proportionnel'",
+   "fieldname": "portee",
+   "fieldtype": "Int",
+   "label": "Port\u00e9e",
+   "mandatory_depends_on": "eval:doc.type_du_placement=='Non proportionnel'"
+  },
+  {
+   "depends_on": "eval:doc.type_du_placement=='Non proportionnel'",
+   "fieldname": "prime_reassurance",
+   "fieldtype": "Currency",
+   "label": "Prime de r\u00e9assurance",
+   "mandatory_depends_on": "eval:doc.type_du_placement=='Non proportionnel'"
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "part_cedee_fac",
+   "fieldtype": "Percent",
+   "label": "La part c\u00e9d\u00e9e en facultative",
+   "precision": "2",
+   "reqd": 1
+  },
+  {
+   "description": "En nombre de jours",
+   "fieldname": "delai_paiement",
+   "fieldtype": "Int",
+   "label": "D\u00e9lai de paiement (PWC)"
+  },
+  {
+   "fieldname": "type_tiers",
+   "fieldtype": "Select",
+   "label": "Type tiers",
+   "options": "\nReassureur\nCourtier",
+   "reqd": 1
+  },
+  {
+   "fieldname": "tiers_aperiteur",
+   "fieldtype": "Dynamic Link",
+   "label": "Tiers Ap\u00e9riteur",
+   "options": "type_tiers"
+  },
+  {
+   "fieldname": "section_break_2",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "contrats",
+   "fieldtype": "Table",
+   "label": "Contrats",
+   "options": "child contrat"
+  },
+  {
+   "fieldname": "tiers_section",
+   "fieldtype": "Section Break",
+   "label": "Tiers"
+  },
+  {
+   "fieldname": "contact_html",
+   "fieldtype": "HTML"
+  },
+  {
+   "fieldname": "link_doctype",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "print_hide": 1
+  },
+  {
+   "fieldname": "somme_tiers",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "soome_tiers",
+   "print_hide": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "validate_doc",
+   "fieldtype": "Icon",
+   "hidden": 1,
+   "label": "validate_doc",
+   "print_hide": 1
+  },
+  {
+   "fieldname": "meme_condition_pour_tous_les_tiers_section",
+   "fieldtype": "Section Break",
+   "label": "M\u00eame condition pour tous les tiers"
+  },
+  {
+   "default": "0",
+   "fieldname": "meme_condition",
+   "fieldtype": "Check",
+   "label": "M\u00eame condition pour tous les tiers"
+  },
+  {
+   "depends_on": "eval:doc.meme_condition",
+   "fieldname": "section_break_hucr",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "type_de_commission",
+   "fieldtype": "Select",
+   "label": "Type de commission",
+   "options": "\nTaux\nForfait\nNon appliqu\u00e9"
+  },
+  {
+   "depends_on": "eval:doc.type_de_commission=='Forfait'",
+   "fieldname": "montant_de_la_commission_forfaitaire",
+   "fieldtype": "Currency",
+   "label": "Montant de la commission forfaitaire"
+  },
+  {
+   "depends_on": "eval:doc.type_de_commission=='Taux'",
+   "fieldname": "taux_de_commission",
+   "fieldtype": "Percent",
+   "label": "Taux de commission",
+   "mandatory_depends_on": "eval:doc.type_de_commission=='Taux'",
+   "precision": "2"
+  },
+  {
+   "fieldname": "column_break_lufb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "type_interessement",
+   "fieldtype": "Select",
+   "label": "Type d\u2019int\u00e9ressement",
+   "options": "\nP.B sur le r\u00e9sultat\nBonification pour non sinistre\nNon appliqu\u00e9"
+  },
+  {
+   "depends_on": "eval:(doc.type_interessement=='P.B sur le r\u00e9sultat' || doc.type_interessement=='Bonification pour non sinistre')",
+   "fieldname": "taux",
+   "fieldtype": "Percent",
+   "label": "Taux",
+   "precision": "2"
+  },
+  {
+   "depends_on": "eval:doc.type_interessement=='P.B sur le r\u00e9sultat'",
+   "fieldname": "frais_de_gestion",
+   "fieldtype": "Percent",
+   "label": "Frais de gestion"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-08-16 07:06:46.798613",
+ "modified_by": "Administrator",
+ "module": "cession facultative",
+ "name": "Section Placement",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Role1",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,106 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:Structure-CSV-{doctype_name}-{#####} -.YYYY.-",
+ "creation": "2023-09-01 15:58:45.332508",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "structure_name",
+  "section_break_k98b",
+  "module_name",
+  "entete",
+  "column_break_2kf4",
+  "doctype_name",
+  "separateur",
+  "section_break_bkuu5",
+  "champs"
+ ],
+ "fields": [
+  {
+   "depends_on": "eval:doc.module_name",
+   "fieldname": "doctype_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Doctype Name",
+   "options": "DocType",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.entete == 'Non'",
+   "fieldname": "champs",
+   "fieldtype": "Table",
+   "label": "Champs",
+   "options": "Champ"
+  },
+  {
+   "fieldname": "section_break_bkuu5",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "structure_name",
+   "fieldtype": "Data",
+   "label": "Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "module_name",
+   "fieldtype": "Link",
+   "label": "Module Name",
+   "options": "Module Def"
+  },
+  {
+   "depends_on": "eval:doc.module_name",
+   "fieldname": "entete",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Ligne d'ent\u00eate",
+   "options": "\nOui\nNon",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.module_name",
+   "fieldname": "separateur",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "S\u00e9parateur",
+   "options": "\npoint virgule\nvirgule",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_k98b",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_2kf4",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-09-04 16:32:16.155077",
+ "modified_by": "Administrator",
+ "module": "Settings",
+ "name": "Structure CSV",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

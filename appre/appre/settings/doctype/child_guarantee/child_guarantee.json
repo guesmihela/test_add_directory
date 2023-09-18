@@ -1,0 +1,43 @@
+{
+ "actions": [],
+ "autoname": "autoincrement",
+ "creation": "2023-01-09 04:41:45.622971",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "code_guarantee",
+  "data_hbxs"
+ ],
+ "fields": [
+  {
+   "fieldname": "code_guarantee",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Code de la garantie",
+   "options": "Garantie",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "code_guarantee.guarantee_label",
+   "fieldname": "data_hbxs",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Libell\u00e9 de la garantie",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-01-12 15:32:01.032689",
+ "modified_by": "Administrator",
+ "module": "Settings",
+ "name": "child guarantee",
+ "naming_rule": "Autoincrement",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

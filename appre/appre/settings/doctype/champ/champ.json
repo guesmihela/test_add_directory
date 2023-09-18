@@ -1,0 +1,39 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-09-04 09:42:08.368682",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "column_name",
+  "ordre"
+ ],
+ "fields": [
+  {
+   "fieldname": "column_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Nom Champ"
+  },
+  {
+   "fieldname": "ordre",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Ordre"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-09-04 10:08:18.062091",
+ "modified_by": "Administrator",
+ "module": "Settings",
+ "name": "Champ",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

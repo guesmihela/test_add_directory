@@ -1,0 +1,221 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:nom_tiers",
+ "creation": "2023-04-14 09:15:39.924938",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "link_name",
+  "nom_tiers",
+  "type_tiers",
+  "code_du_tiers",
+  "etat_tiers",
+  "column_break_gbz1",
+  "la_part_du_tiers",
+  "part_signee",
+  "document_signe",
+  "section_break_cqyj",
+  "part_de_chaque_r\u00e9assureur_derri\u00e8re_les_courtiers",
+  "meme_condition_section",
+  "m\u00eame_condition_avec_autre_tiers_section",
+  "meme_condition_tiers",
+  "tiers_identique",
+  "section_break_zoqf",
+  "type_de_commission",
+  "montant_de_la_commission_forfaitaire",
+  "taux_de_commission",
+  "column_break_6lge",
+  "type_interessement",
+  "taux",
+  "frais_de_gestion",
+  "link_doctype"
+ ],
+ "fields": [
+  {
+   "fieldname": "link_name",
+   "fieldtype": "Link",
+   "label": "Section",
+   "options": "Section Placement",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "nom_tiers",
+   "fieldtype": "Data",
+   "label": "Nom tiers",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "type_tiers",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Type Tiers",
+   "options": "Reassureur\nCourtier",
+   "reqd": 1
+  },
+  {
+   "fieldname": "code_du_tiers",
+   "fieldtype": "Dynamic Link",
+   "in_list_view": 1,
+   "label": "Code du tiers",
+   "options": "type_tiers",
+   "reqd": 1
+  },
+  {
+   "fieldname": "etat_tiers",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "etat_tiers",
+   "print_hide": 1
+  },
+  {
+   "fieldname": "column_break_gbz1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "la_part_du_tiers",
+   "fieldtype": "Percent",
+   "in_list_view": 1,
+   "label": "La part du Tiers",
+   "precision": "2",
+   "reqd": 1
+  },
+  {
+   "fieldname": "part_signee",
+   "fieldtype": "Percent",
+   "label": "Part sign\u00e9e",
+   "mandatory_depends_on": "eval:doc.document_signe",
+   "precision": "2"
+  },
+  {
+   "fieldname": "document_signe",
+   "fieldtype": "Attach",
+   "label": "Document sign\u00e9"
+  },
+  {
+   "depends_on": "eval:doc.type_tiers=='Courtier'",
+   "fieldname": "section_break_cqyj",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "part_de_chaque_r\u00e9assureur_derri\u00e8re_les_courtiers",
+   "fieldtype": "Table",
+   "label": "Part de chaque r\u00e9assureur derri\u00e8re les courtiers",
+   "mandatory_depends_on": "eval:doc.type_tiers=='Courtier'",
+   "options": "Part reassureur derriere  courtiers placement"
+  },
+  {
+   "default": "0",
+   "fieldname": "meme_condition_section",
+   "fieldtype": "Check",
+   "hidden": 1,
+   "label": "meme_condition_section",
+   "print_hide": 1,
+   "report_hide": 1
+  },
+  {
+   "depends_on": "eval:!doc.meme_condition_section",
+   "fieldname": "m\u00eame_condition_avec_autre_tiers_section",
+   "fieldtype": "Section Break",
+   "label": "M\u00eame condition avec autre tiers"
+  },
+  {
+   "default": "0",
+   "fieldname": "meme_condition_tiers",
+   "fieldtype": "Check",
+   "label": "M\u00eame condition avec autre tiers"
+  },
+  {
+   "depends_on": "eval:doc.meme_condition_tiers",
+   "fieldname": "tiers_identique",
+   "fieldtype": "Link",
+   "label": "Tiers identique",
+   "options": "Tiers placement"
+  },
+  {
+   "fieldname": "section_break_zoqf",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "type_de_commission",
+   "fieldtype": "Select",
+   "label": "Type de commission",
+   "options": "\nTaux\nForfait\nNon appliqu\u00e9"
+  },
+  {
+   "depends_on": "eval:doc.type_de_commission=='Forfait'",
+   "fieldname": "montant_de_la_commission_forfaitaire",
+   "fieldtype": "Currency",
+   "label": "Montant de la commission forfaitaire"
+  },
+  {
+   "depends_on": "eval:doc.type_de_commission=='Taux'",
+   "fieldname": "taux_de_commission",
+   "fieldtype": "Percent",
+   "label": "Taux de commission",
+   "mandatory_depends_on": "eval:doc.type_de_commission=='Taux'",
+   "precision": "2"
+  },
+  {
+   "fieldname": "column_break_6lge",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "type_interessement",
+   "fieldtype": "Select",
+   "label": "Type d\u2019int\u00e9ressement",
+   "options": "\nP.B sur le r\u00e9sultat\nBonification pour non sinistre\nNon appliqu\u00e9"
+  },
+  {
+   "depends_on": "eval:(doc.type_interessement=='P.B sur le r\u00e9sultat' || doc.type_interessement=='Bonification pour non sinistre')",
+   "fieldname": "taux",
+   "fieldtype": "Percent",
+   "label": "Taux",
+   "mandatory_depends_on": "eval:(doc.type_interessement=='P.B sur le r\u00e9sultat' || doc.type_interessement=='Bonification pour non sinistre')",
+   "precision": "2"
+  },
+  {
+   "depends_on": "eval:doc.type_interessement=='P.B sur le r\u00e9sultat'",
+   "fieldname": "frais_de_gestion",
+   "fieldtype": "Percent",
+   "label": "Frais de gestion",
+   "precision": "2"
+  },
+  {
+   "fieldname": "link_doctype",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "print_hide": 1,
+   "report_hide": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-08-16 07:08:17.745034",
+ "modified_by": "Administrator",
+ "module": "cession facultative",
+ "name": "Tiers placement",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

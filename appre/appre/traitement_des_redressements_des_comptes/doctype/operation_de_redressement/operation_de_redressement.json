@@ -1,0 +1,331 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:libelle",
+ "creation": "2023-04-29 07:25:47.653246",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "periode",
+  "type_cession",
+  "type_operation",
+  "column_break_zxrp",
+  "choix_compte",
+  "libelle",
+  "id_traite",
+  "id_placement",
+  "section_break_5a8j",
+  "type_section",
+  "code_section",
+  "code_risque",
+  "code_branche",
+  "code_agence",
+  "column_break_8vx0",
+  "niveau_traite",
+  "type_placement",
+  "nom_assure",
+  "num_contrat",
+  "section_break_h8oa",
+  "type_tiers",
+  "code_tiers",
+  "nom_tiers",
+  "type_tiers_section",
+  "column_break_mjy5",
+  "code_securite",
+  "nom_securite",
+  "section_break_k6x1",
+  "code_rubrique",
+  "libelle_rubrique",
+  "column_break_c4qw",
+  "sens_operation",
+  "montant_debit",
+  "montant_credit",
+  "t"
+ ],
+ "fields": [
+  {
+   "fieldname": "type_operation",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Type de l\u2019op\u00e9ration (Individuel ou Commun)",
+   "options": "\nIndividuelle\nCommune",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_zxrp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_5a8j",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "type_section",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "type section",
+   "options": "\nSection\nSection Placement"
+  },
+  {
+   "depends_on": "eval:doc.type_cession=='Facultative'",
+   "fieldname": "code_branche",
+   "fieldtype": "Data",
+   "in_standard_filter": 1,
+   "label": "Code branche",
+   "mandatory_depends_on": "eval:doc.type_de_la_cession_conventionnelle_ou_facultative=='Facultative'",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.type_cession=='Facultative'",
+   "fetch_from": "identifiant_du_placement.nom_de_lassur\u00e9",
+   "fetch_if_empty": 1,
+   "fieldname": "nom_assure",
+   "fieldtype": "Data",
+   "label": "Nom de l\u2019assur\u00e9",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_8vx0",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "code_de_la_rubrique.sens_comptable",
+   "fetch_if_empty": 1,
+   "fieldname": "sens_operation",
+   "fieldtype": "Select",
+   "label": "Sens de l\u2019op\u00e9ration",
+   "options": "\nD\nC",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.type_operation=='Individuelle'",
+   "fieldname": "section_break_h8oa",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_k6x1",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_mjy5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_c4qw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.type_de_la_cession_conventionnelle_ou_facultative!=''",
+   "fieldname": "code_risque",
+   "fieldtype": "Data",
+   "label": "Code risque",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "type_tiers",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "type tiers",
+   "options": "\nTiers\nTiers placement"
+  },
+  {
+   "fieldname": "type_tiers_section",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "type_tiers_section",
+   "print_hide": 1
+  },
+  {
+   "fieldname": "t",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "t"
+  },
+  {
+   "depends_on": "eval:doc.type_tiers_section==\"Courtier\"",
+   "fieldname": "code_securite",
+   "fieldtype": "Link",
+   "label": "Code s\u00e9curit\u00e9",
+   "options": "Reassureur"
+  },
+  {
+   "fieldname": "periode",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "P\u00e9riode",
+   "reqd": 1
+  },
+  {
+   "fieldname": "libelle",
+   "fieldtype": "Data",
+   "label": "Libell\u00e9",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "depends_on": "eval:doc.sens_operation=='D'",
+   "fieldname": "montant_debit",
+   "fieldtype": "Currency",
+   "label": "Montant D\u00e9bit",
+   "mandatory_depends_on": "eval:doc.sens_operation=='D'"
+  },
+  {
+   "depends_on": "eval:doc.sens_operation=='C'",
+   "fieldname": "montant_credit",
+   "fieldtype": "Currency",
+   "label": "Montant Cr\u00e9dit",
+   "mandatory_depends_on": "eval:doc.sens_operation=='C'"
+  },
+  {
+   "fetch_from": "code_securite.reinsurer_name",
+   "fetch_if_empty": 1,
+   "fieldname": "nom_securite",
+   "fieldtype": "Data",
+   "label": "Nom s\u00e9curit\u00e9",
+   "read_only": 1
+  },
+  {
+   "fieldname": "code_agence",
+   "fieldtype": "Data",
+   "label": "Code agence"
+  },
+  {
+   "depends_on": "eval:doc.type_cession=='Conventionnelle'",
+   "fieldname": "id_traite",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Identifiant du trait\u00e9",
+   "mandatory_depends_on": "eval:doc.type_cession=='Conventionnelle'",
+   "options": "Traite"
+  },
+  {
+   "depends_on": "eval:doc.type_cession=='Facultative'",
+   "fieldname": "id_placement",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Identifiant du placement",
+   "mandatory_depends_on": "eval:doc.type_cession=='Facultative'",
+   "options": "Placement en reassurance facultative"
+  },
+  {
+   "fieldname": "type_cession",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Type de la cession (Conventionnelle ou Facultative)",
+   "options": "\nConventionnelle\nFacultative",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:(doc.id_traite || doc.id_placement ) ",
+   "fieldname": "code_section",
+   "fieldtype": "Dynamic Link",
+   "label": "Code de la section",
+   "options": "type_section",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:(doc.type_cession=='Facultative' && doc.code_section)",
+   "fieldname": "num_contrat",
+   "fieldtype": "Link",
+   "label": "Num\u00e9ro du contrat",
+   "mandatory_depends_on": "eval:doc.type_de_la_cession_conventionnelle_ou_facultative=='Facultative'",
+   "options": "Contrat"
+  },
+  {
+   "depends_on": "eval:(doc.type_operation=='Individuelle' && doc.code_section)",
+   "fieldname": "code_tiers",
+   "fieldtype": "Dynamic Link",
+   "label": "Code du tiers",
+   "mandatory_depends_on": "eval:(doc.type_operation=='Individuelle' && doc.code_de_la_section)",
+   "options": "type_tiers"
+  },
+  {
+   "fieldname": "niveau_traite",
+   "fieldtype": "Data",
+   "label": "Niveau du trait\u00e9",
+   "mandatory_depends_on": "eval:doc.type_de_la_cession_conventionnelle_ou_facultative=='Conventionnelle'",
+   "read_only": 1
+  },
+  {
+   "fieldname": "nom_tiers",
+   "fieldtype": "Data",
+   "label": "Nom du tiers",
+   "read_only": 1
+  },
+  {
+   "fieldname": "choix_compte",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Compte ou Hors compte",
+   "options": "\nCompte\nHors compte",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.type_cession=='Facultative'",
+   "fieldname": "type_placement",
+   "fieldtype": "Data",
+   "label": "Type du placement",
+   "mandatory_depends_on": "eval:doc.type_de_la_cession_conventionnelle_ou_facultative=='Facultative'",
+   "read_only": 1
+  },
+  {
+   "fieldname": "code_rubrique",
+   "fieldtype": "Link",
+   "label": "Code de la rubrique",
+   "options": "Rubrique de compte",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "code_rubrique.libelle_rubrique",
+   "fetch_if_empty": 1,
+   "fieldname": "libelle_rubrique",
+   "fieldtype": "Data",
+   "label": "Libell\u00e9 de la rubrique",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-08-17 21:53:21.905449",
+ "modified_by": "Administrator",
+ "module": "Traitement des Redressements des comptes",
+ "name": "Operation de redressement",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Role1",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
