@@ -4,6 +4,12 @@ app_publisher = "tnt"
 app_description = "re"
 app_email = "s.b@tnt.com.tn"
 app_license = "MIT"
+app_logo_url = "/assets/appre/images/tnt.png"
+
+website_context = {
+    "favicon": "/assets/appre/images/tnt.png",
+    "splash_image": "/assets/appre/images/tnt.png",
+}
 # required_apps = []
 
 # Includes in <head>
